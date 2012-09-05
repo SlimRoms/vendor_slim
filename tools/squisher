@@ -40,6 +40,7 @@ fi
 OPTICHARGER=$ANDROID_BUILD_TOP/vendor/slim/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
+DELETE_MEDIA="*.qmg"
 
 REPACK=$OUT/repack.d
 printf "Sanitizing environment..."
@@ -86,12 +87,40 @@ $SED -i \
 # Delete unnecessary binaries
 ( cd $REPACK/ota/system/bin; echo $DELETE_BINS | xargs rm -f; )
 
+# Delete Offline charging mode files
+( cd $REPACK/ota/system/media; echo $DELETE_MEDIA | xargs rm -f; )
+
+# No need for modem.bin
+rm -f $REPACK/ota/modem.bin
+
+# No need for media/video
+rm -rf $REPACK/ota/system/media/video
+
+# Delete compiled fonts
+rm -rf $REPACK/ota/system/fonts
+
+#make dir for fonts again
+mkdir $REPACK/ota/system/fonts
+
+# Add precompiled fonts
+mv -f $REPACK/ota/system/sfont/*.ttf $REPACK/ota/system/fonts/
+
+# No need for tts
+rm -rf $REPACK/ota/system/tts
+
 # No need for recovery
 rm -rf $REPACK/ota/recovery
 
 # Strip modules
 [ -d $REPACK/ota/system/lib/modules ] && \
 	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
+
+# Swap boot.img
+DEVICEINFO=`sed -n -e'/ro\.product\.device/s/^.*=//p' $REPACK/ota/system/build.prop`
+if [ "$DEVICEINFO" = "GT-I9000" ]; then
+   rm -f $REPACK/ota/boot.img
+   mv -f $REPACK/ota/system/slimkernel/boot.img $REPACK/ota/boot.img
+fi
 
 # Determine what to name the new signed package
 MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $REPACK/ota/system/build.prop`

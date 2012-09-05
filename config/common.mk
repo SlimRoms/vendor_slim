@@ -8,8 +8,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
-    ro.com.android.dataroaming=false
-
+    ro.com.android.dataroaming=false \
+    updateme.otauid=slimroms.net \
+    updateme.name=Slim \
+    updateme.urlcheck=http://slimota.slimroms.net/xml/update_me_check.xml \
+    updateme.urlelement=http://slimota.slimroms.net/xml/update_me_parts.xml \
+    updateme.reboottype=0
 
 # init.d support
 PRODUCT_COPY_FILES += \
@@ -29,18 +33,72 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES +=  \
     vendor/slim/proprietary/supersu/su:system/xbin/su
 
-# Bring in camera effects
+#LOCAL SLIM CHANGES - START
+#Bring in fonts files
 PRODUCT_COPY_FILES +=  \
-    vendor/slim/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/slim/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+vendor/slim/prebuilt/common/fonts/Roboto-Italic.ttf:system/sfont/Roboto-Italic.ttf \
+vendor/slim/prebuilt/common/fonts/Roboto-Regular.ttf:system/sfont/Roboto-Regular.ttf \
+vendor/slim/prebuilt/common/fonts/DroidSansArmenian.ttf:system/sfont/DroidSansArmenian.ttf \
+vendor/slim/prebuilt/common/fonts/Roboto-BoldItalic.ttf:system/sfont/Roboto-BoldItalic.ttf \
+vendor/slim/prebuilt/common/fonts/AndroidClock_Solid.ttf:system/sfont/AndroidClock_Solid.ttf \
+vendor/slim/prebuilt/common/fonts/DroidSansGeorgian.ttf:system/sfont/DroidSansGeorgian.ttf \
+vendor/slim/prebuilt/common/fonts/DroidSerif-Bold.ttf:system/sfont/DroidSerif-Bold.ttf \
+vendor/slim/prebuilt/common/fonts/DroidSerif-Italic.ttf:system/sfont/DroidSerif-Italic.ttf \
+vendor/slim/prebuilt/common/fonts/DroidSerif-BoldItalic.ttf:system/sfont/DroidSerif-BoldItalic.ttf \
+vendor/slim/prebuilt/common/fonts/DroidSansThai.ttf:system/sfont/DroidSansThai.ttf \
+vendor/slim/prebuilt/common/fonts/Roboto-Bold.ttf:system/sfont/Roboto-Bold.ttf \
+vendor/slim/prebuilt/common/fonts/Clockopia.ttf:system/sfont/Clockopia.ttf \
+vendor/slim/prebuilt/common/fonts/DroidSansHebrew-Regular.ttf:system/sfont/DroidSansHebrew-Regular.ttf \
+vendor/slim/prebuilt/common/fonts/DroidSansMono.ttf:system/sfont/DroidSansMono.ttf \
+vendor/slim/prebuilt/common/fonts/DroidSansHebrew-Bold.ttf:system/sfont/DroidSansHebrew-Bold.ttf \
+vendor/slim/prebuilt/common/fonts/AndroidClock.ttf:system/sfont/AndroidClock.ttf \
+vendor/slim/prebuilt/common/fonts/DroidSansFallback.ttf:system/sfont/DroidSansFallback.ttf \
+vendor/slim/prebuilt/common/fonts/DroidSerif-Regular.ttf:system/sfont/DroidSerif-Regular.ttf \
+vendor/slim/prebuilt/common/fonts/AndroidClock_Highlight.ttf:system/sfont/AndroidClock_Highlight.ttf
 
 # Bring in media files
 PRODUCT_COPY_FILES +=  \
-    vendor/slim/prebuilt/common/media/audio/alarms/Alarm_Beep_02.ogg:system/media/media/audio/alarms/Alarm_Beep_02.ogg \
-    vendor/slim/prebuilt/common/media/audio/alarms/Alarm_Classic.ogg:system/media/media/audio/alarms/Alarm_Classic.ogg \
-    vendor/slim/prebuilt/common/media/audio/alarms/Alarm_Rooster_02.ogg:system/media/media/audio/alarms/Alarm_Rooster_02.ogg \
-    vendor/slim/prebuilt/common/media/audio/alarms/Cesium.ogg:system/media/media/audio/alarms/Cesium.ogg
-
+	vendor/slim/prebuilt/common/media/audio/alarms/Alarm_Classic.ogg:system/media/audio/alarms/Alarm_Beep_02.ogg \
+	vendor/slim/prebuilt/common/media/audio/alarms/Alarm_Rooster_02.ogg:system/media/audio/alarms/Alarm_Classic_02.ogg \
+	vendor/slim/prebuilt/common/media/audio/alarms/Cesium.ogg:system/media/audio/alarms/Cesium.ogg \
+	vendor/slim/prebuilt/common/media/audio/alarms/Alarm_Beep_02.ogg:system/media/audio/alarms/Alarm_Beep_02.ogg \
+	vendor/slim/prebuilt/common/media/audio/ringtones/NewPlayer.ogg:system/media/audio/ringtones/NewPlayer.ogg \
+	vendor/slim/prebuilt/common/media/audio/ringtones/Ring_Digital_02.ogg:system/media/audio/ringtones/Ring_Digital.ogg \
+	vendor/slim/prebuilt/common/media/audio/ringtones/Playa.ogg:system/media/audio/ringtones/Playa.ogg \
+	vendor/slim/prebuilt/common/media/audio/ringtones/Pyxis.ogg:system/media/audio/ringtones/Pyxis.ogg \
+	vendor/slim/prebuilt/common/media/audio/ringtones/Vespa.ogg:system/media/audio/ringtones/Vespa.ogg \
+	vendor/slim/prebuilt/common/media/audio/ringtones/hydra.ogg:system/media/audio/ringtones/hydra.ogg \
+	vendor/slim/prebuilt/common/media/audio/ringtones/Aquila.ogg:system/media/audio/ringtones/Aquila.ogg \
+	vendor/slim/prebuilt/common/media/audio/ringtones/World.ogg:system/media/audio/ringtones/World.ogg \
+	vendor/slim/prebuilt/common/media/audio/ringtones/InsertCoin.ogg:system/media/audio/ringtones/InsertCoin.ogg \
+	vendor/slim/prebuilt/common/media/audio/ringtones/Carina.ogg:system/media/audio/ringtones/Carina.ogg \
+	vendor/slim/prebuilt/common/media/audio/notifications/Antares.ogg:system/media/audio/notifications/Antares.ogg \
+	vendor/slim/prebuilt/common/media/audio/notifications/Doink.ogg:system/media/audio/notifications/Doink.ogg \
+	vendor/slim/prebuilt/common/media/audio/notifications/arcturus.ogg:system/media/audio/notifications/arcturus.ogg \
+	vendor/slim/prebuilt/common/media/audio/notifications/Plastic_Pipe.ogg:system/media/audio/notifications/Plastic_Pipe.ogg \
+	vendor/slim/prebuilt/common/media/audio/notifications/Procyon.ogg:system/media/audio/notifications/Procyon.ogg \
+	vendor/slim/prebuilt/common/media/audio/notifications/pixiedust.ogg:system/media/audio/notifications/pixiedust.ogg \
+	vendor/slim/prebuilt/common/media/audio/notifications/DontPanic.ogg:system/media/audio/notifications/DontPanic.ogg \
+	vendor/slim/prebuilt/common/media/audio/notifications/Palladium.ogg:system/media/audio/notifications/Palladium.ogg \
+	vendor/slim/prebuilt/common/media/audio/notifications/tweeters.ogg:system/media/audio/notifications/tweeters.ogg \
+	vendor/slim/prebuilt/common/media/audio/notifications/Cricket.ogg:system/media/audio/notifications/Cricket.ogg \
+	vendor/slim/prebuilt/common/media/audio/notifications/Altair.ogg:system/media/audio/notifications/Altair.ogg \
+	vendor/slim/prebuilt/common/media/audio/notifications/Helium.ogg:system/media/audio/notifications/Helium.ogg \
+	vendor/slim/prebuilt/common/media/audio/notifications/Aldebaran.ogg:system/media/audio/notifications/Aldebaran.ogg \
+	vendor/slim/prebuilt/common/media/audio/ui/camera_click.ogg:system/media/audio/ui/camera_click.ogg \
+	vendor/slim/prebuilt/common/media/audio/ui/Undock.ogg:system/media/audio/ui/Undock.ogg \
+	vendor/slim/prebuilt/common/media/audio/ui/VideoRecord.ogg:system/media/audio/ui/VideoRecord.ogg \
+	vendor/slim/prebuilt/common/media/audio/ui/KeypressReturn.ogg:system/media/audio/ui/KeypressReturn.ogg \
+	vendor/slim/prebuilt/common/media/audio/ui/camera_focus.ogg:system/media/audio/ui/camera_focus.ogg \
+	vendor/slim/prebuilt/common/media/audio/ui/LowBattery.ogg:system/media/audio/ui/LowBattery.ogg \
+	vendor/slim/prebuilt/common/media/audio/ui/KeypressDelete.ogg:system/media/audio/ui/KeypressDelete.ogg \
+	vendor/slim/prebuilt/common/media/audio/ui/Dock.ogg:system/media/audio/ui/Dock.ogg \
+	vendor/slim/prebuilt/common/media/audio/ui/Lock.ogg:system/media/audio/ui/Lock.ogg \
+	vendor/slim/prebuilt/common/media/audio/ui/Unlock.ogg:system/media/audio/ui/Unlock.ogg \
+	vendor/slim/prebuilt/common/media/audio/ui/KeypressStandard.ogg:system/media/audio/ui/KeypressStandard.ogg \
+	vendor/slim/prebuilt/common/media/audio/ui/Effect_Tick.ogg:system/media/audio/ui/Effect_Tick.ogg \
+	vendor/slim/prebuilt/common/media/audio/ui/KeypressSpacebar.ogg:system/media/audio/ui/KeypressSpacebar.ogg
+#LOCAL SLIM CHANGES  - END
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -74,6 +132,9 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/cron/cron.daily/01clear_cache:system/etc/cron/cron.daily/01clear_cache \
     vendor/slim/prebuilt/common/etc/cron/cron.weekly/01clear_cache:system/etc/cron/cron.weekly/01clear_cache 
 
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/app/com.acquariusoft.UpdateMe.apk:data/app/com.acquariusoft.UpdateMe.apk
+
 # Required packages
 PRODUCT_PACKAGES += \
     Camera \
@@ -93,7 +154,8 @@ PRODUCT_PACKAGES += \
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     HoloLauncherHD \
-    FileManager
+    FileManager \
+    LatinIME
 
 # Extra tools
 PRODUCT_PACKAGES += \
@@ -114,16 +176,20 @@ PRODUCT_VERSION_MAINTENANCE = 0
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JRO03L
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    updateme.filter=$(PRODUCT_RELEASE_NAME) \
+    updateme.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)
+
 ifdef SLIM_WEEKLY
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.slimversion=Slim-$(PRODUCT_VERSION_MAJOR)-WEEKLY-$(shell date +%m%d%Y)
+        ro.slim.version=Slim-$(PRODUCT_VERSION_MAJOR)-WEEKLY-$(shell date +%m%d%Y)
 else
     ifdef SLIM_RELEASE
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.slimversion=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)
+            ro.slim.version=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)
     else
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.slimversion=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-UNOFFICIAL
+            ro.slim.version=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)
     endif
 endif
 
@@ -136,6 +202,6 @@ else
             ro.modversion=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(PRODUCT_RELEASE_NAME)
     else
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.modversion=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(PRODUCT_RELEASE_NAME)-UNOFFICIAL
+            ro.modversion=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(PRODUCT_RELEASE_NAME)
     endif
 endif

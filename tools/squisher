@@ -116,11 +116,11 @@ rm -rf $REPACK/ota/recovery
 	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
 
 # Swap boot.img
-DEVICEINFO=`sed -n -e'/ro\.product\.device/s/^.*=//p' $REPACK/ota/system/build.prop`
-if [ "$DEVICEINFO" = "GT-I9000" ]; then
+#DEVICEINFO=`sed -n -e'/ro\.product\.device/s/^.*=//p' $REPACK/ota/system/build.prop`
+#if [ "$DEVICEINFO" = "GT-I9000" ]; then
    rm -f $REPACK/ota/boot.img
    mv -f $REPACK/ota/system/slimkernel/boot.img $REPACK/ota/boot.img
-fi
+#fi
 
 # Determine what to name the new signed package
 MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $REPACK/ota/system/build.prop`

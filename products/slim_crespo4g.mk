@@ -1,6 +1,9 @@
 $(call inherit-product, device/samsung/crespo4g/full_crespo4g.mk)
 
 # Inherit some common stuff.
+$(call inherit-product, vendor/slim/config/cdma.mk)
+
+# Inherit some common stuff.
 $(call inherit-product, vendor/slim/config/common_full_phone.mk)
 
 PRODUCT_COPY_FILES +=  \

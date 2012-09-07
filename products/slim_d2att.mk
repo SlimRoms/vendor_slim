@@ -1,5 +1,8 @@
 $(call inherit-product, device/samsung/d2att/full_d2att.mk)
 
+# Release name
+PRODUCT_RELEASE_NAME := d2att
+
 # Inherit some common SLIM stuff.
 $(call inherit-product, vendor/slim/config/gsm.mk)
 

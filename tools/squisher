@@ -41,6 +41,7 @@ OPTICHARGER=$ANDROID_BUILD_TOP/vendor/slim/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 DELETE_MEDIA="*.qmg"
+DELETE_APKS="Home.apk LiveWallpapers.apk VoiceDialer.apk SoundRecorder.apk VisualizationWallpapers.apk "
 
 REPACK=$OUT/repack.d
 printf "Sanitizing environment..."
@@ -90,6 +91,9 @@ $SED -i \
 # Delete Offline charging mode files
 ( cd $REPACK/ota/system/media; echo $DELETE_MEDIA | xargs rm -f; )
 
+# Delete Home Apk
+( cd $REPACK/ota/system/app; echo $DELETE_APKS | xargs rm -f; )
+
 # No need for modem.bin
 rm -f $REPACK/ota/modem.bin
 
@@ -104,6 +108,10 @@ mkdir $REPACK/ota/system/fonts
 
 # Add precompiled fonts
 mv -f $REPACK/ota/system/sfont/*.ttf $REPACK/ota/system/fonts/
+
+# Add OTA app
+#mkdir $REPACK/ota/data/app
+#cp -f $OUT/data/app/com.acquariusoft.UpdateMe.apk $REPACK/ota/data/app/
 
 # No need for tts
 rm -rf $REPACK/ota/system/tts

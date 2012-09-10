@@ -6,6 +6,9 @@ $(call inherit-product, vendor/slim/config/common_full_hybrid_wifionly.mk)
 PRODUCT_COPY_FILES +=  \
     vendor/slim/prebuilt/hdpi/bootanimation.zip:system/media/bootanimation.zip
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.camera.res=5MP
+
 # Release name
 PRODUCT_RELEASE_NAME := Nexus7
 

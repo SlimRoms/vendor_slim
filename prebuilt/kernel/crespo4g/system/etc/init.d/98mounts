@@ -1,0 +1,3 @@
+#!/system/bin/sh
+
+mount -o remount,noauto_da_alloc,nosuid,nodev,noatime,nodiratime /data /data

@@ -6,8 +6,26 @@ $(call inherit-product, vendor/slim/config/common_full_phone.mk)
 # Inherit some common stuff.
 $(call inherit-product, vendor/slim/config/gsm.mk)
 
+# Inherit device settings
+$(call inherit-product, vendor/slim/config/common_nexus.mk)
+
+#copy kernel and modules
+PRODUCT_COPY_FILES += \
+	vendor/slim/prebuilt/kernel/crespo/boot.img:system/slimkernel/boot.img \
+	vendor/slim/prebuilt/kernel/crespo/system/etc/init.d/98mounts:system/etc/init.d/98mounts \
+	vendor/slim/prebuilt/kernel/crespo/system/lib/libOMX.SEC.AVC.Decoder.so:system/lib/libOMX.SEC.AVC.Decoder.so \
+	vendor/slim/prebuilt/kernel/crespo/system/lib/libOMX.SEC.AVC.Encoder.so:systemlib/libOMX.SEC.AVC.Encoder.so \
+	vendor/slim/prebuilt/kernel/crespo/system/lib/libOMX.SEC.M4V.Decoder.so:system/lib/libOMX.SEC.M4V.Decoder.so \
+	vendor/slim/prebuilt/kernel/crespo/system/lib/libOMX.SEC.M4V.Encoder.so:system/lib/libOMX.SEC.M4V.Encoder.so \
+	vendor/slim/prebuilt/kernel/crespo/system/lib/hw/lights.s5pc110.so:system/lib/hw/lights.s5pc110.so \
+	vendor/slim/prebuilt/kernel/crespo/system/modules/scsi_wait_scan.ko:system/modules/scsi_wait_scan.ko	
+
+
 PRODUCT_COPY_FILES +=  \
     vendor/slim/prebuilt/hdpi/bootanimation.zip:system/media/bootanimation.zip
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.camera.res=5MP
 
 # Release name
 PRODUCT_RELEASE_NAME := NS

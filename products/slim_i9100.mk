@@ -26,8 +26,21 @@ $(call inherit-product, vendor/slim/config/common_full_phone.mk)
 # Inherit device configuration
 $(call inherit-product, device/samsung/i9100/full_i9100.mk)
 
+# Inherit device settings
+$(call inherit-product, vendor/slim/config/common_sgs.mk)
+
 PRODUCT_COPY_FILES +=  \
     vendor/slim/prebuilt/hdpi/bootanimation.zip:system/media/bootanimation.zip
+
+#copy kernel and modules
+PRODUCT_COPY_FILES += \
+	vendor/slim/prebuilt/kernel/i9100/zImage:system/slimkernel/boot.img \
+	vendor/slim/prebuilt/kernel/i9100/zImage:kernel \
+        device/samsung/i9100/recovery.fstab:ramdisk.img \
+        device/samsung/i9100/recovery.fstab:recovery/root/etc/recovery.fstab \
+	vendor/slim/prebuilt/kernel/i9100/system/lib/modules/scsi_wait.ko:system/lib/modules/scsi_wait.ko \
+	vendor/slim/prebuilt/kernel/i9100/system/lib/modules/dhd.ko:system/lib/modules/dhd.ko \
+	vendor/slim/prebuilt/kernel/i9100/system/lib/modules/driver.ko:system/lib/modules/driver.ko
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := i9100

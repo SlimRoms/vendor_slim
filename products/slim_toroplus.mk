@@ -7,8 +7,14 @@ $(call inherit-product, device/samsung/toroplus/full_toroplus.mk)
 # Inherit some common stuff.
 $(call inherit-product, vendor/slim/config/common_full_phone.mk)
 
+# Inherit device settings
+$(call inherit-product, vendor/slim/config/common_nexus.mk)
+
 PRODUCT_COPY_FILES +=  \
     vendor/slim/prebuilt/hdpi/bootanimation.zip:system/media/bootanimation.zip
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.camera.res=5MP
 
 # Release name
 PRODUCT_RELEASE_NAME := GN-SPR

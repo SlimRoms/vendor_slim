@@ -22,18 +22,16 @@ PRODUCT_COPY_FILES +=  \
 
 #copy kernel and modules
 PRODUCT_COPY_FILES += \
-	vendor/slim/kernel/prebuilt/i9300/proprietary/zImage:system/slimkernel/boot.img \
-	vendor/slim/kernel/prebuilt/i9300/proprietary/zImage:kernel \
-	device/samsung/i9300/recovery.fstab:ramdisk.img \
-        device/samsung/i9300/recovery.fstab:recovery/root/etc/recovery.fstab \
-	vendor/slim/kernel/prebuilt/i9300/proprietary/system/lib/modules/Si4709_driver.ko:system/lib/modules/Si4709_driver.ko \
-	vendor/slim/kernel/prebuilt/i9300/proprietary/system/lib/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
-	vendor/slim/kernel/prebuilt/i9300/proprietary/system/lib/modules/cifs.ko:system/lib/modules/cifs.ko \
-	vendor/slim/kernel/prebuilt/i9300/proprietary/system/lib/modules/pvtcpkm.ko:system/lib/modules/pvtcpkm.ko \
-	vendor/slim/kernel/prebuilt/i9300/proprietary/system/lib/modules/mvpkm.ko:system/lib/modules/mvpkm.ko \
-	vendor/slim/kernel/prebuilt/i9300/proprietary/system/lib/modules/btlock.ko:system/lib/modules/btlock.ko \
-	vendor/slim/kernel/prebuilt/i9300/proprietary/system/lib/modules/dhd.ko:system/lib/modules/dhd.ko \
-	vendor/slim/kernel/prebuilt/i9300/proprietary/system/lib/modules/commkm.ko:system/lib/modules/commkm.ko
+	vendor/slim/prebuilt/kernel/i9300/boot.img:system/slimkernel/boot.img \
+	vendor/slim/prebuilt/kernel/i9100/zImage:kernel \
+	vendor/slim/prebuilt/kernel/i9300/system/lib/modules/Si4709_driver.ko:system/lib/modules/Si4709_driver.ko \
+	vendor/slim/prebuilt/kernel/i9300/system/lib/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
+	vendor/slim/prebuilt/kernel/i9300/system/lib/modules/cifs.ko:system/lib/modules/cifs.ko \
+	vendor/slim/prebuilt/kernel/i9300/system/lib/modules/pvtcpkm.ko:system/lib/modules/pvtcpkm.ko \
+	vendor/slim/prebuilt/kernel/i9300/system/lib/modules/mvpkm.ko:system/lib/modules/mvpkm.ko \
+	vendor/slim/prebuilt/kernel/i9300/system/lib/modules/btlock.ko:system/lib/modules/btlock.ko \
+	vendor/slim/prebuilt/kernel/i9300/system/lib/modules/dhd.ko:system/lib/modules/dhd.ko \
+	vendor/slim/prebuilt/kernel/i9300/system/lib/modules/commkm.ko:system/lib/modules/commkm.ko
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := i9300

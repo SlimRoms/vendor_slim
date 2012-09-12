@@ -17,6 +17,8 @@ PRODUCT_COPY_FILES += \
 	vendor/slim/prebuilt/kernel/crespo/system/lib/libOMX.SEC.AVC.Encoder.so:systemlib/libOMX.SEC.AVC.Encoder.so \
 	vendor/slim/prebuilt/kernel/crespo/system/lib/libOMX.SEC.M4V.Decoder.so:system/lib/libOMX.SEC.M4V.Decoder.so \
 	vendor/slim/prebuilt/kernel/crespo/system/lib/libOMX.SEC.M4V.Encoder.so:system/lib/libOMX.SEC.M4V.Encoder.so \
+	vendor/slim/prebuilt/kernel/crespo/system/lib/libSEC_OMX_Core.so:system/lib/libSEC_OMX_Core.so \
+	vendor/slim/prebuilt/kernel/crespo/system/lib/libstagefright_omx.so:system/lib/libstagefright_omx.so \
 	vendor/slim/prebuilt/kernel/crespo/system/lib/hw/lights.s5pc110.so:system/lib/hw/lights.s5pc110.so \
 	vendor/slim/prebuilt/kernel/crespo/system/modules/scsi_wait_scan.ko:system/modules/scsi_wait_scan.ko	
 

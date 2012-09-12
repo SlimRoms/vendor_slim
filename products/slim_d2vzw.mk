@@ -24,7 +24,10 @@ PRODUCT_COPY_FILES += \
 	vendor/slim/prebuilt/kernel/d2-common/system/lib/modules/gspca_main.ko:system/lib/modules/gpsca_main.ko \
 	vendor/slim/prebuilt/kernel/d2-common/system/lib/modules/btlock.ko:system/lib/modules/btlock.ko \
 	vendor/slim/prebuilt/kernel/d2-common/system/lib/modules/dhd.ko:system/lib/modules/dhd.ko \
-	vendor/slim/prebuilt/kernel/d2-common/system/lib/modules/evbug.ko:system/lib/modules/evbug.ko
+	vendor/slim/prebuilt/kernel/d2-common/system/lib/modules/evbug.ko:system/lib/modules/evbug.ko \
+	vendor/slim/prebuilt/kernel/d2-common/system/bin/thermald:system/bin/thermald \
+	vendor/slim/prebuilt/kernel/d2-common/system/xbin/ffc:system/xbin/ffc \
+	vendor/slim/prebuilt/kernel/d2-common/system/xbin/stocktherm:system/xbin/stocktherm
 
 PRODUCT_COPY_FILES +=  \
     vendor/slim/prebuilt/hdpi/bootanimation.zip:system/media/bootanimation.zip

@@ -27,7 +27,10 @@ PRODUCT_COPY_FILES += \
 	vendor/slim/prebuilt/kernel/d2-common/system/lib/modules/gspca_main.ko:system/lib/modules/gpsca_main.ko \
 	vendor/slim/prebuilt/kernel/d2-common/system/lib/modules/btlock.ko:system/lib/modules/btlock.ko \
 	vendor/slim/prebuilt/kernel/d2-common/system/lib/modules/dhd.ko:system/lib/modules/dhd.ko \
-	vendor/slim/prebuilt/kernel/d2-common/system/lib/modules/evbug.ko:system/lib/modules/evbug.ko
+	vendor/slim/prebuilt/kernel/d2-common/system/lib/modules/evbug.ko:system/lib/modules/evbug.ko \
+	vendor/slim/prebuilt/kernel/d2-common/system/bin/thermald:system/bin/thermald \
+	vendor/slim/prebuilt/kernel/d2-common/system/xbin/ffc:system/xbin/ffc \
+	vendor/slim/prebuilt/kernel/d2-common/system/xbin/stocktherm:system/xbin/stocktherm
 
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=d2uc TARGET_DEVICE=d2att BUILD_FINGERPRINT="d2att-userdebug 4.1.1 JRO03L eng.ar.20120827.191311 release-keys"
 PRIVATE_BUILD_DESC="samsung/full_d2att/d2att:4.1.1/JRO03L/eng.ar.20120827.191311:userdebug/release-keys"

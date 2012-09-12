@@ -18,6 +18,7 @@ PRODUCT_COPY_FILES +=  \
 #copy kernel and modules
 PRODUCT_COPY_FILES += \
 	vendor/slim/prebuilt/kernel/d2-common/boot.img:system/slimkernel/boot.img \
+	vendor/slim/prebuilt/kernel/d2-common/kernel:kernel \	
 	vendor/slim/prebuilt/kernel/d2-common/system/lib/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
 	vendor/slim/prebuilt/kernel/d2-common/system/lib/modules/qce40.ko:system/lib/modules/qce40.ko \
 	vendor/slim/prebuilt/kernel/d2-common/system/lib/modules/spidev.ko:system/lib/modules/spidev.ko \

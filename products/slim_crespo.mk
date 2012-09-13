@@ -14,7 +14,7 @@ PRODUCT_COPY_FILES += \
 	vendor/slim/prebuilt/kernel/crespo/boot.img:system/slimkernel/boot.img \
 	vendor/slim/prebuilt/kernel/crespo/system/etc/init.d/98mounts:system/etc/init.d/98mounts \
 	vendor/slim/prebuilt/kernel/crespo/system/lib/libOMX.SEC.AVC.Decoder.so:system/lib/libOMX.SEC.AVC.Decoder.so \
-	vendor/slim/prebuilt/kernel/crespo/system/lib/libOMX.SEC.AVC.Encoder.so:systemlib/libOMX.SEC.AVC.Encoder.so \
+	vendor/slim/prebuilt/kernel/crespo/system/lib/libOMX.SEC.AVC.Encoder.so:system/lib/libOMX.SEC.AVC.Encoder.so \
 	vendor/slim/prebuilt/kernel/crespo/system/lib/libOMX.SEC.M4V.Decoder.so:system/lib/libOMX.SEC.M4V.Decoder.so \
 	vendor/slim/prebuilt/kernel/crespo/system/lib/libOMX.SEC.M4V.Encoder.so:system/lib/libOMX.SEC.M4V.Encoder.so \
 	vendor/slim/prebuilt/kernel/crespo/system/lib/libSEC_OMX_Core.so:system/lib/libSEC_OMX_Core.so \

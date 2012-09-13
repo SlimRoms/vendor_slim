@@ -6,6 +6,9 @@ $(call inherit-product, vendor/slim/config/common_full_hybrid_wifionly.mk)
 PRODUCT_COPY_FILES +=  \
     vendor/slim/prebuilt/hdpi/bootanimation.zip:system/media/bootanimation.zip
 
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/app/CameraLauncher.apk:data/app/CameraLauncher.apk
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.res=5MP
 

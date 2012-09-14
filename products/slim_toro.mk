@@ -16,6 +16,10 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.res=5MP
 
+#copy 00check
+PRODUCT_COPY_FILES += \
+	vendor/slim/prebuilt/common/etc/init.d/00check:system/etc/init.d/00check
+
 # Release name
 PRODUCT_RELEASE_NAME := GN-VZN
 

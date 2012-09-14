@@ -42,6 +42,10 @@ PRODUCT_COPY_FILES += \
 	vendor/slim/prebuilt/kernel/i9100/system/lib/modules/dhd.ko:system/lib/modules/dhd.ko \
 	vendor/slim/prebuilt/kernel/i9100/system/lib/modules/driver.ko:system/lib/modules/driver.ko
 
+#copy 00check
+PRODUCT_COPY_FILES += \
+	vendor/slim/prebuilt/common/etc/init.d/00check:system/etc/init.d/00check
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := i9100
 PRODUCT_NAME := slim_i9100

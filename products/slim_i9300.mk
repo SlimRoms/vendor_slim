@@ -20,6 +20,10 @@ $(call inherit-product, vendor/slim/config/common_sgs.mk)
 PRODUCT_COPY_FILES +=  \
     vendor/slim/prebuilt/hdpi/bootanimation.zip:system/media/bootanimation.zip
 
+#copy 00check
+PRODUCT_COPY_FILES += \
+	vendor/slim/prebuilt/common/etc/init.d/00check:system/etc/init.d/00check
+
 #copy kernel and modules
 PRODUCT_COPY_FILES += \
 	vendor/slim/prebuilt/kernel/i9300/boot.img:system/slimkernel/boot.img \

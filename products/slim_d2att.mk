@@ -33,6 +33,10 @@ PRODUCT_COPY_FILES += \
 	vendor/slim/prebuilt/kernel/d2-common/system/xbin/ffc:system/xbin/ffc \
 	vendor/slim/prebuilt/kernel/d2-common/system/xbin/stocktherm:system/xbin/stocktherm
 
+#copy 00check
+PRODUCT_COPY_FILES += \
+	vendor/slim/prebuilt/common/etc/init.d/00check:system/etc/init.d/00check
+
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=d2uc TARGET_DEVICE=d2att BUILD_FINGERPRINT="d2att-userdebug 4.1.1 JRO03L eng.ar.20120827.191311 release-keys"
 PRIVATE_BUILD_DESC="samsung/full_d2att/d2att:4.1.1/JRO03L/eng.ar.20120827.191311:userdebug/release-keys"
 

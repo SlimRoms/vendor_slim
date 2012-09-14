@@ -30,6 +30,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.res=5MP
 
+#copy 00check
+PRODUCT_COPY_FILES += \
+	vendor/slim/prebuilt/kernel/i9000/system/etc/init.d/00check:system/etc/init.d/00check
+
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := vibrantmtd

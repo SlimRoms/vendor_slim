@@ -12,4 +12,5 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/slim_toro.mk \
     $(LOCAL_DIR)/slim_toroplus.mk \
     $(LOCAL_DIR)/slim_i9300.mk \
-    $(LOCAL_DIR)/slim_endeavoru.mk
+    $(LOCAL_DIR)/slim_endeavoru.mk \
+    $(LOCAL_DIR)/slim_quincyatt.mk

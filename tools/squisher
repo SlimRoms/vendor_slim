@@ -133,6 +133,12 @@ elif [ "$DEVICELCD" = "320" ]; then
 elif [ "$DEVICELCD" = "213" ]; then
     sed -i 's/ro.sf.lcd_density=213/ro.sf.lcd_density=182/g' $OUT/system/build.prop
 fi
+
+# Fix LCD Density for GNote
+DEVICEID=`sed -n -e'/ro\.product\.device/s/^.*=//p' $OUT/system/build.prop`
+if [ "$DEVICEID" = "SGH-I717" ]; then
+   sed -i 's/ro.sf.lcd_density=241/ro.sf.lcd_density=268/g' $OUT/system/build.prop
+fi
 cp -f $OUT/system/build.prop $REPACK/ota/system/build.prop
 
 # Delete Gallery2 for 5MP cameras

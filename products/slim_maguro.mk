@@ -20,6 +20,10 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES += \
 	vendor/slim/prebuilt/common/etc/init.d/00check:system/etc/init.d/00check
 
+#copy vold.fstab
+PRODUCT_COPY_FILES += \
+	vendor/slim/prebuilt/kernel/tuna/vold.fstab:system/etc/vold.fstab
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.res=5MP
 

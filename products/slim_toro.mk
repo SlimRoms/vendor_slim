@@ -20,6 +20,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
 	vendor/slim/prebuilt/common/etc/init.d/00check:system/etc/init.d/00check
 
+#copy vold.fstab
+PRODUCT_COPY_FILES += \
+	vendor/slim/prebuilt/kernel/tuna/vold.fstab:system/etc/vold.fstab
+
 # Release name
 PRODUCT_RELEASE_NAME := GN-VZN
 

@@ -25,7 +25,7 @@ PRODUCT_COPY_FILES += \
 	vendor/slim/prebuilt/kernel/tuna/vold.fstab:system/etc/vold.fstab
 
 # Release name
-PRODUCT_RELEASE_NAME := GN-VZN
+PRODUCT_RELEASE_NAME := GNEX-VZN
 
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=mysid BUILD_FINGERPRINT="google/mysid/toro:4.1.1/JRO03L/eng.ar.20120710.005722:userdebug/release-keys" 
 PRIVATE_BUILD_DESC="mysid-userdebug 4.1.1 JRO03L 005722 release-keys"

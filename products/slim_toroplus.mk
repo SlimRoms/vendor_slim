@@ -25,7 +25,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.res=5MP
 
 # Release name
-PRODUCT_RELEASE_NAME := GN-SPR
+PRODUCT_RELEASE_NAME := GNEX-SPR
 
 PRODUCT_BUILD_PROP_OVERRIDES +=  PRODUCT_NAME=mysidspr BUILD_FINGERPRINT="samsung/mysidspr/toroplus:4.1.1/JRO03L/eng.ar.20120710.005722:userdebug/release-keys" 
 PRIVATE_BUILD_DESC="mysidspr-userdebug 4.1.1 JRO03L 005722 release-keys"

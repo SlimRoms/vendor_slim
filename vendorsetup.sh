@@ -9,6 +9,9 @@ add_lunch_combo slim_crespo4g-userdebug
 add_lunch_combo slim_galaxysmtd-userdebug
 add_lunch_combo slim_i9100-userdebug
 add_lunch_combo slim_i9300-userdebug
+add_lunch_combo slim_i777-userdebug
+add_lunch_combo slim_n7000-userdebug
+add_lunch_combo slim_endeavoru-userdebug
 add_lunch_combo slim_vibrantmtd-userdebug
 
 

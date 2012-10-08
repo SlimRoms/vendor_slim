@@ -33,28 +33,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES +=  \
     vendor/slim/proprietary/supersu/su:system/xbin/su
 
-#LOCAL SLIM CHANGES - START
-#Bring in fonts files
-PRODUCT_COPY_FILES +=  \
-vendor/slim/prebuilt/common/fonts/Roboto-Italic.ttf:system/sfont/Roboto-Italic.ttf \
-vendor/slim/prebuilt/common/fonts/Roboto-Regular.ttf:system/sfont/Roboto-Regular.ttf \
-vendor/slim/prebuilt/common/fonts/DroidSansArmenian.ttf:system/sfont/DroidSansArmenian.ttf \
-vendor/slim/prebuilt/common/fonts/Roboto-BoldItalic.ttf:system/sfont/Roboto-BoldItalic.ttf \
-vendor/slim/prebuilt/common/fonts/AndroidClock_Solid.ttf:system/sfont/AndroidClock_Solid.ttf \
-vendor/slim/prebuilt/common/fonts/DroidSansGeorgian.ttf:system/sfont/DroidSansGeorgian.ttf \
-vendor/slim/prebuilt/common/fonts/DroidSerif-Bold.ttf:system/sfont/DroidSerif-Bold.ttf \
-vendor/slim/prebuilt/common/fonts/DroidSerif-Italic.ttf:system/sfont/DroidSerif-Italic.ttf \
-vendor/slim/prebuilt/common/fonts/DroidSerif-BoldItalic.ttf:system/sfont/DroidSerif-BoldItalic.ttf \
-vendor/slim/prebuilt/common/fonts/DroidSansThai.ttf:system/sfont/DroidSansThai.ttf \
-vendor/slim/prebuilt/common/fonts/Roboto-Bold.ttf:system/sfont/Roboto-Bold.ttf \
-vendor/slim/prebuilt/common/fonts/Clockopia.ttf:system/sfont/Clockopia.ttf \
-vendor/slim/prebuilt/common/fonts/DroidSansHebrew-Regular.ttf:system/sfont/DroidSansHebrew-Regular.ttf \
-vendor/slim/prebuilt/common/fonts/DroidSansMono.ttf:system/sfont/DroidSansMono.ttf \
-vendor/slim/prebuilt/common/fonts/DroidSansHebrew-Bold.ttf:system/sfont/DroidSansHebrew-Bold.ttf \
-vendor/slim/prebuilt/common/fonts/AndroidClock.ttf:system/sfont/AndroidClock.ttf \
-vendor/slim/prebuilt/common/fonts/DroidSansFallback.ttf:system/sfont/DroidSansFallback.ttf \
-vendor/slim/prebuilt/common/fonts/DroidSerif-Regular.ttf:system/sfont/DroidSerif-Regular.ttf \
-vendor/slim/prebuilt/common/fonts/AndroidClock_Highlight.ttf:system/sfont/AndroidClock_Highlight.ttf
 
 # Bring in media files
 PRODUCT_COPY_FILES +=  \
@@ -170,10 +148,10 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
 
 # T-Mobile theme engine
 include vendor/slim/config/themes_common.mk
-
+PRODUCT_VERSION_WEEK = 1
 PRODUCT_VERSION_MAJOR = 2
 PRODUCT_VERSION_MINOR = 6
-PRODUCT_VERSION_MAINTENANCE = 3
+PRODUCT_VERSION_MAINTENANCE = 4
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JRO03L
 
@@ -181,28 +159,28 @@ PRODUCT_PROPERTY_OVERRIDES += \
     updateme.filter=$(PRODUCT_RELEASE_NAME) \
     updateme.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)
 
-ifdef SLIM_WEEKLY
+ifdef SLIM_NIGHTLY
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.slim.version=Slim-$(PRODUCT_VERSION_MAJOR)-WEEKLY-$(shell date +%m%d%Y)
+        ro.slim.version=Slim-WEEK-$(PRODUCT_VERSION_WEEK)-NIGHTLY-$(shell date +%m%d%Y)
 else
     ifdef SLIM_RELEASE
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.slim.version=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)
+            ro.slim.version=Slim-WEEK-$(PRODUCT_VERSION_WEEK)-OFFICIAL
     else
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.slim.version=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)
+            ro.slim.version=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-UNOFFICIAL
     endif
 endif
 
-ifdef SLIM_WEEKLY
+ifdef SLIM_NIGHTLY
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=Slim-$(PRODUCT_VERSION_MAJOR)-WEEKLY-$(shell date +%m%d%Y)-$(PRODUCT_RELEASE_NAME)
+        ro.modversion=Slim-$(PRODUCT_RELEASE_NAME)-WEEK-$(PRODUCT_VERSION_WEEK)-NIGHTLY-$(shell date +%m%d%Y)
 else
     ifdef SLIM_RELEASE
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.modversion=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(PRODUCT_RELEASE_NAME)
+            ro.modversion=Slim-$(PRODUCT_RELEASE_NAME)-WEEK-$(PRODUCT_VERSION_WEEK)-OFFICIAL
     else
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.modversion=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(PRODUCT_RELEASE_NAME)
+            ro.modversion=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(PRODUCT_RELEASE_NAME)-UNOFFICIAL
     endif
 endif

@@ -43,6 +43,7 @@ DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 DELETE_MEDIA="*.qmg"
 DELETE_APKS="Home.apk LiveWallpapers.apk VoiceDialer.apk SoundRecorder.apk VisualizationWallpapers.apk "
 DELETE_GALLERY="Gallery2.apk"
+DELETE_FONTS="MTLmr3m.ttf"
 
 REPACK=$OUT/repack.d
 printf "Sanitizing environment..."
@@ -101,14 +102,17 @@ rm -f $REPACK/ota/modem.bin
 # No need for media/video
 rm -rf $REPACK/ota/system/media/video
 
+# Delete Unnecessary Fonts
+( cd $REPACK/ota/system/fonts; echo $DELETE_FONTS | xargs rm -f; )
+
 # Delete compiled fonts
-rm -rf $REPACK/ota/system/fonts
+#rm -rf $REPACK/ota/system/fonts
 
 #make dir for fonts again
-mkdir $REPACK/ota/system/fonts
+#mkdir $REPACK/ota/system/fonts
 
 # Add precompiled fonts
-mv -f $REPACK/ota/system/sfont/*.ttf $REPACK/ota/system/fonts/
+#mv -f $REPACK/ota/system/sfont/*.ttf $REPACK/ota/system/fonts/
 
 # Add OTA app
 #mkdir $REPACK/ota/data/app

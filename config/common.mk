@@ -148,7 +148,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
 
 # T-Mobile theme engine
 include vendor/slim/config/themes_common.mk
-#PRODUCT_VERSION_WEEK = 1
 PRODUCT_VERSION_MAJOR = 2
 PRODUCT_VERSION_MINOR = 6
 PRODUCT_VERSION_MAINTENANCE = 8

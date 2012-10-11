@@ -15,6 +15,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     updateme.urlelement=http://slimota.slimroms.net/xml/update_me_parts.xml \
     updateme.reboottype=0
 
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/slim/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh
+
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
@@ -149,8 +155,8 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
 # T-Mobile theme engine
 include vendor/slim/config/themes_common.mk
 PRODUCT_VERSION_MAJOR = 2
-PRODUCT_VERSION_MINOR = 6
-PRODUCT_VERSION_MAINTENANCE = 9
+PRODUCT_VERSION_MINOR = 7
+PRODUCT_VERSION_MAINTENANCE = 0
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JZO54K
 

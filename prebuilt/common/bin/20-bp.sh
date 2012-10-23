@@ -9,7 +9,7 @@
 
 list_files() {
 cat <<EOF
-system/build.prop
+build.prop
 EOF
 }
 

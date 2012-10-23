@@ -15,15 +15,13 @@ EOF
 
 case "$1" in
   backup)
-    list_files | while read FILE DUMMY; do
-      backup_file $S/"$FILE"
+    cp $S/$FILE $C/$S/$FILE
     done
   ;;
   restore)
-    list_files | while read FILE REPLACEMENT; do
-      R=""
-      [ -n "$REPLACEMENT" ] && R="$S/$REPLACEMENT"
-      [ -f "$C/$S/$FILE" ] && restore_lcd $S/"$FILE" "$R"
+	USERLCD=`sed -n -e'/ro\.sf\.lcd_density/s/^.*=//p' $C/$S/$FILE`
+	SLIMLCD=`sed -n -e'/ro\.sf\.lcd_density/s/^.*=//p' $S/$FILE`
+	sed -i 's/ro.sf.lcd_density=$SLIMLCD/ro.sf.lcd_density=$USERLCD/g' $S/$FILE
     done
   ;;
   pre-backup)

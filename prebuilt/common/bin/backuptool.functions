@@ -38,17 +38,9 @@ restore_file() {
 
 restore_lcd() {
   local FILE=`basename "$1"`
-  local DIR=`dirname "$1"`
-  if [ -e "$C/$DIR/$FILE" ]; then
-    if [ ! -d "$DIR" ]; then
-      mkdir -p "$DIR";
-    fi
-  local USERLCD=`sed -n -e'/ro\.sf\.lcd_density/s/^.*=//p' $C/$DIR/$FILE`
-  local SLIMLCD=`sed -n -e'/ro\.sf\.lcd_density/s/^.*=//p' $S/$FILE`
-  sed -i 's/ro.sf.lcd_density=$SLIMLCD/ro.sf.lcd_density=$USERLCD/g' $S/$FILE
-    if [ -n "$2" ]; then
-      echo "Deleting obsolete file $2"
-      rm "$2";
-    fi
+  if [ -e "$C/$S/$FILE" ]; then
+	local USERLCD=`sed -n -e'/ro\.sf\.lcd_density/s/^.*=//p' $C/$S/$FILE`
+	local SLIMLCD=`sed -n -e'/ro\.sf\.lcd_density/s/^.*=//p' $S/$FILE`
+	sed -i 's/ro.sf.lcd_density=$SLIMLCD/ro.sf.lcd_density=$USERLCD/g' $S/$FILE
   fi
 }

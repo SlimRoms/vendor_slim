@@ -30,9 +30,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
+# SLIM-specific init file
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/etc/init.local.rc:root/init.slim.rc
+
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.local.rc:system/etc/init.local.rc \
     vendor/slim/prebuilt/common/bin/compcache:system/bin/compcache \
     vendor/slim/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
 
@@ -156,7 +159,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
 include vendor/slim/config/themes_common.mk
 PRODUCT_VERSION_MAJOR = 2
 PRODUCT_VERSION_MINOR = 8
-PRODUCT_VERSION_MAINTENANCE = 0
+PRODUCT_VERSION_MAINTENANCE = 1
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JZO54K
 
@@ -173,7 +176,7 @@ else
             ro.slim.version=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-OFFICIAL
     else
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.slim.version=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-UNOFFICIAL
+            ro.slim.version=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(shell date +"%Y%m%d-%H%M")-UNOFFICIAL
     endif
 endif
 
@@ -186,6 +189,6 @@ else
             ro.modversion=Slim-$(PRODUCT_RELEASE_NAME)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-OFFICIAL
     else
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.modversion=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(PRODUCT_RELEASE_NAME)-UNOFFICIAL
+            ro.modversion=Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(PRODUCT_RELEASE_NAME)-$(shell date +"%Y%m%d-%H%M")-UNOFFICIAL
     endif
 endif

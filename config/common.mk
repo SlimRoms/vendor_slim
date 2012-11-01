@@ -19,7 +19,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/slim/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh
+    vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh \
+    vendor/slim/prebuilt/common/bin/density.sh:system/bin/density.sh
 
 # init.d support
 PRODUCT_COPY_FILES += \

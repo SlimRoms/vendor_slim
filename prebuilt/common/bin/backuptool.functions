@@ -35,3 +35,12 @@ restore_file() {
     fi
   fi
 }
+
+restore_lcd() {
+  local FILE=`basename "$1"`
+  if [ -e "$C/$S/$FILE" ]; then
+	local USERLCD=`sed -n -e'/ro\.sf\.lcd_density/s/^.*=//p' $C/$S/$FILE`
+	local SLIMLCD=`sed -n -e'/ro\.sf\.lcd_density/s/^.*=//p' $S/$FILE`
+	sed -i 's/ro.sf.lcd_density=$SLIMLCD/ro.sf.lcd_density=$USERLCD/g' $S/$FILE
+  fi
+}

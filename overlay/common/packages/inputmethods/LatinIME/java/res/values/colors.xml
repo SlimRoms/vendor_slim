@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+        <color name="KVkeyTextColor">#FFFFFFFF</color>
+        <color name="KVkeyTextInactivatedColor">#FFFFFFFF</color>
+        <color name="keyTextInactivatedColor">#66E0E4E5</color>
+        <color name="keyHintLetterColor">#80000000</color>
+        <color name="keyHintLabelColor">#A0FFFFFF</color>
+        <color name="keyShiftedLetterHintInactivatedColor">#66E0E4E5</color>
+        <color name="keyShiftedLetterHintActivatedColor">#FFFFFFFF</color>
+        <color name="keyPreviewTextColor">#FFFFFFFF</color>
+        <color name="shadowColor">#00000000</color>
+        <color name="colorValidTypedWord">@android:color/holo_blue_light</color>
+        <color name="colorTypedWord">@android:color/holo_blue_light</color>
+        <color name="colorAutoCorrect">@android:color/holo_blue_light</color>
+        <color name="colorSuggested">@android:color/holo_blue_light</color>
+</resources>

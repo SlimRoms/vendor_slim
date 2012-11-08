@@ -1,5 +1,6 @@
 add_lunch_combo slim_d2att-userdebug
 add_lunch_combo slim_d2vzw-userdebug
+add_lunch_combo slim_d2spr-userdebug
 add_lunch_combo slim_grouper-userdebug
 add_lunch_combo slim_maguro-userdebug
 add_lunch_combo slim_toro-userdebug

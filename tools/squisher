@@ -41,9 +41,9 @@ OPTICHARGER=$ANDROID_BUILD_TOP/vendor/slim/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 DELETE_MEDIA="*.qmg"
-DELETE_APKS="Home.apk LiveWallpapers.apk VoiceDialer.apk SoundRecorder.apk VisualizationWallpapers.apk "
+DELETE_APKS="Launcher2.apk LiveWallpapers.apk VoiceDialer.apk SoundRecorder.apk VisualizationWallpapers.apk VideoEditor.apk Exchange2.apk HoloSpiralWallpaper.apk HTMLViewer.apk MagicSmokeWallpapers.apk NoiseField.apk PicoTts.apk "
 DELETE_GALLERY="Gallery2.apk"
-DELETE_FONTS="MTLmr3m.ttf"
+DELETE_FONTS="MTLmr3m.ttf NanumGothic.ttf"
 
 REPACK=$OUT/repack.d
 printf "Sanitizing environment..."
@@ -123,6 +123,7 @@ rm -rf $REPACK/ota/system/tts
 
 # No need for recovery
 rm -rf $REPACK/ota/recovery
+rm -rf $REPACK/ota/system/etc/recovery-resource.dat
 
 # Strip modules
 [ -d $REPACK/ota/system/lib/modules ] && \

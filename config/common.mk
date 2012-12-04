@@ -34,6 +34,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.local.rc:root/init.slim.rc
 
+# Copy latinime for gesture typing
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bin/compcache:system/bin/compcache \

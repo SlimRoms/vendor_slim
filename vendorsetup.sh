@@ -18,3 +18,4 @@ add_lunch_combo slim_skyrocket-userdebug
 add_lunch_combo slim_hercules-userdebug
 add_lunch_combo slim_i9100g-userdebug
 add_lunch_combo slim_captivatemtd-userdebug
+add_lunch_combo slim_mako-userdebug

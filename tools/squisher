@@ -121,6 +121,9 @@ rm -rf $REPACK/ota/system/media/video
 # No need for tts
 rm -rf $REPACK/ota/system/tts
 
+# No need for srec
+rm -rf $REPACK/ota/system/usr/srec
+
 # No need for recovery
 rm -rf $REPACK/ota/recovery
 rm -rf $REPACK/ota/system/etc/recovery-resource.dat

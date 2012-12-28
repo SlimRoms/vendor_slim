@@ -142,7 +142,7 @@ PRODUCT_PACKAGES += \
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     HoloLauncherHD \
-    FileManager \
+    SlimFileManager \
     Velvet \
     LatinIME
 

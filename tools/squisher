@@ -148,6 +148,8 @@ if [ "$DEVICEID" = "SGH-I717" ]; then
    sed -i 's/ro.sf.lcd_density=241/ro.sf.lcd_density=268/g' $OUT/system/build.prop
 elif [ "$DEVICEID" = "GT-N7000" ]; then
    sed -i 's/ro.sf.lcd_density=241/ro.sf.lcd_density=268/g' $OUT/system/build.prop
+elif [ "$DEVICEID" = "mako" ]; then
+   sed -i 's/ro.sf.lcd_density=241/ro.sf.lcd_density=268/g' $OUT/system/build.prop
 fi
 cp -f $OUT/system/build.prop $REPACK/ota/system/build.prop
 

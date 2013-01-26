@@ -139,6 +139,7 @@ PRODUCT_PACKAGES += \
     HoloLauncherHD \
     LockClock \
     SlimFileManager \
+    SlimOTA \
     Velvet \
     LatinIME
 

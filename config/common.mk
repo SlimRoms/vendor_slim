@@ -8,12 +8,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
-    ro.com.android.dataroaming=false \
-    updateme.otauid=slimroms.net \
-    updateme.name=Slim \
-    updateme.urlcheck=http://slimota.slimroms.net/xml/update_me_check.xml \
-    updateme.urlelement=http://slimota.slimroms.net/xml/update_me_parts.xml \
-    updateme.reboottype=0
+    ro.com.android.dataroaming=false
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
@@ -166,8 +161,7 @@ PRODUCT_VERSION_MAINTENANCE = 2
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JOP40D
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    updateme.filter=$(PRODUCT_RELEASE_NAME) \
-    updateme.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)
+    slim.ota.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)
 
 ifdef SLIM_NIGHTLY
     PRODUCT_PROPERTY_OVERRIDES += \

@@ -15,6 +15,7 @@ add_lunch_combo slim_i9300-userdebug
 add_lunch_combo slim_infuse4g-userdebug
 add_lunch_combo slim_maguro-userdebug
 add_lunch_combo slim_mako-userdebug
+add_lunch_combo slim_manta-userdebug
 add_lunch_combo slim_n7000-userdebug
 add_lunch_combo slim_skyrocket-userdebug
 add_lunch_combo slim_tf300t-userdebug

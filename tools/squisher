@@ -114,10 +114,6 @@ rm -rf $REPACK/ota/system/media/video
 # Add precompiled fonts
 #mv -f $REPACK/ota/system/sfont/*.ttf $REPACK/ota/system/fonts/
 
-# Add OTA app
-#mkdir $REPACK/ota/data/app
-#cp -f $OUT/data/app/com.acquariusoft.UpdateMe.apk $REPACK/ota/data/app/
-
 # No need for tts
 rm -rf $REPACK/ota/system/tts
 

@@ -43,7 +43,7 @@ DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 DELETE_MEDIA="*.qmg"
 DELETE_APKS="Launcher2.apk LiveWallpapers.apk VoiceDialer.apk SoundRecorder.apk VisualizationWallpapers.apk VideoEditor.apk Exchange2.apk HoloSpiralWallpaper.apk MagicSmokeWallpapers.apk NoiseField.apk Calendar.apk OpenWnn.apk PinyinIME.apk QuickSearchBox.apk Velvet.apk Provision.apk"
 DELETE_GALLERY="Gallery2.apk"
-DELETE_FONTS="MTLmr3m.ttf NanumGothic.ttf"
+DELETE_FONTS="MTLmr3m.ttf"
 
 REPACK=$OUT/repack.d
 printf "Sanitizing environment..."

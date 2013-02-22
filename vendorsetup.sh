@@ -20,6 +20,7 @@ add_lunch_combo slim_manta-userdebug
 add_lunch_combo slim_n7000-userdebug
 add_lunch_combo slim_skyrocket-userdebug
 add_lunch_combo slim_tf300t-userdebug
+add_lunch_combo slim_tilapia-userdebug
 add_lunch_combo slim_toro-userdebug
 add_lunch_combo slim_toroplus-userdebug
 add_lunch_combo slim_vibrantmtd-userdebug

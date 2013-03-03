@@ -138,7 +138,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     HoloLauncherHD \
     DashClock \
-    LockClock \
     SlimFileManager \
     SlimOTA \
     Velvet \

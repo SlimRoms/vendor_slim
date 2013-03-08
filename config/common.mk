@@ -38,10 +38,6 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bin/compcache:system/bin/compcache \
     vendor/slim/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
 
-PRODUCT_COPY_FILES +=  \
-    vendor/slim/proprietary/supersu/su:system/xbin/su
-
-
 # Bring in media files
 PRODUCT_COPY_FILES +=  \
     vendor/slim/prebuilt/common/media/audio/alarms/Alarm_Classic.ogg:system/media/audio/alarms/Alarm_Classic.ogg \
@@ -118,12 +114,16 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/cron/cron.daily/01clear_cache:system/etc/cron/cron.daily/01clear_cache \
     vendor/slim/prebuilt/common/etc/cron/cron.weekly/01clear_cache:system/etc/cron/cron.weekly/01clear_cache 
 
+# Embed SuperUser
+SUPERUSER_EMBEDDED := true
+
 # Required packages
 PRODUCT_PACKAGES += \
     Camera \
     Development \
     SpareParts \
-    Superuser
+    Superuser \
+    su
 
 # Optional packages
 PRODUCT_PACKAGES += \

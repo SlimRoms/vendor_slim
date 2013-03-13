@@ -139,7 +139,7 @@ PRODUCT_PACKAGES += \
     HoloLauncherHD \
     DashClock \
     SlimFileManager \
-    SlimOTA \
+    SlimCenter \
     Velvet \
     LatinIME
 

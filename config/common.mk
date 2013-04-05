@@ -16,15 +16,6 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh
 
-# init.d support
-PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
-
-# userinit support
-PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
-
 # SLIM-specific init file
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.local.rc:root/init.slim.rc
@@ -92,18 +83,11 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/sysctl.conf:system/bin/sysctl.conf
 
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.d/01zipalign:system/etc/init.d/01zipalign \
-    vendor/slim/prebuilt/common/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
-    vendor/slim/prebuilt/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
-    vendor/slim/prebuilt/common/etc/init.d/05freemem:system/etc/init.d/05freemem \
-    vendor/slim/prebuilt/common/etc/init.d/06removecache:system/etc/init.d/06removecache \
-    vendor/slim/prebuilt/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
-    vendor/slim/prebuilt/common/etc/init.d/09cron:system/etc/init.d/09cron \
-    vendor/slim/prebuilt/common/etc/init.d/10sdboost:system/etc/init.d/10sdboost \
+    vendor/slim/prebuilt/common/etc/init.d/00slim:system/etc/init.d/00slim \
+    vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/slim/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
     vendor/slim/prebuilt/common/etc/init_trigger.disabled:system/etc/init_trigger.disabled \
-    vendor/slim/prebuilt/common/etc/liberty.bsh:system/etc/liberty.bsh \
-    vendor/slim/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf    
+    vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/cron/cron.conf:system/etc/cron/cron.conf \

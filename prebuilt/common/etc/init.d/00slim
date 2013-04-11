@@ -1,47 +1,56 @@
 #!/system/xbin/ash
 
-
-# Memory Thresholds
-FOREGROUND_APP_MEM=2048
-VISIBLE_APP_MEM=3072
-PERCEPTIBLE_APP_MEM=4096
-HEAVY_WEIGHT_APP_MEM=6144
-SECONDARY_SERVER_MEM=7168
-BACKUP_APP_MEM=7168
-HOME_APP_MEM=4096
-HIDDEN_APP_MEM=10240
-EMPTY_APP_MEM=12288
-
+. /system/etc/liberty.bsh
 
 # Always zipalign
 zipalign_apks
 
-# Apply MEM limits
-busybox echo $FOREGROUND_APP_MEM,$VISIBLE_APP_MEM,$PERCEPTIBLE_APP_MEM,$SECONDARY_SERVER_MEM,$HIDDEN_APP_MEM,$EMPTY_APP_MEM > /sys/module/lowmemorykiller/parameters/minfree
+# Enable Syscntl
+sysctl -p /system/etc/sysctl.conf
 
-setprop ro.FOREGROUND_APP_MEM $FOREGROUND_APP_MEM
-setprop ro.VISIBLE_APP_MEM $VISIBLE_APP_MEM
-setprop ro.PERCEPTIBLE_APP_MEM $PERCEPTIBLE_APP_MEM
-setprop ro.HEAVY_WEIGHT_APP_MEM $HEAVY_WEIGHT_APP_MEM
-setprop ro.SECONDARY_SERVER_MEM $SECONDARY_SERVER_MEM
-setprop ro.BACKUP_APP_MEM $BACKUP_APP_MEM
-setprop ro.HOME_APP_MEM $HOME_APP_MEM
-setprop ro.HIDDEN_APP_MEM $HIDDEN_APP_MEM
-setprop ro.EMPTY_APP_MEM $EMPTY_APP_MEM
+# Fix Permissions
+fix_permissions
 
-RAM_FREE=` busybox expr $EMPTY_APP_MEM \* 4 / 1024 `
+# Enable Cron
+# crond has "/bin/sh" hardcoded
+mount -o remount,rw rootfs /
+if busybox [ ! -L /bin ]; then
+    ln -s /system/bin/ /bin
+fi
+mount -o remount,ro rootfs /
+
+# set timezone (if you're not between -0500 and -0800 you get PST)
+# todo - support other timezones
+timezone=`date +%z`
+if busybox [ $timezone = "-0800" ]; then
+    TZ=PST8PDT
+elif busybox [ $timezone = "-0700" ]; then
+    TZ=MST7MDT
+elif busybox [ $timezone = "-0600" ]; then
+    TZ=CST6CDT
+elif busybox [ $timezone = "-0500" ]; then
+    TZ=EST5EDT
+else
+    TZ=PST8PDT
+fi
+export TZ
+
+# use /data/cron, call the crontab file "root"
+if busybox [ ! -d /data/cron ]; then
+    busybox mkdir -p /data/cron
+    cat > /data/cron/root << EOF
+# run-parts
+01 * * * * busybox run-parts /system/etc/cron/cron.hourly
+02 4 * * * busybox run-parts /system/etc/cron/cron.daily
+22 4 * * 0 busybox run-parts /system/etc/cron/cron.weekly
+EOF
+fi
+busybox crond -c /data/cron
 
 # Read Ahead
-for i in `seq 1 100`
-do
-    if [ -e /sys/devices/virtual/bdi/179:$i/read_ahead_kb ];
-    then
-        echo "1024" > /sys/devices/virtual/bdi/179:$i/read_ahead_kb;
-        fi;
-done
-if [ -e /sys/devices/virtual/bdi/default/read_ahead_kb ];
+if [ -e /sys/devices/virtual/bdi/179:0/read_ahead_kb ];
 then
-    echo "512" > /sys/devices/virtual/bdi/default/read_ahead_kb;
+    echo "1024" > /sys/devices/virtual/bdi/179:0/read_ahead_kb;
 fi;
 
 # VM
@@ -50,9 +59,9 @@ echo "300" > /proc/sys/vm/dirty_writeback_centisecs;
 echo "8192" > /proc/sys/vm/min_free_kbytes;
 echo "1" > /proc/sys/vm/oom_kill_allocating_task;
 echo "0" > /proc/sys/vm/panic_on_oom;
-echo "35" > /proc/sys/vm/dirty_background_ratio;
-echo "70" > /proc/sys/vm/dirty_ratio;
-echo "300" > /proc/sys/vm/vfs_cache_pressure;
+echo "70" > /proc/sys/vm/dirty_background_ratio;
+echo "90" > /proc/sys/vm/dirty_ratio;
+echo "5" > /proc/sys/vm/vfs_cache_pressure;
 echo "0" > /proc/sys/vm/overcommit_memory;
 echo "4" > /proc/sys/vm/min_free_order_shift;
 echo "0" > /proc/sys/vm/laptop_mode;

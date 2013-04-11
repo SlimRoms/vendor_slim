@@ -84,12 +84,13 @@ PRODUCT_COPY_FILES += \
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
-    vendor/slim/prebuilt/common/etc/sysctl.conf:system/bin/sysctl.conf
+    vendor/slim/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
 
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.d/00slim:system/etc/init.d/00slim \
     vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/slim/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
+    vendor/slim/prebuilt/common/etc/liberty.bsh:system/etc/liberty.bsh \
     vendor/slim/prebuilt/common/etc/init_trigger.disabled:system/etc/init_trigger.disabled \
     vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
 
@@ -143,9 +144,11 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
 
 # T-Mobile theme engine
 include vendor/slim/config/themes_common.mk
+
+# Versioning System
 PRODUCT_VERSION_MAJOR = 4.2.2
 PRODUCT_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = 3.3
+PRODUCT_VERSION_MAINTENANCE = 3.4
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JDQ39
 

@@ -29,6 +29,10 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bin/compcache:system/bin/compcache \
     vendor/slim/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
 
+# Audio Config for DSPManager
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
+
 # Bring in media files
 PRODUCT_COPY_FILES +=  \
     vendor/slim/prebuilt/common/media/audio/alarms/Alarm_Classic.ogg:system/media/audio/alarms/Alarm_Classic.ogg \

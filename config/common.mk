@@ -130,7 +130,8 @@ PRODUCT_PACKAGES += \
     SlimFileManager \
     SlimCenter \
     Velvet \
-    LatinIME
+    LatinIME \
+    SlimIRC
 
 # Extra tools
 PRODUCT_PACKAGES += \

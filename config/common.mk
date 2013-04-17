@@ -147,6 +147,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
 include vendor/slim/config/themes_common.mk
 
 # Versioning System
+# Final freeze for 4.2.2.build.4
 PRODUCT_VERSION_MAJOR = 4.2.2
 PRODUCT_VERSION_MINOR = build
 PRODUCT_VERSION_MAINTENANCE = 4

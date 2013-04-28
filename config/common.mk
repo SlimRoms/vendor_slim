@@ -60,6 +60,10 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/cron/cron.daily/01clear_cache:system/etc/cron/cron.daily/01clear_cache \
     vendor/slim/prebuilt/common/etc/cron/cron.weekly/01clear_cache:system/etc/cron/cron.weekly/01clear_cache 
 
+# Workaround for NovaLauncher zipalign fails
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher.apk
+
 # Embed SuperUser
 SUPERUSER_EMBEDDED := true
 
@@ -82,11 +86,9 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    HoloLauncherHD \
     DashClock \
     SlimFileManager \
     SlimCenter \
-    Velvet \
     LatinIME \
     SlimIRC
 
@@ -104,10 +106,10 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
 include vendor/slim/config/themes_common.mk
 
 # Versioning System
-# Reopen 4.2.2.build.4.3
+# Pre codefreeze 4.2.2.build.5
 PRODUCT_VERSION_MAJOR = 4.2.2
 PRODUCT_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = 4.3
+PRODUCT_VERSION_MAINTENANCE = 5.PCFR
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=$(BUILD_ID)
 

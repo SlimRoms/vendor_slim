@@ -10,6 +10,7 @@
 list_files() {
 cat <<EOF
 etc/hosts
+app/HoloLauncherHD.apk
 EOF
 }
 

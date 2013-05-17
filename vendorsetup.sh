@@ -20,6 +20,7 @@ add_lunch_combo slim_maguro-userdebug
 add_lunch_combo slim_mako-userdebug
 add_lunch_combo slim_manta-userdebug
 add_lunch_combo slim_n7000-userdebug
+add_lunch_combo slim_n7100-userdebug
 add_lunch_combo slim_nozomi-userdebug
 add_lunch_combo slim_p3100-userdebug
 add_lunch_combo slim_p3110-userdebug

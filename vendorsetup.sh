@@ -5,7 +5,6 @@ add_lunch_combo slim_d2att-userdebug
 add_lunch_combo slim_d2spr-userdebug
 add_lunch_combo slim_d2vzw-userdebug
 add_lunch_combo slim_endeavoru-userdebug
-add_lunch_combo slim_enrc2b-userdebug
 add_lunch_combo slim_galaxysmtd-userdebug
 add_lunch_combo slim_grouper-userdebug
 add_lunch_combo slim_hercules-userdebug

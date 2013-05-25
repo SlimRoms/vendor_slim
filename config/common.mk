@@ -14,7 +14,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/slim/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh
+    vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh \
+    vendor/slim/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
+    vendor/slim/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 
 # SLIM-specific init file
 PRODUCT_COPY_FILES += \

@@ -16,6 +16,7 @@ add_lunch_combo slim_jflteatt-userdebug
 add_lunch_combo slim_jfltecan-userdebug
 add_lunch_combo slim_jfltespr-userdebug
 add_lunch_combo slim_jfltetmo-userdebug
+add_lunch_combo slim_jfltevzw-userdebug
 add_lunch_combo slim_maguro-userdebug
 add_lunch_combo slim_mako-userdebug
 add_lunch_combo slim_manta-userdebug

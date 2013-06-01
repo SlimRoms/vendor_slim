@@ -106,10 +106,10 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
 include vendor/slim/config/themes_common.mk
 
 # Versioning System
-# Code freeze build 6
+# Reopen for 6.1
 PRODUCT_VERSION_MAJOR = 4.2.2
 PRODUCT_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = 6
+PRODUCT_VERSION_MAINTENANCE = 6.1
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=$(BUILD_ID)
 

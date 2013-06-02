@@ -1,4 +1,4 @@
-#!/system/xbin/ash
+#!/system/xbin/bash
 
 . /system/etc/liberty.bsh
 

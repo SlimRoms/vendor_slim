@@ -1,15 +1,7 @@
-#!/system/xbin/bash
-
-. /system/etc/liberty.bsh
-
-# Always zipalign
-zipalign_apks
+#!/system/xbin/ash
 
 # Enable Syscntl
 sysctl -p /system/etc/sysctl.conf
-
-# Fix Permissions
-fix_permissions
 
 # Enable Cron
 # crond has "/bin/sh" hardcoded

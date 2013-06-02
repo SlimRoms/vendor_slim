@@ -47,7 +47,6 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.d/00slim:system/etc/init.d/00slim \
     vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/slim/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
-    vendor/slim/prebuilt/common/etc/liberty.bsh:system/etc/liberty.bsh \
     vendor/slim/prebuilt/common/etc/init_trigger.disabled:system/etc/init_trigger.disabled \
     vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
 

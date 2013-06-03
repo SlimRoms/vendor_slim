@@ -54,7 +54,7 @@ echo "0" > /proc/sys/vm/panic_on_oom;
 echo "70" > /proc/sys/vm/dirty_background_ratio;
 echo "90" > /proc/sys/vm/dirty_ratio;
 echo "5" > /proc/sys/vm/vfs_cache_pressure;
-echo "0" > /proc/sys/vm/overcommit_memory;
+#echo "0" > /proc/sys/vm/overcommit_memory;
 echo "4" > /proc/sys/vm/min_free_order_shift;
 echo "0" > /proc/sys/vm/laptop_mode;
 echo "0" > /proc/sys/vm/block_dump;

@@ -105,10 +105,10 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
 include vendor/slim/config/themes_common.mk
 
 # Versioning System
-# Reopen for 6.1
+# Weekly 6.2
 PRODUCT_VERSION_MAJOR = 4.2.2
 PRODUCT_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = 6.1
+PRODUCT_VERSION_MAINTENANCE = 6.2
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=$(BUILD_ID)
 

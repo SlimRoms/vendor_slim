@@ -23,9 +23,10 @@ on init
 on post-fs-data
     mkdir /data/.ssh 0750 root shell
 
-on boot
+    # Run sysinit
     start sysinit
 
+on boot
     chown system system /sys/block/mmcblk0/queue/scheduler
     chmod 0664 /sys/block/mmcblk0/queue/scheduler
     restorecon /sys/block/mmcblk0/queue/scheduler

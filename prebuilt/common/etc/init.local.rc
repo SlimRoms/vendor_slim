@@ -1,5 +1,7 @@
 # Extras
 
+import /init.superuser.rc
+
 on init
     export ANDROID_CACHE /cache
     export TERMINFO /system/etc/terminfo

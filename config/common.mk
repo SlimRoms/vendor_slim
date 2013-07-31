@@ -96,10 +96,10 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
 include vendor/slim/config/themes_common.mk
 
 # Versioning System
-# Weekly build.7.8
+# Final build.8 PCFR
 PRODUCT_VERSION_MAJOR = 4.2.2
 PRODUCT_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = 7.8
+PRODUCT_VERSION_MAINTENANCE = 8.PCFR
 ifdef SLIM_BUILD_EXTRA
     SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
 endif

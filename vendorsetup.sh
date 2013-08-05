@@ -9,6 +9,7 @@ add_lunch_combo slim_endeavoru-userdebug
 add_lunch_combo slim_flo-userdebug
 add_lunch_combo slim_galaxysmtd-userdebug
 add_lunch_combo slim_gkatt-userdebug
+add_lunch_combo slim_geefhd_att_us-userdebug
 add_lunch_combo slim_grouper-userdebug
 add_lunch_combo slim_hercules-userdebug
 add_lunch_combo slim_i777-userdebug

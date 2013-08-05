@@ -102,7 +102,7 @@ include vendor/slim/config/themes_common.mk
 # push up to alpha 2
 PRODUCT_VERSION_MAJOR = 4.3
 PRODUCT_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = alpha.3
+PRODUCT_VERSION_MAINTENANCE = alpha.3.1
 ifdef SLIM_BUILD_EXTRA
     SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
 endif

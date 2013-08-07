@@ -83,6 +83,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AudioFX
 
+# CM Hardware Abstraction Framework
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
+
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     SlimCenter \

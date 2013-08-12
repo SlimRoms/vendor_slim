@@ -92,7 +92,6 @@ PRODUCT_PACKAGES += \
     mke2fs \
     tune2fs
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
 
 # T-Mobile theme engine

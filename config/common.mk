@@ -101,7 +101,7 @@ include vendor/slim/config/themes_common.mk
 # Prepare for first 4.3 weekly beta.1
 PRODUCT_VERSION_MAJOR = 4.3
 PRODUCT_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = beta.1
+PRODUCT_VERSION_MAINTENANCE = beta.1.2
 ifdef SLIM_BUILD_EXTRA
     SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
 endif

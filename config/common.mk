@@ -102,6 +102,9 @@ PRODUCT_PACKAGES += \
     mke2fs \
     tune2fs
 
+# easy way to extend to add more packages
+-include vendor/extra/product.mk
+
 PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
 
 # Boot animation include

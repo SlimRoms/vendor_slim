@@ -38,9 +38,6 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bin/compcache:system/bin/compcache \
     vendor/slim/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
 
-# Audio Config for DSPManager
-PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
 #LOCAL SLIM CHANGES  - END
 
 # Enable SIP+VoIP on all targets

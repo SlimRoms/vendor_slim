@@ -78,6 +78,12 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhaseBeam
 
+# DSPManager
+PRODUCT_PACKAGES += \
+    DSPManager \
+    libcyanogen-dsp \
+    audio_effects.conf
+
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     DashClock \

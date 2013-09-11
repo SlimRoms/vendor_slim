@@ -137,7 +137,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Versioning System
-# Prepare for 4.3 pre code freeze build.1
+# Prepare for 4.3 stable
 PRODUCT_VERSION_MAJOR = 4.3
 PRODUCT_VERSION_MINOR = build
 PRODUCT_VERSION_MAINTENANCE = 1

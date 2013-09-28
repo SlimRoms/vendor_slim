@@ -137,10 +137,10 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Versioning System
-# Prepare for 4.3 Weekly build.1.2
+# Prepare for 4.3 Weekly build.1.4
 PRODUCT_VERSION_MAJOR = 4.3
 PRODUCT_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = 1.2
+PRODUCT_VERSION_MAINTENANCE = 1.4
 ifdef SLIM_BUILD_EXTRA
     SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
 endif

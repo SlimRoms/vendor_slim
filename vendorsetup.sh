@@ -26,6 +26,7 @@ add_lunch_combo slim_m7att-userdebug
 add_lunch_combo slim_m7spr-userdebug
 add_lunch_combo slim_m7tmo-userdebug
 add_lunch_combo slim_m7ul-userdebug
+add_lunch_combo slim_m7vzw-userdebug
 add_lunch_combo slim_maguro-userdebug
 add_lunch_combo slim_mako-userdebug
 add_lunch_combo slim_manta-userdebug

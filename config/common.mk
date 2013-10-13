@@ -94,7 +94,8 @@ PRODUCT_PACKAGES += \
     SlimFileManager \
     SlimCenter \
     LatinIME \
-    SlimIRC
+    SlimIRC \
+    BluetoothExt
 
 # Extra tools
 PRODUCT_PACKAGES += \

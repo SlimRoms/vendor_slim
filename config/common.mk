@@ -30,8 +30,8 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.local.rc:root/init.slim.rc
 
 # Copy latinime for gesture typing
-PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+# PRODUCT_COPY_FILES += \
+#    vendor/slim/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
@@ -90,8 +90,6 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    DashClock \
-    SlimFileManager \
     SlimCenter \
     LatinIME \
     SlimIRC \
@@ -105,9 +103,6 @@ PRODUCT_PACKAGES += \
     tune2fs
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
-
-# T-Mobile theme engine
-include vendor/slim/config/themes_common.mk
 
 # Boot animation include
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
@@ -142,10 +137,10 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Versioning System
-# code freeze stable 2
-PRODUCT_VERSION_MAJOR = 4.3
-PRODUCT_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = 2
+# kitkat initial start
+PRODUCT_VERSION_MAJOR = 4.4
+PRODUCT_VERSION_MINOR = alpha
+PRODUCT_VERSION_MAINTENANCE = 1
 ifdef SLIM_BUILD_EXTRA
     SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
 endif

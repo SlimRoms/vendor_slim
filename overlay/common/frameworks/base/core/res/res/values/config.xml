@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- default to disabling the menu key. The CM setting to
+    <!-- default to disabling the menu key. The Slim setting to
          do this is a no-op unless the below item is true -->
     <bool name="config_disableMenuKeyInLockScreen">true</bool>
 
@@ -17,12 +17,12 @@
     <!-- Class name for default keyguard appwidget [DO NOT TRANSLATE] -->
     <string name="widget_default_class_name">com.google.android.apps.dashclock.WidgetProvider</string>
 
-    <!-- Disable stock OTA components if installed
+    <!-- Disable stock OTA components if installed -->
     <string-array name="config_disabledComponents" translatable="false">
         <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateActivity</item>
         <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService</item>
         <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService$Receiver</item>
-    </string-array> -->
+    </string-array>
 
 </resources>
 

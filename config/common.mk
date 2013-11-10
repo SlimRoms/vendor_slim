@@ -160,4 +160,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.slim.version=$(SLIM_VERSION) \
     ro.modversion=$(SLIM_MOD_VERSION)
 
--include vendor/slim/sepolicy/sepolicy.mk

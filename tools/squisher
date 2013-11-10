@@ -68,12 +68,19 @@ mkdir -p $REPACK/parallel
 cd $REPACK/parallel
 cp $REPACK/ota/system/framework/framework-res.apk .
 cp $REPACK/ota/system/app/*.apk .
+for f in $REPACK/ota/system/priv-app/*.apk; do
+    cp $f ./priv-app-$(basename $f)
+done
+
 
 # Do optimization in parallel
 find ./ -name \*.apk | $XARGS $OPTICHARGER
 
 # Move optimized apks to repack directory
 mv -f $REPACK/parallel/framework-res.apk $REPACK/ota/system/framework/framework-res.apk
+for f in $REPACK/parallel/priv-app*.apk; do
+    mv $f $REPACK/ota/system/priv-app/$(basename $f | cut -d'-' -f3)
+done
 mv -f $REPACK/parallel/*.apk $REPACK/ota/system/app/
 
 # Return to directory

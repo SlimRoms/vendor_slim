@@ -10,6 +10,7 @@ on post-fs-data
     mkdir /data/.ssh 0750 root shell
 
 on boot
+    start sysinit
     chown system system /sys/block/mmcblk0/queue/scheduler
     chmod 0664 /sys/block/mmcblk0/queue/scheduler
 
@@ -37,3 +38,9 @@ service compcache /system/bin/handle_compcache
     user root
     group root
     oneshot
+
+# sysinit (/system/etc/init.d)
+service sysinit /system/bin/sysinit
+    user root
+    oneshot
+    disabled

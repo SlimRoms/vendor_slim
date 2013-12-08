@@ -141,10 +141,10 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Versioning System
-# kitkat initial start
+# KitKat SlimKat beta releases
 PRODUCT_VERSION_MAJOR = 4.4.1
 PRODUCT_VERSION_MINOR = beta
-PRODUCT_VERSION_MAINTENANCE = 1.3
+PRODUCT_VERSION_MAINTENANCE = 1.4
 ifdef SLIM_BUILD_EXTRA
     SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
 endif

@@ -49,3 +49,4 @@ add_lunch_combo slim_toroplus-userdebug
 add_lunch_combo slim_vibrantmtd-userdebug
 add_lunch_combo slim_xt925-userdebug
 add_lunch_combo slim_xt926-userdebug
+add_lunch_combo slim_p700-userdebug

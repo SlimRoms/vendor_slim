@@ -4,4 +4,4 @@
 #
 L="log -p i -t slim"
 
-$L "Welcome to Android `getprop ro.build.version.release` / SlimBean `getprop ro.slim.version`";
+$L "Welcome to Android `getprop ro.build.version.release` / SlimKat `getprop ro.slim.version`";

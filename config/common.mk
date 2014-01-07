@@ -37,13 +37,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
-# Compcache/Zram support
-PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bin/compcache:system/bin/compcache \
-    vendor/slim/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
-
-#LOCAL SLIM CHANGES  - END
-
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml

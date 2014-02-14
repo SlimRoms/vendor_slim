@@ -136,7 +136,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Versioning System
-# KitKat SlimKat beta releases
+# KitKat SlimKat stable releases
 PRODUCT_VERSION_MAJOR = 4.4.2
 PRODUCT_VERSION_MINOR = build
 PRODUCT_VERSION_MAINTENANCE = 3

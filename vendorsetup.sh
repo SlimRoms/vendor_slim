@@ -1,11 +1,7 @@
 add_lunch_combo slim_captivatemtd-userdebug
 add_lunch_combo slim_crespo-userdebug
 add_lunch_combo slim_crespo4g-userdebug
-add_lunch_combo slim_d2att-userdebug
-add_lunch_combo slim_d2mtr-userdebug
-add_lunch_combo slim_d2spr-userdebug
-add_lunch_combo slim_d2usc-userdebug
-add_lunch_combo slim_d2vzw-userdebug
+add_lunch_combo slim_d2lte-userdebug
 add_lunch_combo slim_d800-userdebug
 add_lunch_combo slim_d801-userdebug
 add_lunch_combo slim_d802-userdebug
@@ -26,13 +22,7 @@ add_lunch_combo slim_i777-userdebug
 add_lunch_combo slim_i9100-userdebug
 add_lunch_combo slim_i9100g-userdebug
 add_lunch_combo slim_i9300-userdebug
-add_lunch_combo slim_jflteatt-userdebug
-add_lunch_combo slim_jfltecan-userdebug
-add_lunch_combo slim_jfltespr-userdebug
-add_lunch_combo slim_jfltetmo-userdebug
-add_lunch_combo slim_jflteusc-userdebug
-add_lunch_combo slim_jfltevzw-userdebug
-add_lunch_combo slim_jfltexx-userdebug
+add_lunch_combo slim_jflte-userdebug
 add_lunch_combo slim_ls980-userdebug
 add_lunch_combo slim_m7att-userdebug
 add_lunch_combo slim_m7spr-userdebug

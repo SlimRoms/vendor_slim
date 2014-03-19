@@ -24,10 +24,8 @@ add_lunch_combo slim_i9100g-userdebug
 add_lunch_combo slim_i9300-userdebug
 add_lunch_combo slim_jflte-userdebug
 add_lunch_combo slim_ls980-userdebug
-add_lunch_combo slim_m7att-userdebug
+add_lunch_combo slim_m7-userdebug
 add_lunch_combo slim_m7spr-userdebug
-add_lunch_combo slim_m7tmo-userdebug
-add_lunch_combo slim_m7ul-userdebug
 add_lunch_combo slim_m7vzw-userdebug
 add_lunch_combo slim_maguro-userdebug
 add_lunch_combo slim_mako-userdebug

@@ -30,6 +30,9 @@ add_lunch_combo slim_m7vzw-userdebug
 add_lunch_combo slim_maguro-userdebug
 add_lunch_combo slim_mako-userdebug
 add_lunch_combo slim_manta-userdebug
+add_lunch_combo slim_n5100-userdebug
+add_lunch_combo slim_n5110-userdebug
+add_lunch_combo slim_n5120-userdebug
 add_lunch_combo slim_n7000-userdebug
 add_lunch_combo slim_n7100-userdebug
 add_lunch_combo slim_nozomi-userdebug

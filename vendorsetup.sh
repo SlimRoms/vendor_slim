@@ -21,6 +21,7 @@ add_lunch_combo slim_honami-userdebug
 add_lunch_combo slim_i777-userdebug
 add_lunch_combo slim_i9100-userdebug
 add_lunch_combo slim_i9100g-userdebug
+add_lunch_combo slim_i925-userdebug
 add_lunch_combo slim_i9300-userdebug
 add_lunch_combo slim_jflte-userdebug
 add_lunch_combo slim_ls980-userdebug

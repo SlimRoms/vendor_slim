@@ -98,7 +98,6 @@ PRODUCT_PACKAGES += \
     SlimCenter \
     SlimFileManager \
     LatinIME \
-    SlimIRC \
     BluetoothExt \
     DashClock
 
@@ -168,6 +167,16 @@ ifndef SLIM_BUILD_TYPE
     SLIM_BUILD_TYPE := UNOFFICIAL
     PLATFORM_VERSION_CODENAME := UNOFFICIAL
     SLIM_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
+endif
+
+# SlimIRC
+# export INCLUDE_SLIMIRC=1 for unofficial builds
+ifneq ($(filter WEEKLY OFFICIAL,$(SLIM_BUILD_TYPE)),)
+    INCLUDE_SLIMIRC = 1
+endif
+
+ifneq ($(INCLUDE_SLIMIRC),)
+    PRODUCT_PACKAGES += SlimIRC
 endif
 
 # Set all versions

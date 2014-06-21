@@ -56,4 +56,4 @@ add_lunch_combo slim_vs980-userdebug
 add_lunch_combo slim_xt925-userdebug
 add_lunch_combo slim_xt926-userdebug
 add_lunch_combo slim_yuga-userdebug
-
+add_lunch_combo slim_pyramid-userdebug

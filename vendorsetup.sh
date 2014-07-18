@@ -1,3 +1,4 @@
+add_lunch_combo slim_bacon-userdebug
 add_lunch_combo slim_crespo-userdebug
 add_lunch_combo slim_d2lte-userdebug
 add_lunch_combo slim_d800-userdebug

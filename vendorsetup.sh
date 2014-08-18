@@ -33,6 +33,7 @@ add_lunch_combo slim_m8-userdebug
 add_lunch_combo slim_maguro-userdebug
 add_lunch_combo slim_mako-userdebug
 add_lunch_combo slim_manta-userdebug
+add_lunch_combo slim_mondrianwifi-userdebug
 add_lunch_combo slim_moto_msm8960-userdebug
 add_lunch_combo slim_moto_msm8960dt-userdebug
 add_lunch_combo slim_n5100-userdebug

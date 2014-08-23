@@ -151,7 +151,7 @@ elif [ "$DEVICELCD" = "213" ]; then
     sed -i 's/ro.sf.lcd_density=213/ro.sf.lcd_density=182/g' $OUT/system/build.prop
 fi
 
-# Fix LCD Density for GNote
+# Device specific LCD Density fix
 DEVICEID=`sed -n -e'/ro\.product\.device/s/^.*=//p' $OUT/system/build.prop`
 if [ "$DEVICEID" = "SGH-I717" ]; then
    sed -i 's/ro.sf.lcd_density=245/ro.sf.lcd_density=268/g' $OUT/system/build.prop

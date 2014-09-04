@@ -17,6 +17,8 @@ add_lunch_combo slim_geefhd_att_us-userdebug
 add_lunch_combo slim_grouper-userdebug
 add_lunch_combo slim_hammerhead-userdebug
 add_lunch_combo slim_hlte-userdebug
+add_lunch_combo slim_hltespr-userdebug
+add_lunch_combo slim_hltevzw-userdebug
 add_lunch_combo slim_honami-userdebug
 add_lunch_combo slim_i777-userdebug
 add_lunch_combo slim_i9100-userdebug

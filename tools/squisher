@@ -42,7 +42,7 @@ QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 DELETE_MEDIA="*.qmg"
 DELETE_APKS="LiveWallpapers.apk SpeechRecorder.apk VideoEditor.apk HoloSpiralWallpaper.apk MagicSmokeWallpapers.apk NoiseField.apk Galaxy4.apk OpenWnn.apk PinyinIME.apk"
-DELETE_PRIV_APKS="Launcher2.apk  VoiceDialer.apk"
+DELETE_PRIV_APKS="VoiceDialer.apk"
 DELETE_GALLERY="Gallery2.apk"
 DELETE_FONTS="MTLmr3m.ttf"
 

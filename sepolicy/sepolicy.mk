@@ -12,6 +12,7 @@ BOARD_SEPOLICY_UNION += \
     genfs_contexts \
     property_contexts \
     seapp_contexts \
+    service_contexts \
     auditd.te \
     healthd.te \
     hostapd.te \

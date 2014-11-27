@@ -12,6 +12,7 @@ BOARD_SEPOLICY_UNION += \
     genfs_contexts \
     seapp_contexts \
     auditd.te \
+    healthd.te \
     installd.te \
     netd.te \
     su.te \

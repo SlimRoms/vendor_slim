@@ -37,7 +37,8 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.local.rc:root/init.slim.rc
 
 # Copy latinime for gesture typing
-
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \

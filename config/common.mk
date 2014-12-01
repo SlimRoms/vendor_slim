@@ -32,6 +32,10 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
     vendor/slim/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 
+# Signature compatibility validation
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/bin/otasigcheck.sh:system/bin/otasigcheck.sh
+
 # SLIM-specific init file
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.local.rc:root/init.slim.rc

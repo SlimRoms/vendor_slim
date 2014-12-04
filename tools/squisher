@@ -1,217 +1,32 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Squish a CM otapackage for distribution
 # cyanogen
-#
 
-OUT_TARGET_HOST=`uname -a | grep Darwin`
-if [ -z "$OUT_TARGET_HOST" ]
+OUT_TARGET_HOST=`uname -s`
+if [ x"$OUT_TARGET_HOST" = x"Linux" ]
 then
    OUT_TARGET_HOST=linux-x86
-   MD5=md5sum
    XARGS="xargs --max-args=1 --max-procs `grep 'processor' /proc/cpuinfo|wc -l`"
-   SED=sed
-else
+elif [ x"$OUT_TARGET_HOST" = x"Darwin" ]
+then
    OUT_TARGET_HOST=darwin-x86
-   MD5=md5
    XARGS="xargs -n 1 -P `sysctl hw.ncpu | awk '{print $2}'`"
-   SED=gsed
+else
+   echo -e ${CL_RED}"ERROR: unknown/unsupported host OS!"${CL_RST}
+   exit 1
 fi
 
 if [ -z "$OUT" -o ! -d "$OUT" ]; then
-    echo "ERROR: $0 only works with a full build environment. $OUT should exist."
-    exit 1
-fi
-
-if [ "$TARGET_BUILD_TYPE" = "debug" ]; then
-    OTAPACKAGE=$OUT/${TARGET_PRODUCT}_debug-ota-$TARGET_BUILD_VARIANT.$USER.zip
-elif [ "$TARGET_BUILD_VARIANT" = "userdebug" ]; then
-    OTAPACKAGE=$OUT/$TARGET_PRODUCT-ota-eng.$USER.zip
-elif [ "$TARGET_BUILD_VARIANT" = "user" ]; then
-    OTAPACKAGE=$OUT/$TARGET_PRODUCT-ota-eng.$USER.zip
-else
-    OTAPACKAGE=$OUT/$TARGET_PRODUCT-ota-$TARGET_BUILD_VARIANT.$USER.zip
-fi
-if [ ! -f "$OTAPACKAGE" ]; then
-    echo "$OTAPACKAGE doesn't exist!";
-    exit 1
+	echo -e ${CL_RED}"ERROR: $0 only works with a full build environment. $OUT should exist."${CL_RST}
+	exit 1
 fi
 
 OPTICHARGER=$ANDROID_BUILD_TOP/vendor/slim/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
-DELETE_MEDIA="*.qmg"
-DELETE_APKS="LiveWallpapers.apk SpeechRecorder.apk VideoEditor.apk HoloSpiralWallpaper.apk MagicSmokeWallpapers.apk NoiseField.apk Galaxy4.apk OpenWnn.apk PinyinIME.apk"
-DELETE_PRIV_APKS="VoiceDialer.apk"
-DELETE_GALLERY="Gallery2.apk"
-DELETE_FONTS="MTLmr3m.ttf"
 
-REPACK=$OUT/repack.d
-printf "Sanitizing environment..."
-rm -rf $REPACK
-mkdir -p $REPACK
-echo
-
-
-# Unpack the otapackage and opticharge all apks
-mkdir $REPACK/ota
-(
-cd $REPACK/ota
-printf "Unpacking $OTAPACKAGE..."
-unzip $QUIET $OTAPACKAGE
-echo
-
-# Move all apks to the same directory so xargs can
-# use also with framework-res.apk. This allow process
-# framework-res.apk in parallel with other apks
-mkdir -p $REPACK/parallel
-cd $REPACK/parallel
-cp $REPACK/ota/system/framework/framework-res.apk .
-cp $REPACK/ota/system/app/*.apk .
-for f in $REPACK/ota/system/priv-app/*.apk; do
-    cp $f ./priv-app-$(basename $f)
-done
-
-
-# Do optimization in parallel
-find ./ -name \*.apk | $XARGS $OPTICHARGER
-
-# Move optimized apks to repack directory
-mv -f $REPACK/parallel/framework-res.apk $REPACK/ota/system/framework/framework-res.apk
-for f in $REPACK/parallel/priv-app*.apk; do
-    mv $f $REPACK/ota/system/priv-app/$(basename $f | cut -d'-' -f3)
-done
-mv -f $REPACK/parallel/*.apk $REPACK/ota/system/app/
-
-# Return to directory
-cd $REPACK/ota
-rm -rf $REPACK/parallel
-)
-
-# Fix build.prop
-$SED -i \
-	-e '/ro\.kernel\.android\.checkjni/d' \
-	-e '/ro\.build\.type/s/eng/user/' \
-	$REPACK/ota/system/build.prop
-
-
-# Delete unnecessary binaries
-( cd $REPACK/ota/system/bin; echo $DELETE_BINS | xargs rm -f; )
-
-# Delete Offline charging mode files
-( cd $REPACK/ota/system/media; echo $DELETE_MEDIA | xargs rm -f; )
-
-# Delete Home Apk's
-( cd $REPACK/ota/system/app; echo $DELETE_APKS | xargs rm -f; )
-
-# Delete priv-app Apk's
-( cd $REPACK/ota/system/priv-app; echo $DELETE_PRIV_APKS | xargs rm -f; )
-
-# No need for modem.bin
-rm -f $REPACK/ota/modem.bin
-
-# No need for media/video
-rm -rf $REPACK/ota/system/media/video
-
-# Delete Unnecessary Fonts
-( cd $REPACK/ota/system/fonts; echo $DELETE_FONTS | xargs rm -f; )
-
-# Delete compiled fonts
-#rm -rf $REPACK/ota/system/fonts
-
-#make dir for fonts again
-#mkdir $REPACK/ota/system/fonts
-
-# Add precompiled fonts
-#mv -f $REPACK/ota/system/sfont/*.ttf $REPACK/ota/system/fonts/
-
-# No need for tts
-rm -rf $REPACK/ota/system/tts
-
-# No need for srec
-rm -rf $REPACK/ota/system/usr/srec
-
-# No need for recovery
-rm -rf $REPACK/ota/recovery
-rm -rf $REPACK/ota/system/etc/recovery-resource.dat
-
-# Strip modules
-[ -d $REPACK/ota/system/lib/modules ] && \
-	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
-
-# Fix LCD Density for slim
-DEVICELCD=`sed -n -e'/ro\.sf\.lcd_density/s/^.*=//p' $OUT/system/build.prop`
-if [ "$DEVICELCD" = "240" ]; then
-   sed -i 's/ro.sf.lcd_density=240/ro.sf.lcd_density=182/g' $OUT/system/build.prop
-elif [ "$DEVICELCD" = "320" ]; then
-    sed -i 's/ro.sf.lcd_density=320/ro.sf.lcd_density=245/g' $OUT/system/build.prop
-elif [ "$DEVICELCD" = "480" ]; then
-    sed -i 's/ro.sf.lcd_density=480/ro.sf.lcd_density=370/g' $OUT/system/build.prop
-elif [ "$DEVICELCD" = "213" ]; then
-    sed -i 's/ro.sf.lcd_density=213/ro.sf.lcd_density=182/g' $OUT/system/build.prop
-fi
-
-# Device specific LCD Density fix
-DEVICEID=`sed -n -e'/ro\.product\.device/s/^.*=//p' $OUT/system/build.prop`
-if [ "$DEVICEID" = "SGH-I717" ]; then
-   sed -i 's/ro.sf.lcd_density=245/ro.sf.lcd_density=268/g' $OUT/system/build.prop
-elif [ "$DEVICEID" = "GT-N7000" ]; then
-   sed -i 's/ro.sf.lcd_density=245/ro.sf.lcd_density=268/g' $OUT/system/build.prop
-elif [ "$DEVICEID" = "mako" ]; then
-   sed -i 's/ro.sf.lcd_density=245/ro.sf.lcd_density=268/g' $OUT/system/build.prop
-elif [ "$DEVICEID" = "flo" ]; then
-   sed -i 's/ro.sf.lcd_density=245/ro.sf.lcd_density=286/g' $OUT/system/build.prop
-elif [ "$DEVICEID" = "deb" ]; then
-   sed -i 's/ro.sf.lcd_density=245/ro.sf.lcd_density=286/g' $OUT/system/build.prop
-elif [ "$DEVICEID" = "amami" ]; then
-   sed -i 's/ro.sf.lcd_density=245/ro.sf.lcd_density=286/g' $OUT/system/build.prop
-elif [ "$DEVICEID" = "togari" ]; then
-   sed -i 's/ro.sf.lcd_density=245/ro.sf.lcd_density=300/g' $OUT/system/build.prop
-fi
-cp -f $OUT/system/build.prop $REPACK/ota/system/build.prop
-
-# Delete Gallery2 for 5MP cameras
-CAMERARESOLUTION=`sed -n -e'/ro\.camera\.res/s/^.*=//p' $REPACK/ota/system/build.prop`
-#if [ "$CAMERARESOLUTION" = "5MP" ];then
-#   rm -f $REPACK/ota/system/app/Gallery2.apk
-#fi
-
-# Swap boot.img
-PREBUILTKERNEL=$OUT/system/slimkernel/boot.img
-if [ -e "$PREBUILTKERNEL" ];then
-   rm -f $REPACK/ota/boot.img
-   mv -f $REPACK/ota/system/slimkernel/boot.img $REPACK/ota/boot.img
-fi
-
-# Determine what to name the new signed package
-MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $REPACK/ota/system/build.prop`
-OUTFILE=$OUT/$MODVERSION.zip
-echo MODVERSION: $MODVERSION
-
-# Pack it up and sign
-printf "Zipping package..."
-( cd $REPACK/ota; zip $QUIET -r $REPACK/update.zip . )
-echo
-printf "Signing package..."
-SECURITYDIR=$ANDROID_BUILD_TOP/build/target/product/security
-java -Xmx1024m \
-	-jar $OUT/../../../host/$OUT_TARGET_HOST/framework/signapk.jar \
-	-w $SECURITYDIR/testkey.x509.pem $SECURITYDIR/testkey.pk8 \
-	$REPACK/update.zip $OUTFILE
-echo
-printf "Cleaning up..."
-rm -rf $REPACK
-echo
-
-# Create a md5 checksum image of the repacked package
-(
-img=`basename $OUTFILE`
-cd `dirname $OUTFILE`
-$MD5 $img >$img.md5sum
-echo
-echo "Package complete: $OUTFILE"
-cat $img.md5sum
-echo
-)
+# Optimize PNG resources in APKs
+( cd $OUT/system; find framework/ app/ priv-app/ -name \*.apk -print | $XARGS $OPTICHARGER; )
 
 exit 0

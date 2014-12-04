@@ -194,3 +194,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 EXTENDED_POST_PROCESS_PROPS := vendor/slim/tools/slim_process_props.py
 
+SQUISHER_SCRIPT := vendor/slim/tools/squisher
+

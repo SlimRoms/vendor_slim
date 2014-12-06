@@ -6,6 +6,10 @@ add_lunch_combo slim_d800-userdebug
 add_lunch_combo slim_d801-userdebug
 add_lunch_combo slim_d802-userdebug
 add_lunch_combo slim_d803-userdebug
+add_lunch_combo slim_d850-userdebug
+add_lunch_combo slim_d851-userdebug
+add_lunch_combo slim_d852-userdebug
+add_lunch_combo slim_d855-userdebug
 add_lunch_combo slim_deb-userdebug
 add_lunch_combo slim_endeavoru-userdebug
 add_lunch_combo slim_falcon-userdebug
@@ -36,6 +40,7 @@ add_lunch_combo slim_jflteusc-userdebug
 add_lunch_combo slim_jfltevzw-userdebug
 add_lunch_combo slim_jfltexx-userdebug
 add_lunch_combo slim_ls980-userdebug
+add_lunch_combo slim_ls990-userdebug
 add_lunch_combo slim_m7-userdebug
 add_lunch_combo slim_m7spr-userdebug
 add_lunch_combo slim_m7vzw-userdebug
@@ -69,4 +74,5 @@ add_lunch_combo slim_toro-userdebug
 add_lunch_combo slim_toroplus-userdebug
 add_lunch_combo slim_v500-userdebug
 add_lunch_combo slim_vs980-userdebug
+add_lunch_combo slim_vs985-userdebug
 add_lunch_combo slim_yuga-userdebug

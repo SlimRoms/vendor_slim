@@ -26,15 +26,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/slim/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/slim/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/slim/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh \
     vendor/slim/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
     vendor/slim/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bin/otasigcheck.sh:system/bin/otasigcheck.sh
+    vendor/slim/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
 # SLIM-specific init file
 PRODUCT_COPY_FILES += \

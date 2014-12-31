@@ -11,7 +11,6 @@
 
 #############################
 # performance-related sysfs files (CM)
-/sys/kernel/mm/ksm(/.*)?       --          u:object_r:sysfs_writable:s0
 /sys/devices/system/cpu.*/cpufreq(/.*)? --  u:object_r:sysfs_devices_system_cpu:s0
 /sys/block/mmcblk.*/queue/scheduler  --    u:object_r:sysfs_devices_system_iosched:s0
 

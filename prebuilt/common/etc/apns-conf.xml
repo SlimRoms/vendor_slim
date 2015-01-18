@@ -718,6 +718,7 @@
   <apn carrier="ATT LTE" mcc="310" mnc="410" apn="pta" mmsc="http://mmsc.mobile.att.net" mmsproxy="proxy.mobile.att.net" mmsport="80" type="default,supl,mms" />
   <apn carrier="ATT Broadband" mcc="310" mnc="410" apn="broadband" user="" server="" password="" mmsc="" type="default" />
   <apn carrier="ATT Activation" mcc="310" mnc="410" apn="lwaactivate" user="" server="" password="" mmsc="" protocol="IP" />
+  <apn carrier="ATT Nextgenphone" mcc="310" mnc="410" apn="nxtgenphone" type="default,mms,supl,fota,hipri" mmsc="http://mmsc.mobile.att.net" mmsproxy="proxy.mobile.att.net" mmsport="80" />
   <apn carrier="StraightTalk ATT" mcc="310" mnc="410" apn="tfdata" port="80" mmsc="http://mms-tf.net" mmsproxy="mms3.tracfone.com" mmsport="80" type="default,supl,mms" />
   <apn carrier="StraightTalk ATT.mvno" mcc="310" mnc="410" apn="att.mvno" port="80" mmsc="http://mmsc.cingular.com" mmsproxy="66.209.11.33" mmsport="80" type="default,supl,mms" />
   <apn carrier="CBW Internet" mcc="310" mnc="420" apn="wap.gocbw.com" proxy="" port="" user="cbw" password="" server="216.68.79.199" mmsc="http://mms.gocbw.com:8088/mms" mmsproxy="216.68.79.202" mmsport="80" type="default,supl,mms" />

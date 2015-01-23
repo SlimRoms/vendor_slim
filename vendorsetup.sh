@@ -4,6 +4,7 @@ add_lunch_combo slim_crespo-userdebug
 add_lunch_combo slim_d2att-userdebug
 add_lunch_combo slim_d2mtr-userdebug
 add_lunch_combo slim_d2spr-userdebug
+add_lunch_combo slim_d2tmo-userdebug
 add_lunch_combo slim_d2usc-userdebug
 add_lunch_combo slim_d2vzw-userdebug
 add_lunch_combo slim_d800-userdebug

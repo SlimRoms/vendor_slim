@@ -104,11 +104,11 @@ PRODUCT_PACKAGES += \
     mkfs.exfat
 
 # Stagefright FFMPEG plugin
-PRODUCT_PACKAGES += \
-    libstagefright_soft_ffmpegadec \
-    libstagefright_soft_ffmpegvdec \
-    libFFmpegExtractor \
-    libnamparser
+#PRODUCT_PACKAGES += \
+#    libstagefright_soft_ffmpegadec \
+#    libstagefright_soft_ffmpegvdec \
+#    libFFmpegExtractor \
+#    libnamparser
 
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
@@ -149,9 +149,9 @@ endif
 
 # Versioning System
 # SlimLP first version.
-PRODUCT_VERSION_MAJOR = 5.0.2
+PRODUCT_VERSION_MAJOR = 5.1
 PRODUCT_VERSION_MINOR = alpha
-PRODUCT_VERSION_MAINTENANCE = 1.0
+PRODUCT_VERSION_MAINTENANCE = 0.1
 ifdef SLIM_BUILD_EXTRA
     SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
 endif

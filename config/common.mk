@@ -86,7 +86,7 @@ PRODUCT_PACKAGES += \
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     SlimCenter \
-    SlimLauncher \
+    Launcher3 \
     LatinIME \
     BluetoothExt \
     DashClock

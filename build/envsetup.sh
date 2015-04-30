@@ -34,3 +34,7 @@ function slim_device_combos() {
     done < "${list_file}"
 }
 
+function slim_rename_function() {
+    eval "slim_$(declare -f ${1})"
+}
+

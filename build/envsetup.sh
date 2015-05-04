@@ -128,3 +128,26 @@ function cafremote()
     git remote add caf "git://codeaurora.org/$pfx$project"
     echo "Remote 'caf' created"
 }
+
+function slim_push()
+{
+    branch="lp5.1"
+    ssh_name="slim_review"
+
+    if [[ "$1" ]]
+    then
+        proj="$ANDROID_BUILD_TOP/$(echo "$1" | sed "s#$ANDROID_BUILD_TOP/##g")"
+        path_opt="--git-dir=$proj"
+    else
+        proj="$(pwd -P)"
+    fi
+    proj="$(echo "$proj" | sed "s#$ANDROID_BUILD_TOP/##g")"
+    proj="${proj//\//_}"
+
+    if (echo "$proj" | egrep -q 'external|system|build|bionic|art|libcore|prebuilt|dalvik') ; then
+        proj="android_$proj"
+    fi
+
+    git $path_opt push "ssh://${ssh_name}/SlimRoms/$proj" "HEAD:refs/for/$branch"
+
+}

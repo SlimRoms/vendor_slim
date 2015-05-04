@@ -1,7 +1,8 @@
 # slim functions that extend build/envsetup.sh
 
-function slim_device_combos() {
-    local device
+function slim_device_combos()
+{
+    local T list_file variant device
 
     T="$(gettop)"
     list_file="${T}/vendor/slim/slim.devices"
@@ -36,7 +37,8 @@ function slim_device_combos() {
     done < "${list_file}"
 }
 
-function slim_rename_function() {
+function slim_rename_function()
+{
     eval "original_slim_$(declare -f ${1})"
 }
 
@@ -50,7 +52,8 @@ function slim_append_hmm()
     HMM_DESCRIPTIVE=("${HMM_DESCRIPTIVE[@]}" "$(_slim_build_hmm "$1" "$2")")
 }
 
-function slim_add_hmm_entry() {
+function slim_add_hmm_entry()
+{
     for c in ${!HMM_DESCRIPTIVE[*]}
     do
         if [[ "${1}" == $(echo "${HMM_DESCRIPTIVE[$c]}" | cut -f1 -d":") ]]
@@ -64,6 +67,8 @@ function slim_add_hmm_entry() {
 
 function slimremote()
 {
+    local proj pfx project
+
     if ! git rev-parse &> /dev/null
     then
         echo "Not in a git directory. Please run this from an Android repository you wish to set up."
@@ -85,6 +90,8 @@ function slimremote()
 
 function cmremote()
 {
+    local proj pfx project
+
     if ! git rev-parse &> /dev/null
     then
         echo "Not in a git directory. Please run this from an Android repository you wish to set up."
@@ -101,6 +108,8 @@ function cmremote()
 
 function aospremote()
 {
+    local pfx project
+
     if ! git rev-parse &> /dev/null
     then
         echo "Not in a git directory. Please run this from an Android repository you wish to set up."
@@ -119,6 +128,8 @@ function aospremote()
 
 function cafremote()
 {
+    local pfx project
+
     if ! git rev-parse &> /dev/null
     then
         echo "Not in a git directory. Please run this from an Android repository you wish to set up."
@@ -136,6 +147,7 @@ function cafremote()
 
 function slim_push()
 {
+    local branch ssh_name path_opt proj
     branch="lp5.1"
     ssh_name="slim_review"
     path_opt=
@@ -162,6 +174,7 @@ function slim_push()
 slim_rename_function hmm
 function hmm() #hidden
 {
+    local i T
     T="$(gettop)"
     original_slim_hmm
     echo

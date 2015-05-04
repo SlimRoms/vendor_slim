@@ -1,6 +1,8 @@
 # slim functions that extend build/envsetup.sh
 
 function slim_device_combos() {
+    local device
+
     T="$(gettop)"
     list_file="${T}/vendor/slim/slim.devices"
     variant="userdebug"

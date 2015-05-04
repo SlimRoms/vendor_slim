@@ -40,23 +40,26 @@ function slim_rename_function() {
     eval "original_slim_$(declare -f ${1})"
 }
 
+function _slim_build_hmm() #hidden
+{
+    printf "%-8s %s" "${1}:" "${2}"
+}
+
+function slim_append_hmm()
+{
+    HMM_DESCRIPTIVE=("${HMM_DESCRIPTIVE[@]}" "$(_slim_build_hmm "$1" "$2")")
+}
+
 function slim_add_hmm_entry() {
-    f_name="${1}"
-    f_desc="${2}"
-
-    function _build_entry() {
-        printf "%-8s %s" "${f_name}:" "${f_desc}"
-    }
-
     for c in ${!HMM_DESCRIPTIVE[*]}
     do
-        if [[ "${f_name}" == $(echo "${HMM_DESCRIPTIVE[$c]}" | cut -f1 -d":") ]]
+        if [[ "${1}" == $(echo "${HMM_DESCRIPTIVE[$c]}" | cut -f1 -d":") ]]
         then
-            HMM_DESCRIPTIVE[${c}]="$(_build_entry)"
+            HMM_DESCRIPTIVE[${c}]="$(_slim_build_hmm "$1" "$2")"
             return
         fi
     done
-    HMM_DESCRIPTIVE=("${HMM_DESCRIPTIVE[@]}" "$(_build_entry)")
+    slim_append_hmm "$1" "$2"
 }
 
 function slimremote()
@@ -169,7 +172,7 @@ function hmm() #hidden
     done |column
 }
 
-slim_add_hmm_entry "slimremote" "Add a git remote for matching SLIM repository"
-slim_add_hmm_entry "cmremote" "Add a git remote for matching CM repository"
-slim_add_hmm_entry "aospremote" "Add git remote for matching AOSP repository"
-slim_add_hmm_entry "cafremote" "Add git remote for matching CodeAurora repository."
+slim_append_hmm "slimremote" "Add a git remote for matching SLIM repository"
+slim_append_hmm "cmremote" "Add a git remote for matching CM repository"
+slim_append_hmm "aospremote" "Add git remote for matching AOSP repository"
+slim_append_hmm "cafremote" "Add git remote for matching CodeAurora repository."

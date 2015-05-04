@@ -56,7 +56,7 @@ function slim_add_hmm_entry() {
             return
         fi
     done
-    HMM_DESCRIPTIVE=(HMM_DESCRIPTIVE[@] "$(_build_entry)")
+    HMM_DESCRIPTIVE=("${HMM_DESCRIPTIVE[@]}" "$(_build_entry)")
 }
 
 function slimremote()
@@ -169,3 +169,7 @@ function hmm() #hidden
     done |column
 }
 
+slim_add_hmm_entry "slimremote" "Add a git remote for matching SLIM repository"
+slim_add_hmm_entry "cmremote" "Add a git remote for matching CM repository"
+slim_add_hmm_entry "aospremote" "Add git remote for matching AOSP repository"
+slim_add_hmm_entry "cafremote" "Add git remote for matching CodeAurora repository."

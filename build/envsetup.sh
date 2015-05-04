@@ -59,66 +59,72 @@ function slim_add_hmm_entry() {
 
 function slimremote()
 {
-    git remote rm slim 2> /dev/null
-    PFX=""
-    if [ ! -d .git ]
+    if ! git rev-parse &> /dev/null
     then
-        echo .git directory not found. Please run this from the root directory of the Android repository you wish to set up.
-    else
-    PROJ=`pwd -P | sed s#$ANDROID_BUILD_TOP/##g`
+        echo "Not in a git directory. Please run this from an Android repository you wish to set up."
+        return
+    fi
+    git remote rm slim 2> /dev/null
 
-    if (echo $PROJ | egrep -q 'external|system|build|bionic|art|libcore|prebuilt|dalvik') ; then
-        PFX="android_"
+    proj="$(pwd -P | sed "s#$ANDROID_BUILD_TOP/##g")"
+
+    if (echo "$proj" | egrep -q 'external|system|build|bionic|art|libcore|prebuilt|dalvik') ; then
+        pfx="android_"
     fi
 
-    PROJECT="$(echo $PROJ | sed 's/\//_/g')"
+    project="${proj//\//_}"
 
-    git remote add slim git@github.com:SlimRoms/$PFX$PROJECT
+    git remote add slim "git@github.com:SlimRoms/$pfx$project"
     echo "Remote 'slim' created"
-    fi
 }
 
 function cmremote()
 {
-    git remote rm cm 2> /dev/null
-    if [ ! -d .git ]
+    if ! git rev-parse &> /dev/null
     then
-        echo .git directory not found. Please run this from the root directory of the Android repository you wish to set up.
+        echo "Not in a git directory. Please run this from an Android repository you wish to set up."
+        return
     fi
-    PROJECT=`pwd -P | sed s#$ANDROID_BUILD_TOP/##g`
-    PFX="android_$(echo $PROJECT | sed 's/\//_/g')"
-    git remote add cm git@github.com:CyanogenMod/$PFX
+    git remote rm cm 2> /dev/null
+
+    proj="$(pwd -P | sed "s#$ANDROID_BUILD_TOP/##g")"
+    pfx="android_"
+    project="${proj//\//_}"
+    git remote add cm "git@github.com:CyanogenMod/$pfx$project"
     echo "Remote 'cm' created"
 }
 
 function aospremote()
 {
+    if ! git rev-parse &> /dev/null
+    then
+        echo "Not in a git directory. Please run this from an Android repository you wish to set up."
+        return
+    fi
     git remote rm aosp 2> /dev/null
-    if [ ! -d .git ]
+
+    project="$(pwd -P | sed "s#$ANDROID_BUILD_TOP/##g")"
+    if [[ "$project" != device* ]]
     then
-        echo .git directory not found. Please run this from the root directory of the Android repository you wish to set up.
+        pfx="platform/"
     fi
-    PROJECT=`pwd -P | sed s#$ANDROID_BUILD_TOP/##g`
-    if (echo $PROJECT | grep -qv "^device")
-    then
-        PFX="platform/"
-    fi
-    git remote add aosp https://android.googlesource.com/$PFX$PROJECT
+    git remote add aosp "https://android.googlesource.com/$pfx$project"
     echo "Remote 'aosp' created"
 }
 
 function cafremote()
 {
+    if ! git rev-parse &> /dev/null
+    then
+        echo "Not in a git directory. Please run this from an Android repository you wish to set up."
+    fi
     git remote rm caf 2> /dev/null
-    if [ ! -d .git ]
+
+    project="$(pwd -P | sed "s#$ANDROID_BUILD_TOP/##g")"
+    if [[ "$project" != device* ]]
     then
-        echo .git directory not found. Please run this from the root directory of the Android repository you wish to set up.
+        pfx="platform/"
     fi
-    PROJECT=`pwd -P | sed s#$ANDROID_BUILD_TOP/##g`
-    if (echo $PROJECT | grep -qv "^device")
-    then
-        PFX="platform/"
-    fi
-    git remote add caf git://codeaurora.org/$PFX$PROJECT
+    git remote add caf "git://codeaurora.org/$pfx$project"
     echo "Remote 'caf' created"
 }

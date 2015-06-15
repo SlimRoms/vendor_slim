@@ -1,0 +1,41 @@
+#!/bin/sh
+
+. $ANDROID_BUILD_TOP/vendor/slim/tools/colors
+
+OUT_TARGET_HOST=`uname -a | grep Darwin`
+if [ -z "$OUT_TARGET_HOST" ]
+then
+   OUT_TARGET_HOST=linux-x86
+   MD5=md5sum
+   XARGS="xargs --max-args=1 --max-procs `grep 'processor' /proc/cpuinfo|wc -l`"
+   SED=sed
+else
+   OUT_TARGET_HOST=darwin-x86
+   MD5=md5
+   XARGS="xargs -n 1 -P `sysctl hw.ncpu | awk '{print $2}'`"
+   SED=gsed
+fi
+
+if [ -z "$OUT" -o ! -d "$OUT" ]; then
+    echo "ERROR: $0 only works with a full build environment. $OUT should exist."
+    exit 1
+fi
+
+# Determine what to name the new signed package
+MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $OUT/system/build.prop`
+OUTFILE=$OUT/$MODVERSION.zip
+
+# Create a md5 checksum image of the repacked package
+(
+img=`basename $OUTFILE`
+cd `dirname $OUTFILE`
+$MD5 $img >$img.md5sum
+ZIPSIZE=`ls -lah $OUTFILE | awk '{ print $5}' `
+echo $CL_CYN"===========-Package complete-==========="$CL_RST
+echo $CL_CYN"zip :"$CL_MAG" $OUTFILE"$CL_RST
+echo $CL_CYN"md5 :"$CL_MAG" $(cat $img.md5sum | awk '{ print $1 }')"$CL_RST
+echo $CL_CYN"size:"$CL_MAG" $ZIPSIZE"$CL_RST
+echo $CL_CYN"========================================"$CL_RST
+)
+
+exit 0

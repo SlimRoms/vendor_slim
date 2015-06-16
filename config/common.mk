@@ -162,6 +162,10 @@ PRODUCT_COPY_FILES += \
 endif
 endif
 
+# Layers Manager
+PRODUCT_COPY_FILES += \
+vendor/tipsy/prebuilt/common/app/layersmanager.apk:system/app/layersmanager.apk
+
 # Versioning System
 # SlimLP first version.
 PRODUCT_VERSION_MAJOR = 5.1.1

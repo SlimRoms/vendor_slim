@@ -115,7 +115,7 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_ffmpegadec \
     libstagefright_soft_ffmpegvdec \
     libFFmpegExtractor \
-    libnamparser
+    media_codecs_ffmpeg.xml
 
 # easy way to extend to add more packages
 -include vendor/extra/product.mk

@@ -28,6 +28,7 @@ else
 fi
 
 TARGET_DIR=$OUT
+LIBS_64=$TARGET_DIR/system/lib64
 PREBUILT_DIR=$TOP/prebuilts/chromium/$DEVICE
 
 if [ -d $PREBUILT_DIR ]; then
@@ -44,6 +45,12 @@ if [ -d $TARGET_DIR ]; then
     cp $TARGET_DIR/system/lib/libwebviewchromium.so $PREBUILT_DIR/lib/libwebviewchromium.so
     cp $TARGET_DIR/system/lib/libwebviewchromium_plat_support.so $PREBUILT_DIR/lib/libwebviewchromium_plat_support.so
     cp $TARGET_DIR/system/lib/libwebviewchromium_loader.so $PREBUILT_DIR/lib/libwebviewchromium_loader.so
+    if [ -d $LIBS_64 ]; then
+    mkdir -p $PREBUILT_DIR/lib64
+    cp $LIBS_64/libwebviewchromium.so $PREBUILT_DIR/lib64/libwebviewchromium.so
+    cp $LIBS_64/libwebviewchromium_plat_support.so $PREBUILT_DIR/lib64/libwebviewchromium_plat_support.so
+    cp $LIBS_64/libwebviewchromium_loader.so $PREBUILT_DIR/lib64/libwebviewchromium_loader.so
+    fi
 else
     echo "Please ensure that you have ran a full build prior to running this script!"
     return 1;
@@ -77,8 +84,20 @@ PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/lib/libwebviewchromium_plat_support.so:system/lib/libwebviewchromium_plat_support.so \\
     \$(LOCAL_PATH)/lib/libwebviewchromium_loader.so:system/lib/libwebviewchromium_loader.so
 
+ifeq (\$(TARGET_ARCH),arm64)
+PRODUCT_COPY_FILES += \\
+    \$(LOCAL_PATH)/lib64/libwebviewchromium.so:system/lib64/libwebviewchromium.so \\
+    \$(LOCAL_PATH)/lib64/libwebviewchromium_plat_support.so:system/lib64/libwebviewchromium_plat_support.so \\
+    \$(LOCAL_PATH)/lib64/libwebviewchromium_loader.so:system/lib64/libwebviewchromium_loader.so
+endif
+
 \$(shell mkdir -p out/target/product/__DEVICE__/system/app/webview/lib/arm/)
 \$(shell cp -r \$(LOCAL_PATH)/app/webview/lib/arm/libwebviewchromium.so out/target/product/__DEVICE__/system/app/webview/lib/arm/libwebviewchromium.so)
+
+ifeq (\$(TARGET_ARCH),arm64)
+\$(shell mkdir -p out/target/product/__DEVICE__/system/app/webview/lib/arm64/)
+\$(shell cp -r \$(LOCAL_PATH)/app/webview/lib/arm64/libwebviewchromium.so out/target/product/__DEVICE__/system/app/webview/lib/arm64/libwebviewchromium.so)
+endif
 
 EOF
 

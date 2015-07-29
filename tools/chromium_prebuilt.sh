@@ -27,8 +27,16 @@ else
     return 1
 fi
 
+if [[ $ANDROID_PROMPT_PREFIX == *arm* ]]; then
+    ARCH=arm
+fi
+
 if [[ $ANDROID_PROMPT_PREFIX == *arm64* ]]; then
     ARCH=arm64
+fi
+
+if [[ $ANDROID_PROMPT_PREFIX == *x86* ]]; then
+    ARCH=x86
 fi
 
 TARGET_DIR=$OUT
@@ -96,12 +104,19 @@ PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/lib64/libwebviewchromium_loader.so:system/lib64/libwebviewchromium_loader.so
 endif
 
+ifeq (\$(ARCH),arm)
 \$(shell mkdir -p out/target/product/__DEVICE__/system/app/webview/lib/arm/)
 \$(shell cp -r \$(LOCAL_PATH)/app/webview/lib/arm/libwebviewchromium.so out/target/product/__DEVICE__/system/app/webview/lib/arm/libwebviewchromium.so)
+endif
 
 ifeq (\$(ARCH),arm64)
 \$(shell mkdir -p out/target/product/__DEVICE__/system/app/webview/lib/arm64/)
 \$(shell cp -r \$(LOCAL_PATH)/app/webview/lib/arm64/libwebviewchromium.so out/target/product/__DEVICE__/system/app/webview/lib/arm64/libwebviewchromium.so)
+endif
+
+ifeq (\$(ARCH),x86)
+\$(shell mkdir -p out/target/product/__DEVICE__/system/app/webview/lib/x86/)
+\$(shell cp -r \$(LOCAL_PATH)/app/webview/lib/x86/libwebviewchromium.so out/target/product/__DEVICE__/system/app/webview/lib/x86/libwebviewchromium.so)
 endif
 
 EOF

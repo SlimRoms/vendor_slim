@@ -186,6 +186,9 @@ ifneq ($(INCLUDE_SLIMIRC),)
     PRODUCT_PACKAGES += SlimIRC
 endif
 
+# more wallpaper
+$(call inherit-product, vendor/slim/wallpaper/wallpaper.mk)
+
 # Chromium Prebuilt
 ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
 -include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk

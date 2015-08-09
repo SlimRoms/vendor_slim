@@ -164,7 +164,7 @@ endif
 
 # Layers Manager
 PRODUCT_COPY_FILES += \
-vendor/orion/prebuilt/common/app/layersmanager.apk:system/app/layersmanager.apk
+vendor/slim/prebuilt/common/app/layersmanager.apk:system/app/layersmanager.apk
 
 # SuperSU
 PRODUCT_COPY_FILES += \

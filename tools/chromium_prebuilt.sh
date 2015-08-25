@@ -18,11 +18,11 @@
 if [ $# -eq 1 ]; then
     TOP=$1
     DEVICE=$TARGET_DEVICE
-elif [ -n "$(gettop)" ]; then
+elif [[ (-n "$(gettop)") && ($(get_build_var TARGET_DEVICE) != generic)]]; then
     TOP=$(gettop)
     DEVICE=$(get_build_var TARGET_DEVICE)
 else
-    echo "Please run envsetup.sh and lunch before running this script,"
+    echo "Please run envsetup.sh and breakfast/lunch before running this script,"
     echo "or provide the build root directory as the first parameter."
     return 1
 fi

@@ -154,3 +154,18 @@ function slim_push()
 
     git $path_opt push "ssh://${ssh_name}/SlimRoms/$proj" "HEAD:refs/for/$branch"
 }
+
+
+slim_rename_function hmm
+function hmm() #hidden
+{
+    T="$(gettop)"
+    original_slim_hmm
+    echo
+
+    echo "vendor/slim extended functions. The complete list is:"
+    for i in $(grep -P '^function .*$' "$T/vendor/slim/build/envsetup.sh" | grep -v "#hidden" | sed 's/function \([a-z_]*\).*/\1/' | sort | uniq); do
+        echo "$i"
+    done |column
+}
+

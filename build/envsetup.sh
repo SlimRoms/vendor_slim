@@ -1,7 +1,8 @@
 # slim functions that extend build/envsetup.sh
 
-function slim_device_combos() {
-    local device
+function slim_device_combos()
+{
+    local T list_file variant device
 
     T="$(gettop)"
     list_file="${T}/vendor/slim/slim.devices"
@@ -36,31 +37,38 @@ function slim_device_combos() {
     done < "${list_file}"
 }
 
-function slim_rename_function() {
+function slim_rename_function()
+{
     eval "original_slim_$(declare -f ${1})"
 }
 
-function slim_add_hmm_entry() {
-    f_name="${1}"
-    f_desc="${2}"
+function _slim_build_hmm() #hidden
+{
+    printf "%-8s %s" "${1}:" "${2}"
+}
 
-    function _build_entry() {
-        printf "%-8s %s" "${f_name}:" "${f_desc}"
-    }
+function slim_append_hmm()
+{
+    HMM_DESCRIPTIVE=("${HMM_DESCRIPTIVE[@]}" "$(_slim_build_hmm "$1" "$2")")
+}
 
+function slim_add_hmm_entry()
+{
     for c in ${!HMM_DESCRIPTIVE[*]}
     do
-        if [[ "${f_name}" == $(echo "${HMM_DESCRIPTIVE[$c]}" | cut -f1 -d":") ]]
+        if [[ "${1}" == $(echo "${HMM_DESCRIPTIVE[$c]}" | cut -f1 -d":") ]]
         then
-            HMM_DESCRIPTIVE[${c}]="$(_build_entry)"
+            HMM_DESCRIPTIVE[${c}]="$(_slim_build_hmm "$1" "$2")"
             return
         fi
     done
-    HMM_DESCRIPTIVE=(HMM_DESCRIPTIVE[@] "$(_build_entry)")
+    slim_append_hmm "$1" "$2"
 }
 
 function slimremote()
 {
+    local proj pfx project
+
     if ! git rev-parse &> /dev/null
     then
         echo "Not in a git directory. Please run this from an Android repository you wish to set up."
@@ -82,6 +90,8 @@ function slimremote()
 
 function cmremote()
 {
+    local proj pfx project
+
     if ! git rev-parse &> /dev/null
     then
         echo "Not in a git directory. Please run this from an Android repository you wish to set up."
@@ -98,6 +108,8 @@ function cmremote()
 
 function aospremote()
 {
+    local pfx project
+
     if ! git rev-parse &> /dev/null
     then
         echo "Not in a git directory. Please run this from an Android repository you wish to set up."
@@ -116,6 +128,8 @@ function aospremote()
 
 function cafremote()
 {
+    local pfx project
+
     if ! git rev-parse &> /dev/null
     then
         echo "Not in a git directory. Please run this from an Android repository you wish to set up."
@@ -133,6 +147,7 @@ function cafremote()
 
 function slim_push()
 {
+    local branch ssh_name path_opt proj
     branch="lp5.1"
     ssh_name="slim_review"
     path_opt=
@@ -159,6 +174,7 @@ function slim_push()
 slim_rename_function hmm
 function hmm() #hidden
 {
+    local i T
     T="$(gettop)"
     original_slim_hmm
     echo
@@ -169,3 +185,7 @@ function hmm() #hidden
     done |column
 }
 
+slim_append_hmm "slimremote" "Add a git remote for matching SLIM repository"
+slim_append_hmm "cmremote" "Add a git remote for matching CM repository"
+slim_append_hmm "aospremote" "Add git remote for matching AOSP repository"
+slim_append_hmm "cafremote" "Add git remote for matching CodeAurora repository."

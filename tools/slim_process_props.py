@@ -24,7 +24,7 @@ from post_process_props import PropFile, validate
 
 
 lcd_changer = {"213": "182", "240": "200",
-               "320": "280", "480": "400", "560" : "493"}
+               "320": "280", "480": "400", "560" : "480"}
 
 
 def mangle_lcd_prop(prop):

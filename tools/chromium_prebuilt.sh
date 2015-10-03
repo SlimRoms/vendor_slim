@@ -104,7 +104,7 @@ PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/lib64/libwebviewchromium_loader.so:system/lib64/libwebviewchromium_loader.so
 endif
 
-ifeq (\$(ARCH),arm)
+ifneq (\$(filter arm arm64,\$(ARCH)),)
 \$(shell mkdir -p out/target/product/__DEVICE__/system/app/webview/lib/arm/)
 \$(shell cp -r \$(LOCAL_PATH)/app/webview/lib/arm/libwebviewchromium.so out/target/product/__DEVICE__/system/app/webview/lib/arm/libwebviewchromium.so)
 endif

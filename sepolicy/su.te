@@ -53,7 +53,7 @@ userdebug_or_eng(`
   # typealias shell alias suclient;
   # domain_auto_trans(untrusted_app, su_exec, suclient)
 
-  allow untrusted_app su_exec:file { execute_no_trans getattr open read execute };
+  allow untrusted_app su_exec:file { getattr open read };
   allow untrusted_app sudaemon:unix_stream_socket { connectto read write setopt ioctl };
   allow untrusted_app superuser_device:dir { r_dir_perms };
   allow untrusted_app superuser_device:sock_file { write };

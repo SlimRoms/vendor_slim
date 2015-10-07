@@ -1,5 +1,3 @@
-/cache/dalvik-cache(/.*)? u:object_r:dalvikcache_data_file:s0
-
 /cache/recovery(/.*)?     u:object_r:recovery_cache_file:s0
 
 # Auditd is a logging daemon. Put it into logd's context

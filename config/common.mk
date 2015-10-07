@@ -63,15 +63,15 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # Embed SuperUser
-SUPERUSER_EMBEDDED := true
+#SUPERUSER_EMBEDDED := true
 
 # Required packages
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Development \
     SpareParts \
-    Superuser \
-    su
+#    Superuser \
+#    su
 
 # Optional packages
 PRODUCT_PACKAGES += \

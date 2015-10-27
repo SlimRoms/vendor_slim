@@ -173,8 +173,17 @@ endif
 ifndef SLIM_BUILD_TYPE
     SLIM_BUILD_TYPE := UNOFFICIAL
     PLATFORM_VERSION_CODENAME := UNOFFICIAL
+endif
+
+ifeq ($(SLIM_BUILD_TYPE),DM)
+    SLIM_POSTFIX := -$(shell date +"%Y%m%d")
+endif
+
+ifndef SLIM_POSTFIX
     SLIM_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
 endif
+
+PLATFORM_VERSION_CODENAME := $(SLIM_BUILD_TYPE)
 
 # SlimIRC
 # export INCLUDE_SLIMIRC=1 for unofficial builds

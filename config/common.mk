@@ -173,6 +173,18 @@ endif
 ifndef SLIM_BUILD_TYPE
     SLIM_BUILD_TYPE := UNOFFICIAL
     PLATFORM_VERSION_CODENAME := UNOFFICIAL
+endif
+
+ifeq ($(SLIM_BUILD_TYPE),DM)
+    PLATFORM_VERSION_CODENAME := DM
+    SLIM_POSTFIX := -$(shell date +"%Y%m%d")
+endif
+
+ifeq ($(SLIM_BUILD_TYPE),DM-DEV)
+    PLATFORM_VERSION_CODENAME := DM-DEV
+endif
+
+ifndef SLIM_POSTFIX
     SLIM_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
 endif
 

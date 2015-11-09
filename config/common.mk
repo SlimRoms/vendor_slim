@@ -95,12 +95,18 @@ PRODUCT_PACKAGES += \
     e2fsck \
     mke2fs \
     tune2fs \
-    mount.exfat \
-    fsck.exfat \
-    mkfs.exfat \
     mkfs.ntfs \
     fsck.ntfs \
     mount.ntfs
+
+WITH_EXFAT ?= true
+ifeq ($(WITH_EXFAT),true)
+TARGET_USES_EXFAT := true
+PRODUCT_PACKAGES += \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat
+endif
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \

@@ -28,9 +28,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/slim/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh \
-    vendor/slim/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
-    vendor/slim/prebuilt/common/etc/backup.conf:system/etc/backup.conf
+    vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
@@ -62,15 +60,11 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
 
-# Embed SuperUser
-SUPERUSER_EMBEDDED := true
-
 # Required packages
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Development \
     SpareParts \
-    Superuser \
     su
 
 # Optional packages
@@ -90,7 +84,6 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    SlimCenter \
     SlimLauncher \
     LatinIME \
     BluetoothExt \

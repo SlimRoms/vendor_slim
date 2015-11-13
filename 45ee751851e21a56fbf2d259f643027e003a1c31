@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_9b526312",
+        "filename": "config/common.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2015-11-13T13:19:55Z",
+      "side": 0,
+      "message": "Why clean this up if you just added in the previous commit?",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 28
+      },
+      "revId": "45ee751851e21a56fbf2d259f643027e003a1c31",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

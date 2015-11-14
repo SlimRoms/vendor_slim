@@ -94,16 +94,12 @@ EXCLUDE_SYSTEMUI_TESTS := true
 
 # Extra tools
 PRODUCT_PACKAGES += \
-    openvpn \
     e2fsck \
     mke2fs \
     tune2fs \
     mkfs.ntfs \
     fsck.ntfs \
-    mount.ntfs
-
-# exFAT tools
-PRODUCT_PACKAGES += \
+    mount.ntfs \
     fsck.exfat \
     mkfs.exfat
 

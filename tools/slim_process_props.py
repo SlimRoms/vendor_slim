@@ -24,17 +24,25 @@ from post_process_props import PropFile, validate
 
 
 lcd_changer = {"213": "182", "240": "200",
-               "320": "280", "480": "400", "560" : "493"}
+               "320": "280", "480": "400", "560" : "480"}
+
+
+def mangle_lcd_prop(prop):
+    new_lcd = prop.get('persist.sys.lcd_density')
+    if new_lcd == '':
+        lcd = prop.get('ro.sf.lcd_density')
+        new_lcd = lcd_changer.get(lcd, lcd)
+    if new_lcd != '':
+        prop.put('persist.sys.lcd_density', new_lcd)
+        prop.put('ro.slim.lcd_density', new_lcd)
 
 
 def mangle_build_prop(prop):
-    lcd = prop.get('ro.sf.lcd_density')
-    new_lcd = lcd_changer.get(lcd, lcd)
-    prop.put('ro.sf.lcd_density', new_lcd)
+    mangle_lcd_prop(prop)
 
 
 def mangle_default_prop(prop):
-    pass
+    mangle_lcd_prop(prop)
 
 
 def main(argv):

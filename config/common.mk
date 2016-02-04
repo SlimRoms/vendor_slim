@@ -26,15 +26,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/slim/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/slim/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/slim/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh \
     vendor/slim/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
     vendor/slim/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bin/otasigcheck.sh:system/bin/otasigcheck.sh
+    vendor/slim/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
 # SLIM-specific init file
 PRODUCT_COPY_FILES += \
@@ -83,6 +83,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AudioFX
 
+# CM Hardware Abstraction Framework
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
+
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     SlimCenter \
@@ -101,14 +106,19 @@ PRODUCT_PACKAGES += \
     tune2fs \
     mount.exfat \
     fsck.exfat \
-    mkfs.exfat
+    mkfs.exfat \
+    ntfsfix \
+    ntfs-3g
 
 # Stagefright FFMPEG plugin
-#PRODUCT_PACKAGES += \
-#    libstagefright_soft_ffmpegadec \
-#    libstagefright_soft_ffmpegvdec \
-#    libFFmpegExtractor \
-#    libnamparser
+PRODUCT_PACKAGES += \
+    libffmpeg_extractor \
+    libffmpeg_omx \
+    media_codecs_ffmpeg.xml
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.sf.omx-plugin=libffmpeg_omx.so \
+    media.sf.extractor-plugin=libffmpeg_extractor.so
 
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
@@ -143,23 +153,37 @@ $(eval TARGET_BOOTANIMATION_NAME := $(shell \
 endef
 $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))
 
+ifeq ($(TARGET_BOOTANIMATION_HALF_RES),true)
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+else
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+endif
 endif
 
 # Versioning System
 # SlimLP first version.
-PRODUCT_VERSION_MAJOR = 5.1
-PRODUCT_VERSION_MINOR = alpha
-PRODUCT_VERSION_MAINTENANCE = 0.1
+PRODUCT_VERSION_MAJOR = 5.1.1
+PRODUCT_VERSION_MINOR = beta
+PRODUCT_VERSION_MAINTENANCE = 0.15
 ifdef SLIM_BUILD_EXTRA
     SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
 endif
 ifndef SLIM_BUILD_TYPE
     SLIM_BUILD_TYPE := UNOFFICIAL
     PLATFORM_VERSION_CODENAME := UNOFFICIAL
+endif
+
+ifeq ($(SLIM_BUILD_TYPE),DM)
+    SLIM_POSTFIX := -$(shell date +"%Y%m%d")
+endif
+
+ifndef SLIM_POSTFIX
     SLIM_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
 endif
+
+PLATFORM_VERSION_CODENAME := $(SLIM_BUILD_TYPE)
 
 # SlimIRC
 # export INCLUDE_SLIMIRC=1 for unofficial builds
@@ -169,6 +193,11 @@ endif
 
 ifneq ($(INCLUDE_SLIMIRC),)
     PRODUCT_PACKAGES += SlimIRC
+endif
+
+# Chromium Prebuilt
+ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+-include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
 endif
 
 # Set all versions

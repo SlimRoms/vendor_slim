@@ -162,6 +162,15 @@ PRODUCT_COPY_FILES += \
 endif
 endif
 
+# Layers Manager
+PRODUCT_COPY_FILES += \
+vendor/slim/prebuilt/common/app/layersmanager.apk:system/app/layersmanager.apk
+
+# SuperSU
+PRODUCT_COPY_FILES += \
+	vendor/slim/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+	vendor/slim/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
 # Versioning System
 # SlimLP first version.
 PRODUCT_VERSION_MAJOR = 5.1.1

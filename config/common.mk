@@ -65,7 +65,6 @@ PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Development \
     SpareParts \
-    su
 
 # Optional packages
 PRODUCT_PACKAGES += \

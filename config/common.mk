@@ -62,7 +62,6 @@ PRODUCT_COPY_FILES += \
 
 # Required packages
 PRODUCT_PACKAGES += \
-    CellBroadcastReceiver \
     Development \
     SpareParts \
     su

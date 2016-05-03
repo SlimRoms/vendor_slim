@@ -89,6 +89,9 @@ PRODUCT_PACKAGES += \
 
 #    SlimFileManager removed until updated
 
+## Slim Framework
+include frameworks/opt/slim/slim_framework.mk
+
 # Extra tools
 PRODUCT_PACKAGES += \
     openvpn \

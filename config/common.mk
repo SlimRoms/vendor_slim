@@ -85,9 +85,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SlimLauncher \
     LatinIME \
-    BluetoothExt
-
-#    SlimFileManager removed until updated
+    BluetoothExt \		
+    SlimFileManager
 
 ## Slim Framework
 include frameworks/opt/slim/slim_framework.mk

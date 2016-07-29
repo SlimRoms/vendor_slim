@@ -88,6 +88,9 @@ PRODUCT_PACKAGES += \
 ## Slim Framework
 include frameworks/opt/slim/slim_framework.mk
 
+## Don't compile SystemUITests
+EXCLUDE_SYSTEMUI_TESTS := true
+
 # Extra tools
 PRODUCT_PACKAGES += \
     openvpn \

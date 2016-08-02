@@ -3,7 +3,10 @@ type themes_service, system_api_service, system_server_service, service_manager_
 type torch_service, system_api_service, system_server_service, service_manager_type;
 type kill_switch_service, system_api_service, system_server_service, service_manager_type;
 type cm_profile_service, system_api_service, system_server_service, service_manager_type;
+
+# cm services
 type cm_hardware_service, system_api_service, system_server_service, service_manager_type;
+type cm_livedisplay_service, system_api_service, system_server_service, service_manager_type;
 
 # Slim services
 type slim_status_bar_service, system_api_service, system_server_service, service_manager_type;

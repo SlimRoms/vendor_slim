@@ -15,3 +15,17 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
+
+OVERLAY_PACKAGES := \
+    GooglePackageInstallerOverlay.apk \
+    GmailOverlay.apk
+
+PRODUCT_PACKAGES += $(patsubst %.apk,%,$(OVERLAY_PACKAGES))
+
+$(warning OVERLAYS)
+
+OVERLAY_SYMLINKS := $(addprefix $(TARGET_OUT)/slim/overlay/,$(notdir $(OVERLAY_PACKAGES)))
+$(OVERLAY_SYMLINKS):
+	@echo "Overlay symlink: $@"
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf $@ $(TARGET_OUT)/vendor/overlay/$(notdir $@)

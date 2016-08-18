@@ -88,11 +88,8 @@ PRODUCT_PACKAGES += \
 ## Slim Framework
 include frameworks/opt/slim/slim_framework.mk
 
-## Extra overlay packages for day night theming
-include vendor/slim/overlays/Android.mk
-
-PRODUCT_PACKAGES += \
-    GooglePackageInstallerOverlay
+## Slim Overlays
+include vendor/slim/overlays/overlays.mk
 
 ## Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true

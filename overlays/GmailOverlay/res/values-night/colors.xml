@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="quantum_black_text">@android:color/white</color>
+    <color name="quantum_black_secondary_text">#FFD9D9D9</color>
+    <color name="quantum_black_hint_text">#ffbbbbbb</color>
+    <color name="quantum_black_divider">#ffaaaaaa</color>
+</resources>

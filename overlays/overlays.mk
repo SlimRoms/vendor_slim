@@ -13,6 +13,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := $(call my-dir)
+PRODUCT_PACKAGES += \
+    GooglePackageInstallerOverlay \
+    GmailOverlay
 
-include $(call all-makefiles-under,$(LOCAL_PATH))

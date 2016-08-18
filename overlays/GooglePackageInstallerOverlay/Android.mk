@@ -21,5 +21,5 @@ LOCAL_PACKAGE_NAME := GooglePackageInstallerOverlay
 LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res)
 LOCAL_AAPT_FLAGS := --auto-add-overlay
 LOCAL_IGNORE_SUBDIR := true
-LOCAL_MODULE_PATH := $(TARGET_OUT)/vendor/overlay
+LOCAL_MODULE_PATH := $(TARGET_OUT)/slim/overlay
 include $(BUILD_PACKAGE)

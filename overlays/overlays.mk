@@ -14,4 +14,5 @@
 #
 
 PRODUCT_PACKAGES += \
-    GooglePackageInstallerOverlay
+    GooglePackageInstallerOverlay \
+    GmailOverlay

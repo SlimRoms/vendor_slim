@@ -3,7 +3,7 @@ include $(CLEAR_VARS)
 
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
-LOCAL_PACKAGE_NAME := GooglePackageInstallerOverlay
+LOCAL_PACKAGE_NAME := GmailOverlay
 LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res)
 LOCAL_AAPT_FLAGS := --auto-add-overlay
 LOCAL_IGNORE_SUBDIR := true

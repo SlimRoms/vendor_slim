@@ -88,6 +88,9 @@ PRODUCT_PACKAGES += \
 ## Slim Framework
 include frameworks/opt/slim/slim_framework.mk
 
+## Slim RRO Overlays
+include vendor/slim/overlays/overlays.mk
+
 ## Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true
 

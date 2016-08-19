@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1acb0d3e_7ed0b053",
+        "filename": "overlays/GooglePackageInstallerOverlay/Android.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2016-08-19T22:02:35Z",
+      "side": 1,
+      "message": "Licensing",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 28
+      },
+      "revId": "dd46fd81e91b1fd3815993373284fd6f76dcc9f1",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_9ed55c45",
+        "filename": "overlays/GooglePackageInstallerOverlay/AndroidManifest.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2016-08-19T22:02:35Z",
+      "side": 1,
+      "message": "licensing",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 54
+      },
+      "revId": "dd46fd81e91b1fd3815993373284fd6f76dcc9f1",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_3eca28a2",
+        "filename": "overlays/GooglePackageInstallerOverlay/res/values-night/colors.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2016-08-19T22:02:35Z",
+      "side": 1,
+      "message": "deadspace",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 2
+      },
+      "revId": "dd46fd81e91b1fd3815993373284fd6f76dcc9f1",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_5ecff4b0",
+        "filename": "overlays/GooglePackageInstallerOverlay/res/values-night/colors.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2016-08-19T22:02:35Z",
+      "side": 1,
+      "message": "deadspace",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 2
+      },
+      "revId": "dd46fd81e91b1fd3815993373284fd6f76dcc9f1",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_fec34088",
+        "filename": "overlays/GooglePackageInstallerOverlay/res/values/colors.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2016-08-19T22:02:35Z",
+      "side": 1,
+      "message": "deadspace",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 2
+      },
+      "revId": "dd46fd81e91b1fd3815993373284fd6f76dcc9f1",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_1ec16c80",
+        "filename": "overlays/GooglePackageInstallerOverlay/res/values/colors.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2016-08-19T22:02:35Z",
+      "side": 1,
+      "message": "deadspace",
+      "revId": "dd46fd81e91b1fd3815993373284fd6f76dcc9f1",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

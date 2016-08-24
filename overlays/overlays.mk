@@ -15,4 +15,5 @@
 
 PRODUCT_PACKAGES += \
     GooglePackageInstallerOverlay \
-    GmailOverlay
+    GmailOverlay \
+    HangoutsOverlay

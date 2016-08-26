@@ -3,6 +3,6 @@
 # inherit from CM
 #
 
-BOARD_SEPOLICY_DIRS += \
-    vendor/slim/sepolicy
+#BOARD_SEPOLICY_DIRS += \
+#    vendor/slim/sepolicy
 

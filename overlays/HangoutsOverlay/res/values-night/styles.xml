@@ -18,8 +18,10 @@
  */
 -->
 <resources>
-    <color name="quantum_black_text">#dd000000</color>
-    <color name="quantum_black_secondary_text">#89000000</color>
-    <color name="quantum_black_hint_text">#61000000</color>
-    <color name="quantum_black_divider">#1f000000</color>
+    <style name="NotificationPrimaryText">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="NotificationSecondaryText">
+        <item name="android:textColor">#FFD9D9D9</item>
+    </style>
 </resources>

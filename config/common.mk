@@ -85,8 +85,10 @@ PRODUCT_PACKAGES += \
 
 #    SlimFileManager removed until updated
 
+ifneq ($(DISABLE_SLIM_FRAMEWORK), true)
 ## Slim Framework
 include frameworks/opt/slim/slim_framework.mk
+endif
 
 ## Slim DayNight theming overlays
 include vendor/slim/overlays/overlays.mk

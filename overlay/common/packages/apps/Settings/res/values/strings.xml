@@ -19,5 +19,7 @@
 
     <!-- Help URL, Fingerprint [DO NOT TRANSLATE] -->
     <string name="help_url_fingerprint" translatable="false">https://support.google.com</string>
+
+    <string name="charging_sounds_title">Wireless charging sounds</string>
 </resources>
 

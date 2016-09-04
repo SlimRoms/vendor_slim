@@ -1,0 +1,78 @@
+From ab186a74267dbd4ba87a6f55302a092442014675 Mon Sep 17 00:00:00 2001
+From: Griffin Millender <griffinn.millender@gmail.com>
+Date: Thu, 25 Aug 2016 21:21:39 -0500
+Subject: [PATCH] Fix gmail overlay
+
+Change-Id: I78c23262d44b61a5e1bace2b9a07b8ac1e86f8ca
+---
+ overlays/GmailOverlay/res/values-night/colors.xml |  7 -------
+ overlays/GmailOverlay/res/values-night/styles.xml |  9 +++++++++
+ overlays/GmailOverlay/res/values/colors.xml       |  7 -------
+ overlays/GmailOverlay/res/values/styles.xml       | 11 +++++++++++
+ 4 files changed, 20 insertions(+), 14 deletions(-)
+ delete mode 100644 overlays/GmailOverlay/res/values-night/colors.xml
+ create mode 100644 overlays/GmailOverlay/res/values-night/styles.xml
+ delete mode 100644 overlays/GmailOverlay/res/values/colors.xml
+ create mode 100644 overlays/GmailOverlay/res/values/styles.xml
+
+diff --git a/overlays/GmailOverlay/res/values-night/colors.xml b/overlays/GmailOverlay/res/values-night/colors.xml
+deleted file mode 100644
+index 5ccab0d..0000000
+--- a/overlays/GmailOverlay/res/values-night/colors.xml
++++ /dev/null
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<resources>
+-    <color name="quantum_black_text">@android:color/white</color>
+-    <color name="quantum_black_secondary_text">#FF767676</color>
+-    <color name="quantum_black_hint_text">#ffbbbbbb</color>
+-    <color name="quantum_black_divider">#ffaaaaaa</color>
+-</resources>
+diff --git a/overlays/GmailOverlay/res/values-night/styles.xml b/overlays/GmailOverlay/res/values-night/styles.xml
+new file mode 100644
+index 0000000..fef152e
+--- /dev/null
++++ b/overlays/GmailOverlay/res/values-night/styles.xml
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <style name="NotificationPrimaryText">
++        <item name="android:textColor">@android:color/white</item>
++    </style>
++    <style name="NotificationSecondaryText">
++        <item name="android:textColor">#FFD9D9D9</item>
++    </style>
++</resources>
+diff --git a/overlays/GmailOverlay/res/values/colors.xml b/overlays/GmailOverlay/res/values/colors.xml
+deleted file mode 100644
+index 7b947d9..0000000
+--- a/overlays/GmailOverlay/res/values/colors.xml
++++ /dev/null
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<resources>
+-    <color name="quantum_black_text">#dd000000</color>
+-    <color name="quantum_black_secondary_text">#89000000</color>
+-    <color name="quantum_black_hint_text">#61000000</color>
+-    <color name="quantum_black_divider">#1f000000</color>
+-</resources>
+diff --git a/overlays/GmailOverlay/res/values/styles.xml b/overlays/GmailOverlay/res/values/styles.xml
+new file mode 100644
+index 0000000..d62a47c
+--- /dev/null
++++ b/overlays/GmailOverlay/res/values/styles.xml
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++
++   <style name="NotificationPrimaryText">
++        <item name="android:textColor">#dd000000</item>
++    </style>
++    <style name="NotificationSecondaryText">
++        <item name="android:textColor">#89000000</item>
++    </style>
++
++</resources>
+-- 
+2.7.4
+

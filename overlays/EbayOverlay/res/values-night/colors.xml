@@ -19,6 +19,6 @@
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <color name="notification_action_button_tint">#ffffffff</color>
-    <color name="notification_material_background_color">#ff263238</color>
+    <color name="notification_material_background_color">#ff21272b</color>
     <color name="notification_ripple_untinted_color">#ffffffff</color>
 </resources>

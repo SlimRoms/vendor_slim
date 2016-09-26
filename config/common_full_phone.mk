@@ -15,5 +15,5 @@ PRODUCT_PACKAGES += \
     Stk \
     telephony-ext
 
-PRODUCT_BOOT_JARS += telephony-ext
-
+PRODUCT_BOOT_JARS += \
+    telephony-ext

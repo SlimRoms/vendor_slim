@@ -22,6 +22,6 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
     <style name="NotificationSecondaryText">
-        <item name="android:textColor">#FFD9D9D9</item>
+        <item name="android:textColor">#b3ffffff</item>
     </style>
 </resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:background="#ff21272b" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:padding="12.0dip" android:layout_width="64.0dip" android:layout_height="64.0dip">
+        <ImageView android:layout_gravity="center" android:id="@+id/imageView1" android:background="@drawable/circle_gray" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/actionbar_tab_sidebar" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="64.0dip" android:layout_weight="1.0">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="17.0sp" android:textColor="#ffffffff" android:id="@+id/textTitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="asdasd" android:fontFamily="sans-serif" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="14.0sp" android:textColor="#b3ffffff" android:id="@+id/textSummary" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="asdasdasd" android:fontFamily="sans-serif" />
+        </LinearLayout>
+        <ImageButton android:id="@+id/butTrigger" android:background="@drawable/button_preferences" android:padding="18.0dip" android:layout_width="58.0dip" android:layout_height="fill_parent" android:src="@drawable/notification_pause_light" />
+    </LinearLayout>
+</LinearLayout>

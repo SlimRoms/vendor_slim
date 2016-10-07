@@ -128,6 +128,11 @@ function cmremote()
     proj="$(pwd -P | sed "s#$ANDROID_BUILD_TOP/##g")"
     pfx="android_"
     project="${proj//\//_}"
+
+    if (echo "$project" | egrep -q 'display-caf|audio-caf|media-caf|ril-caf|wlan-caf|bt-caf') ; then
+    project=${project%-caf*}
+    fi
+
     git remote add cm "git@github.com:CyanogenMod/$pfx$project"
     echo "Remote 'cm' created"
 }

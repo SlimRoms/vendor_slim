@@ -1,2 +1,2 @@
 # Slim services
-slimstatusbar                             u:object_r:slim_status_bar_service:s0
+slimstatusbar                           u:object_r:slim_status_bar_service:s0

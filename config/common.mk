@@ -85,6 +85,7 @@ PRODUCT_PACKAGES += \
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     SlimLauncher \
+    SlimWallpapers \
     LatinIME \
     BluetoothExt
 

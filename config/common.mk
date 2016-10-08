@@ -24,6 +24,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
 
+# Default sounds
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.ringtone=Titania.ogg \
+    ro.config.notification_sound=Tethys.ogg
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \

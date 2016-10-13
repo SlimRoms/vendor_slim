@@ -132,6 +132,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
 
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/slim/overlay/common \
     vendor/slim/overlay/dictionaries

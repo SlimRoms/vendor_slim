@@ -211,7 +211,7 @@ def fetch_dependencies(repo_path, fallback_branch=None):
         return
     _fetch_dep_cache.append(repo_path)
 
-    print('Looking for dependencies')
+    print('Looking for dependencies in %s' % repo_path)
 
     dep_p = '/'.join((repo_path, custom_dependencies))
     if os.path.exists(dep_p):
@@ -223,6 +223,7 @@ def fetch_dependencies(repo_path, fallback_branch=None):
 
     fetch_list = []
     syncable_repos = []
+    verify_repos = []
 
     for dependency in dependencies:
         if not is_in_manifest(dependency['target_path']):
@@ -232,6 +233,9 @@ def fetch_dependencies(repo_path, fallback_branch=None):
 
             fetch_list.append(dependency)
             syncable_repos.append(dependency['target_path'])
+                verify_repos.append(dependency['target_path'])
+            elif re.search("android_device_.*_.*$", dependency['repository']):
+                verify_repos.append(dependency['target_path'])
 
     if fetch_list:
         print('Adding dependencies to manifest')
@@ -241,7 +245,7 @@ def fetch_dependencies(repo_path, fallback_branch=None):
         print('Syncing dependencies')
         os.system('repo sync --force-sync %s' % ' '.join(syncable_repos))
 
-    for deprepo in syncable_repos:
+    for deprepo in verify_repos:
         fetch_dependencies(deprepo)
 
 

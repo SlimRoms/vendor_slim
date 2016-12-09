@@ -139,40 +139,35 @@ function cmremote()
 
 function aospremote()
 {
-    local pfx project
-
-    if ! git rev-parse &> /dev/null
+    if ! git rev-parse --git-dir &> /dev/null
     then
-        echo "Not in a git directory. Please run this from an Android repository you wish to set up."
-        return
+        echo ".git directory not found. Please run this from the root directory of the Android repository you wish to set up."
+        return 1
     fi
     git remote rm aosp 2> /dev/null
-
-    project="$(pwd -P | sed "s#$ANDROID_BUILD_TOP/##g")"
-    if [[ "$project" != device* ]]
+    PROJECT=$(pwd -P | sed -e "s#$ANDROID_BUILD_TOP\/##; s#-caf.*##; s#\/default##")
+    if (echo $PROJECT | grep -qv "^device")
     then
-        pfx="platform/"
+        PFX="platform/"
     fi
-    git remote add aosp "https://android.googlesource.com/$pfx$project"
+    git remote add aosp https://android.googlesource.com/$PFX$PROJECT
     echo "Remote 'aosp' created"
 }
 
 function cafremote()
 {
-    local pfx project
-
-    if ! git rev-parse &> /dev/null
+    if ! git rev-parse --git-dir &> /dev/null
     then
-        echo "Not in a git directory. Please run this from an Android repository you wish to set up."
+        echo ".git directory not found. Please run this from the root directory of the Android repository you wish to set up."
+        return 1
     fi
     git remote rm caf 2> /dev/null
-
-    project="$(pwd -P | sed "s#$ANDROID_BUILD_TOP/##g")"
-    if [[ "$project" != device* ]]
+    PROJECT=$(pwd -P | sed -e "s#$ANDROID_BUILD_TOP\/##; s#-caf.*##; s#\/default##")
+    if (echo $PROJECT | grep -qv "^device")
     then
-        pfx="platform/"
+        PFX="platform/"
     fi
-    git remote add caf "git://codeaurora.org/$pfx$project"
+    git remote add caf git://codeaurora.org/$PFX$PROJECT
     echo "Remote 'caf' created"
 }
 

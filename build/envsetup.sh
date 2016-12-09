@@ -937,16 +937,13 @@ function dopush()
     sleep 0.3
     adb remount &> /dev/null
 
-    $func $*
-    if [ $? -ne 0 ]; then
-        return $?
+    mkdir -p $OUT
+    ($func $*|tee $OUT/.log;return ${PIPESTATUS[0]})
+    ret=$?;
+    if [ $ret -ne 0 ]; then
+        rm -f $OUT/.log;return $ret
     fi
 
-    NINJA_DIR=$(pwd -P | sed "s#$ANDROID_BUILD_TOP\/##" | sed "s/\//_/g")
-    NINJA_MAKEFILE=$(gettop)/out/build-${TARGET_PRODUCT}-mmm-${NINJA_DIR}_Android.mk.ninja
-
-    # Install: <file>
-    LOC="$(grep '^ description = Install:' $NINJA_MAKEFILE | cut -d ':' -f 2)"
     # Install: <file>
     if [ `uname` = "Linux" ]; then
         LOC="$(cat $OUT/.log | sed -r -e 's/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g' -e 's/^\[ {0,2}[0-9]{1,3}% [0-9]{1,6}\/[0-9]{1,6}\] +//' \

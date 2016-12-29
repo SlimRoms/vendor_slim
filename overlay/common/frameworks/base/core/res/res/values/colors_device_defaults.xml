@@ -14,20 +14,10 @@
      limitations under the License.
 -->
 
+<!-- Colors specific to DeviceDefault themes. These are mostly pass-throughs to enable
+     overlaying new theme colors. -->
+
 <resources>
-
-    <!-- Slim colors -->
-    <color name="slim_blue">#FF297DAF</color>
-    <color name="slim_grey">#FF9B9B9B</color>
-
-    <!-- Slim extra colors -->
-    <color name="slim_ochre_yellow">#FFEEB128</color>
-    <color name="slim_grey_870">#FF2D2D2D</color>
-
-    <!-- Google colors -->
-    <color name="google_red">#FFEA4335</color>
-    <color name="google_yellow">#FFFBBC05</color>
-    <color name="google_green">#FF34A853</color>
-    <color name="google_blue">#FF4285F4</color>
-
+    <color name="accent_device_default_700">@color/google_blue</color>
+    <color name="accent_device_default_50">@color/google_blue</color>
 </resources>

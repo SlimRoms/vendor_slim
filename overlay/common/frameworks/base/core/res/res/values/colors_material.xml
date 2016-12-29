@@ -18,24 +18,24 @@
 <resources>
 
     <!-- Customize Settings Theme -->
-    <color name="primary_material_settings">@color/slim_grey_870</color>
-    <color name="primary_dark_material_settings">@color/slim_grey_870</color>
+    <color name="primary_material_settings">@android:color/slim_grey_870</color>
+    <color name="primary_dark_material_settings">@android:color/slim_grey_870</color>
 
-    <color name="secondary_material_settings">@color/material_blue_grey_800</color>
-    <color name="tertiary_material_settings">@color/material_blue_grey_700</color>
-    <color name="quaternary_material_settings">@color/material_blue_grey_200</color>
+    <color name="secondary_material_settings">@android:color/material_blue_grey_800</color>
+    <color name="tertiary_material_settings">@android:color/material_blue_grey_700</color>
+    <color name="quaternary_material_settings">@android:color/material_blue_grey_200</color>
 
     <!-- Accent Color defaults when no theme is set -->
-    <color name="accent_material_light">@color/google_blue</color>
-    <color name="accent_material_dark">@color/google_blue</color>
+    <color name="accent_material_light">@android:color/google_blue</color>
+    <color name="accent_material_dark">@android:color/google_blue</color>
 
     <!-- Time picker defaults when no theme is set -->
-    <color name="timepicker_default_ampm_selected_background_color_material">@color/google_blue</color>
-    <color name="timepicker_default_selector_color_material">@color/google_blue</color>
+    <color name="timepicker_default_ampm_selected_background_color_material">@android:color/google_blue</color>
+    <color name="timepicker_default_selector_color_material">@android:color/google_blue</color>
 
     <!-- DatePicker defaults when no theme is set -->
-    <color name="datepicker_default_circle_background_color_material_light">@color/google_blue</color>
-    <color name="datepicker_default_circle_background_color_material_dark">@color/google_blue</color>
+    <color name="datepicker_default_circle_background_color_material_light">@android:color/google_blue</color>
+    <color name="datepicker_default_circle_background_color_material_dark">@android:color/google_blue</color>
 
 
 </resources>

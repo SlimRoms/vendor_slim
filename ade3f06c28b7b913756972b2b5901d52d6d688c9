@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aade967_41e8717c",
+        "filename": "overlay/common/frameworks/base/core/res/res/values/colors_material.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2016-12-30T15:11:18Z",
+      "side": 1,
+      "message": "shouldn\u0027t be android? it\u0027s already in the android framework",
+      "range": {
+        "startLine": 24,
+        "startChar": 47,
+        "endLine": 24,
+        "endChar": 65
+      },
+      "revId": "ade3f06c28b7b913756972b2b5901d52d6d688c9",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aade967_61ed6d8b",
+        "filename": "overlay/common/frameworks/base/core/res/res/values/colors_material.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2016-12-30T15:11:18Z",
+      "side": 1,
+      "message": "shouldn\u0027t be android? it\u0027s already in the android framework",
+      "range": {
+        "startLine": 25,
+        "startChar": 46,
+        "endLine": 25,
+        "endChar": 64
+      },
+      "revId": "ade3f06c28b7b913756972b2b5901d52d6d688c9",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aade967_0102793e",
+        "filename": "overlay/common/frameworks/base/core/res/res/values/colors_material.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2016-12-30T15:11:18Z",
+      "side": 1,
+      "message": "shouldn\u0027t be android? it\u0027s already in the android framework",
+      "range": {
+        "startLine": 26,
+        "startChar": 48,
+        "endLine": 26,
+        "endChar": 66
+      },
+      "revId": "ade3f06c28b7b913756972b2b5901d52d6d688c9",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

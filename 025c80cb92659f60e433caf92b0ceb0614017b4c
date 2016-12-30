@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aade967_01db59ee",
+        "filename": "overlay/common/frameworks/base/core/res/res/values/colors_device_defaults.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2016-12-30T14:53:59Z",
+      "side": 1,
+      "message": "delete",
+      "range": {
+        "startLine": 21,
+        "startChar": 44,
+        "endLine": 21,
+        "endChar": 59
+      },
+      "revId": "025c80cb92659f60e433caf92b0ceb0614017b4c",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aade967_61d6cdc7",
+        "filename": "overlay/common/frameworks/base/core/res/res/values/colors_device_defaults.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2016-12-30T14:53:59Z",
+      "side": 1,
+      "message": "delete",
+      "range": {
+        "startLine": 22,
+        "startChar": 43,
+        "endLine": 22,
+        "endChar": 58
+      },
+      "revId": "025c80cb92659f60e433caf92b0ceb0614017b4c",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

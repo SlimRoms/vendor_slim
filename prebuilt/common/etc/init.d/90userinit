@@ -10,6 +10,6 @@ fi;
 
 if [ -d /data/local/userinit.d ];
 then
-   logwrapper busybox run-parts /data/local/userinit.d;
+   logwrapper toybox run-parts /data/local/userinit.d;
    setprop cm.userinit.active 1;
 fi;

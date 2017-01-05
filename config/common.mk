@@ -91,6 +91,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SlimBootAnimation \
     SlimLauncher \
+    SlimWallpaperResizer \
     SlimWallpapers \
     LatinIME \
     BluetoothExt

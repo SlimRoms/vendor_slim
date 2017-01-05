@@ -1,0 +1,8 @@
+overlay/common/frameworks/base/core/res/res/drawable-hdpi/default_wallpaper.png
+overlay/common/frameworks/base/core/res/res/drawable-mdpi/default_wallpaper.png
+overlay/common/frameworks/base/core/res/res/drawable-nodpi/
+overlay/common/frameworks/base/core/res/res/drawable-sw600dp-nodpi/
+overlay/common/frameworks/base/core/res/res/drawable-sw720dp-nodpi/
+overlay/common/frameworks/base/core/res/res/drawable-xhdpi/default_wallpaper.png
+overlay/common/frameworks/base/core/res/res/drawable-xxhdpi/default_wallpaper.png
+overlay/common/frameworks/base/core/res/res/drawable-xxxhdpi/

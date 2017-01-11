@@ -11,7 +11,7 @@ Additional SlimRoms functions:
 - slimgerrit:      A Git wrapper that fetches/pushes patch from/to SLIM Gerrit Review.
 - slimrebase:      Rebase a Gerrit change and push it again.
 - slimremote:      Add a git remote for SLIM github repository.
-- cmremote:        Add git remote pointing to the cm github repository.
+- losremote:       Add git remote pointing to the LineageOS github repository.
 - aospremote:      Add git remote for matching AOSP repository.
 - cafremote:       Add git remote for matching CodeAurora repository.
 - mka:             Builds using SCHED_BATCH on all processors.
@@ -114,7 +114,7 @@ function slimremote()
     echo "Remote 'slim' created"
 }
 
-function cmremote()
+function losremote()
 {
     local proj pfx project
 
@@ -133,8 +133,8 @@ function cmremote()
     project=${project%-caf*}
     fi
 
-    git remote add cm "git@github.com:CyanogenMod/$pfx$project"
-    echo "Remote 'cm' created"
+    git remote add los "git@github.com:LineageOS/$pfx$project"
+    echo "Remote 'los' created"
 }
 
 function aospremote()

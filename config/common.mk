@@ -26,6 +26,13 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh
 
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/slim/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/slim/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+endif
+
 # SLIM-specific init file
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.slim.rc:system/etc/init/init.slim.rc

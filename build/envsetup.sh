@@ -1049,6 +1049,27 @@ function repopick() {
     $T/vendor/slim/build/tools/repopick.py $@
 }
 
+function mush() #make and push to device through adb
+{
+    local adb_state=$(adb wait-for-device get-state)
+    if [[ "$adb_state" == *"command not found"* ]]; then
+        echo $adb_state
+        echo "adb binary not found."
+    elif [[ "$adb_state" == *"error"* ]]; then
+        echo $adb_state
+        echo "adb not connected to device."
+    else
+        local requested_product="${TARGET_PRODUCT#slim_}"
+        local ret=$?
+        mk_timer $(get_make_command) "$@"
+        if [ $ret -eq 0 ] ; then
+            . vendor/slim/build/adbpush.sh $requested_product $(readlink -m ./out)
+        else
+            echo "build failed.  nothing pushed to device."
+        fi
+    fi
+}
+
 function fixup_common_out_dir() {
     common_out_dir=$(get_build_var OUT_DIR)/target/common
     target_device=$(get_build_var TARGET_DEVICE)

@@ -8,6 +8,7 @@ Additional SlimRoms functions:
 - mmmp:            Builds all of the modules in the supplied directories and pushes them to the device.
 - mms:             Short circuit builder. Quickly re-build the kernel, rootfs, boot and system images
                    without deep dependencies. Requires the full build to have run before.
+- mush:            Same as make, but pushes completed full build to device root storage via adb after the successful build.
 - slimgerrit:      A Git wrapper that fetches/pushes patch from/to SLIM Gerrit Review.
 - slimrebase:      Rebase a Gerrit change and push it again.
 - slimremote:      Add a git remote for SLIM github repository.
@@ -1047,6 +1048,27 @@ alias slimkap='dopush slimka'
 function repopick() {
     T=$(gettop)
     $T/vendor/slim/build/tools/repopick.py $@
+}
+
+function mush() #make and push to device through adb
+{
+    local adb_state=$(adb wait-for-device get-state)
+    if [[ "$adb_state" == *"command not found"* ]]; then
+        echo $adb_state
+        echo "adb binary not found."
+    elif [[ "$adb_state" == *"error"* ]]; then
+        echo $adb_state
+        echo "adb not connected to device."
+    else
+        local requested_product="${TARGET_PRODUCT#slim_}"
+        local ret=$?
+        mk_timer $(get_make_command) "$@"
+        if [ $ret -eq 0 ] ; then
+            . vendor/slim/build/adbpush.sh $requested_product $(readlink -m ./out)
+        else
+            echo "build failed.  nothing pushed to device."
+        fi
+    fi
 }
 
 function fixup_common_out_dir() {

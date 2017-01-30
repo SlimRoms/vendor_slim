@@ -61,6 +61,10 @@ PRODUCT_PACKAGES += \
     Development
 endif
 
+# Superuser
+PRODUCT_PACKAGES += \
+    su
+
 # Optional packages
 PRODUCT_PACKAGES += \
     Basic \

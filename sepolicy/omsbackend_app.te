@@ -1,0 +1,2 @@
+type omsbackend_app, domain;
+app_domain(omsbackend_app)

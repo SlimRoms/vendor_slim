@@ -42,3 +42,5 @@
 # fsck
 /system/bin/fsck\.ntfs                          u:object_r:fsck_exec:s0
 /system/bin/fsck\.exfat                         u:object_r:fsck_exec:s0
+
+/data/system/theme/bin(/.*)? u:object_r:omsbackend_app_data_file:s0

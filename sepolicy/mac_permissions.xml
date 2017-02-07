@@ -17,8 +17,8 @@
 
   <!-- CMUpdater -->
   <signer signature="@RELEASE" >
-    <package name="com.cyanogenmod.updater" >
-      <seinfo value="cmupdater" />
+    <package name="com.slimroms.omsbackend" >
+      <seinfo value="omsbackend" />
     </package>
   </signer>
 </policy>

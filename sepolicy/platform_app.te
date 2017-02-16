@@ -1,2 +1,4 @@
 # Needed for NFC tile
 allow platform_app nfc_service:service_manager find;
+
+allow platform_app app_data_file:file { execute execute_no_trans };

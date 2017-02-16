@@ -90,6 +90,11 @@ PRODUCT_PACKAGES += \
     LatinIME \
     BluetoothExt
 
+# Theme Packages
+PRODUCT_PACKAGES += \
+    ThemeManager \
+    OmsBackend
+
 #    SlimFileManager removed until updated
 
 ifneq ($(DISABLE_SLIM_FRAMEWORK), true)

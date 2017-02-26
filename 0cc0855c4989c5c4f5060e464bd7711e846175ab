@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aaae553_68b545cc",
+        "filename": "build/tasks/bootzip.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000131
+      },
+      "writtenOn": "2017-02-26T09:20:07Z",
+      "side": 1,
+      "message": "/vendor/slim/..",
+      "revId": "0cc0855c4989c5c4f5060e464bd7711e846175ab",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

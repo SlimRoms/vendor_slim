@@ -1,2 +1,3 @@
 # Slim services
+overlay                                 u:object_r:overlay_service:s0
 slimactions                             u:object_r:slim_actions_service:s0

@@ -21,4 +21,16 @@
       <seinfo value="cmupdater" />
     </package>
   </signer>
+
+  <signer signature="@PLATFORM" >
+    <package name="com.slimroms.omsbackend" >
+      <seinfo value="omsbackend" />
+    </package>
+  </signer>
+
+  <signer signature="@PLATFORM" >
+    <package name="com.slimroms.thememanager" >
+      <seinfo value="thememanager" />
+    </package>
+  </signer>
 </policy>

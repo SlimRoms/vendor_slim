@@ -21,4 +21,10 @@
       <seinfo value="cmupdater" />
     </package>
   </signer>
+
+  <signer signature="@RELEASE" >
+    <package name="com.slimroms.omsbackend" >
+      <seinfo value="omsbackend" />
+    </package>
+  </signer>
 </policy>

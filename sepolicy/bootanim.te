@@ -1,0 +1,1 @@
+allow bootanim theme_app_data_file:dir search;

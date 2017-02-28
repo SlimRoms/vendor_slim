@@ -1,0 +1,5 @@
+type thememanager_app, domain;
+app_domain(thememanager_app)
+
+allow omsbackend_app theme_app_data_file:dir create_dir_perms;
+allow omsbackend_app theme_app_data_file:file create_file_perms;

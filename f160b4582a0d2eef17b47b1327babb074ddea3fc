@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa7f18b_6ad55342",
+        "filename": "sepolicy/bootanim.te",
+        "patchSetId": 17
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-03-11T22:45:22Z",
+      "side": 1,
+      "message": "Try Dan\u0027s suggestion\nallow bootanim theme_app_data_file:file r_rile_perms;",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 54
+      },
+      "revId": "f160b4582a0d2eef17b47b1327babb074ddea3fc",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

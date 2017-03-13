@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa7f18b_4ad3b738",
+        "filename": "sepolicy/netd.te",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-03-13T02:17:54Z",
+      "side": 1,
+      "message": "allow netd omsbackend:tcp_socket {read write };",
+      "revId": "42eb54c9304670c6d95ad595d635be1bb8618a93",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

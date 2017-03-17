@@ -8,6 +8,7 @@ allow thememanager_app connectivity_service:service_manager find;
 allow thememanager_app display_service:service_manager find;
 allow thememanager_app input_method_service:service_manager find;
 allow thememanager_app input_service:service_manager find;
+allow thememanager_app media_session_service:service_manager find;
 allow thememanager_app network_management_service:service_manager find;
 allow thememanager_app notification_service:service_manager find;
 allow thememanager_app overlay_service:service_manager find;

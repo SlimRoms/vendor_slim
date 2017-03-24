@@ -98,7 +98,7 @@ PRODUCT_PACKAGES += \
 
 ifneq ($(DISABLE_SLIM_FRAMEWORK), true)
 ## Slim Framework
-include frameworks/opt/slim/slim_framework.mk
+include frameworks/slim/slim_framework.mk
 endif
 
 ## Don't compile SystemUITests

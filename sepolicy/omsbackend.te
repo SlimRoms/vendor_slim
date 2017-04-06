@@ -1,0 +1,25 @@
+type omsbackend_app, domain;
+app_domain(omsbackend_app)
+
+allow omsbackend_app self:{ rawip_socket udp_socket } create;
+
+allow omsbackend_app activity_service:service_manager find;
+allow omsbackend_app connectivity_service:service_manager find;
+allow omsbackend_app display_service:service_manager find;
+allow omsbackend_app network_management_service:service_manager find;
+allow omsbackend_app notification_service:service_manager find;
+allow omsbackend_app overlay_service:service_manager find;
+
+allow omsbackend_app app_data_file:dir search;
+allow omsbackend_app dnsproxyd_socket:sock_file write;
+allow omsbackend_app fwmarkd_socket:sock_file write;
+allow omsbackend_app netd:unix_stream_socket connectto;
+allow omsbackend_app omsbackend_app:udp_socket { connect getattr };
+allow omsbackend_app omsbackend_app:rawip_socket { setopt getopt write read };
+allow omsbackend_app omsbackend_app:tcp_socket { create setopt };
+allow omsbackend_app system_app_data_file:dir search;
+allow omsbackend_app theme_app_data_file:dir { create_dir_perms write };
+allow omsbackend_app theme_app_data_file:file create_file_perms;
+allow omsbackend_app theme_app_data_file:file { execute execute_no_trans };
+
+allow netd omsbackend_app:fd use;

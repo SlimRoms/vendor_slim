@@ -1,0 +1,20 @@
+type thememanager_app, domain;
+app_domain(thememanager_app)
+
+allow thememanager_app accessibility_service:service_manager find;
+allow thememanager_app activity_service:service_manager find;
+allow thememanager_app audio_service:service_manager find;
+allow thememanager_app connectivity_service:service_manager find;
+allow thememanager_app display_service:service_manager find;
+allow thememanager_app input_method_service:service_manager find;
+allow thememanager_app input_service:service_manager find;
+allow thememanager_app media_session_service:service_manager find;
+allow thememanager_app network_management_service:service_manager find;
+allow thememanager_app notification_service:service_manager find;
+allow thememanager_app overlay_service:service_manager find;
+allow thememanager_app surfaceflinger_service:service_manager find;
+allow thememanager_app uimode_service:service_manager find;
+allow thememanager_app user_service:service_manager find;
+
+allow thememanager_app theme_app_data_file:dir create_dir_perms;
+allow thememanager_app theme_app_data_file:file create_file_perms;

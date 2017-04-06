@@ -1,3 +1,4 @@
 # Slim services
 type overlay_service, app_api_service, system_server_service, service_manager_type;
 type slim_actions_service, system_api_service, system_server_service, service_manager_type;
+type slim_settings_service, system_api_service, system_server_service, service_manager_type;

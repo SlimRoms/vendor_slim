@@ -84,11 +84,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SnapdragonGallery
 
-# CM Hardware Abstraction Framework
-PRODUCT_PACKAGES += \
-    org.cyanogenmod.hardware \
-    org.cyanogenmod.hardware.xml
-
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     SlimBootAnimation \
@@ -147,9 +142,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so
 
-# easy way to extend to add more packages
--include vendor/extra/product.mk
-
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext
@@ -171,7 +163,6 @@ ifdef SLIM_BUILD_EXTRA
 endif
 ifndef SLIM_BUILD_TYPE
     SLIM_BUILD_TYPE := UNOFFICIAL
-    PLATFORM_VERSION_CODENAME := UNOFFICIAL
 endif
 
 ifeq ($(SLIM_BUILD_TYPE),DM)
@@ -183,16 +174,6 @@ ifndef SLIM_POSTFIX
 endif
 
 PLATFORM_VERSION_CODENAME := $(SLIM_BUILD_TYPE)
-
-# SlimIRC
-# export INCLUDE_SLIMIRC=1 for unofficial builds
-ifneq ($(filter WEEKLY OFFICIAL,$(SLIM_BUILD_TYPE)),)
-    INCLUDE_SLIMIRC = 1
-endif
-
-ifneq ($(INCLUDE_SLIMIRC),)
-    PRODUCT_PACKAGES += SlimIRC
-endif
 
 # Set all versions
 SLIM_VERSION := Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(SLIM_BUILD_TYPE)$(SLIM_POSTFIX)
@@ -214,3 +195,5 @@ else
   ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.device.cache_dir=/cache
 endif
+
+$(call prepend-product-if-exists, vendor/extra/product.mk)

@@ -32,5 +32,8 @@
 
     <!-- SystemUIFactory component -->
     <string name="config_systemUIFactoryComponent" translatable="false">com.android.systemui.SlimSystemUIFactory</string>
+
+    <!-- Show data connection type also when roaming -->
+    <bool name="show_roaming_and_network_icons">true</bool>
 </resources>
 

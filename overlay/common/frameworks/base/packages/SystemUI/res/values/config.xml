@@ -32,5 +32,8 @@
 
     <!-- SystemUIFactory component -->
     <string name="config_systemUIFactoryComponent" translatable="false">com.android.systemui.SlimSystemUIFactory</string>
+
+    <!-- Show data connection type also when roaming -->
+    <bool name="config_show_long_operator_name_when_roaming">true</bool>
 </resources>
 

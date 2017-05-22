@@ -80,6 +80,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SnapdragonGallery
 
+# Jelly
+PRODUCT_PACKAGES +=\
+    Jelly
+
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     SlimBootAnimation \

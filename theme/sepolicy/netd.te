@@ -1,0 +1,2 @@
+allow netd omsbackend_app:tcp_socket { read write getopt setopt connect };
+allow netd omsbackend_app:udp_socket { read write getopt setopt connect };

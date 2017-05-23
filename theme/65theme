@@ -1,0 +1,7 @@
+#!/system/bin/sh
+if [ ! -d /data/system/theme ]; then
+    mkdir -p /data/system/theme
+    chmod 777 /data/system/theme
+    chown system:system /data/system/theme
+    restorecon /data/system/theme
+fi

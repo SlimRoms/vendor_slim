@@ -3,7 +3,5 @@
 # inherit from Slim
 #
 
-include vendor/slim/theme/sepolicy/sepolicy.mk
-
 BOARD_SEPOLICY_DIRS += \
-    vendor/slim/sepolicy
+    vendor/slim/theme/sepolicy

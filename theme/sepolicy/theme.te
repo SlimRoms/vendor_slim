@@ -1,0 +1,44 @@
+type theme_app, domain;
+app_domain(theme_app)
+
+allow theme_app self:{ rawip_socket udp_socket } create;
+
+allow theme_app accessibility_service:service_manager find;
+allow theme_app activity_service:service_manager find;
+allow theme_app appops_service:service_manager find;
+allow theme_app audio_service:service_manager find;
+allow theme_app audioserver_service:service_manager find;
+allow theme_app connectivity_service:service_manager find;
+allow theme_app display_service:service_manager find;
+allow theme_app graphicsstats_service:service_manager find;
+allow theme_app input_method_service:service_manager find;
+allow theme_app input_service:service_manager find;
+allow theme_app mediaserver_service:service_manager find;
+allow theme_app media_session_service:service_manager find;
+allow theme_app network_management_service:service_manager find;
+allow theme_app notification_service:service_manager find;
+allow theme_app overlay_service:service_manager find;
+allow theme_app power_service:service_manager find;
+allow theme_app surfaceflinger_service:service_manager find;
+allow theme_app uimode_service:service_manager find;
+allow theme_app user_service:service_manager find;
+allow theme_app wallpaper_service:service_manager find;
+
+allow theme_app dnsproxyd_socket:sock_file write;
+allow theme_app fwmarkd_socket:sock_file write;
+allow theme_app netd:unix_stream_socket connectto;
+allow theme_app theme_app:udp_socket { create connect getattr bind read write };
+allow theme_app theme_app:rawip_socket { setopt getopt write read };
+allow theme_app theme_app:tcp_socket { connect create getopt setopt getattr write read name_connect };
+allow theme_app port:udp_socket name_bind;
+allow theme_app node:udp_socket node_bind;
+allow theme_app port:tcp_socket name_connect;
+
+# allow theme_app to set sys.refresh_theme
+allow theme_app property_socket:sock_file write;
+allow theme_app init:unix_stream_socket connectto;
+
+allow theme_app app_data_file:dir search;
+allow theme_app system_app_data_file:dir search;
+allow theme_app theme_app_data_file:dir create_dir_perms;
+allow theme_app theme_app_data_file:file { create_file_perms execute execute_no_trans };

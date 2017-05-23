@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7add62b_a8fea230",
+        "filename": "prebuilt/common/etc/init.local.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-05-23T20:29:27Z",
+      "side": 1,
+      "message": "mkdir /data/system/theme\n    chmod 777 /data/system/theme\n    chown system /data/system/theme\n    chgrp system /data/system/theme\n    restorecon /data/system/theme",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 33
+      },
+      "revId": "70024f8cf2ed66011cea695d02a9aab2bd0cf5f4",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ca1b851c_8ed3a25f",
+        "filename": "theme/65theme",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-05-23T20:29:27Z",
+      "side": 1,
+      "message": "Should not exist",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 2
+      },
+      "revId": "70024f8cf2ed66011cea695d02a9aab2bd0cf5f4",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f9cccb48_502d9811",
+        "filename": "theme/theme.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-05-23T20:29:27Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 55
+      },
+      "revId": "70024f8cf2ed66011cea695d02a9aab2bd0cf5f4",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

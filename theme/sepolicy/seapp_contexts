@@ -1,0 +1,2 @@
+user=theme seinfo=omsbackend name=com.slimroms.omsbackend domain=omsbackend_app type=theme_app_data_file isPrivApp=true
+user=theme seinfo=thememanager name=com.slimroms.thememanager domain=thememanager_app type=theme_app_data_file

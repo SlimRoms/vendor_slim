@@ -1,0 +1,3 @@
+allow netd theme_app:tcp_socket { read write getopt setopt connect };
+allow netd theme_app:udp_socket { read write getopt setopt connect };
+allow netd theme_app:fd use;

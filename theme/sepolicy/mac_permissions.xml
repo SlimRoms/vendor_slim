@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policy>
+  <signer signature="@PLATFORM" >
+    <package name="com.slimroms.omsbackend" >
+      <seinfo value="omsbackend" />
+    </package>
+  </signer>
+
+  <signer signature="@PLATFORM" >
+    <package name="com.slimroms.thememanager" >
+      <seinfo value="thememanager" />
+    </package>
+  </signer>
+</policy>

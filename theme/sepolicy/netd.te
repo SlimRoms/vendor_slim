@@ -1,0 +1,3 @@
+allow netd { thememanager_app omsbackend_app }:tcp_socket { read write getopt setopt connect };
+allow netd { thememanager_app omsbackend_app }:udp_socket { read write getopt setopt connect };
+allow netd thememanager_app:fd use;

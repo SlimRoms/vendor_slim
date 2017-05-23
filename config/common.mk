@@ -102,6 +102,8 @@ ifneq ($(DISABLE_SLIM_FRAMEWORK), true)
 include frameworks/slim/slim_framework.mk
 endif
 
+include vendor/slim/theme/theme.mk
+
 ## Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true
 

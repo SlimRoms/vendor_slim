@@ -23,6 +23,12 @@ on init
 on post-fs-data
     mkdir /data/.ssh 0750 root shell
 
+    # Add ThemeManager dir
+    mkdir /data/system/theme
+    chown theme system /data/system/theme
+    chmod 0755 /data/system/theme
+    restorecon /data/system/theme
+
     # Run sysinit
     start sysinit
 

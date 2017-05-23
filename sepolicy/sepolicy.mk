@@ -4,5 +4,6 @@
 #
 
 BOARD_SEPOLICY_DIRS += \
-    vendor/slim/sepolicy
+    vendor/slim/sepolicy \
+    vendor/slim/theme/sepolicy
 

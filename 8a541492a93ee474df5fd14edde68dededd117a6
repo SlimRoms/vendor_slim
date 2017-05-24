@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "707fec2d_8cbea365",
+        "filename": "prebuilt/common/etc/init.local.rc",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2017-05-24T16:13:46Z",
+      "side": 1,
+      "message": "mkdir /data/system/theme\nchown system system /data/system/theme\nchmod 0777 /data/system/theme",
+      "range": {
+        "startLine": 29,
+        "startChar": 4,
+        "endLine": 29,
+        "endChar": 47
+      },
+      "revId": "8a541492a93ee474df5fd14edde68dededd117a6",
+      "serverId": "f8201d64-d729-4630-b91d-5f8be02869f0",
+      "unresolved": false
+    }
+  ]
+}

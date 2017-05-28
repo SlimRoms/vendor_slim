@@ -87,7 +87,8 @@ PRODUCT_PACKAGES += \
     SlimWallpaperResizer \
     SlimWallpapers \
     LatinIME \
-    BluetoothExt
+    BluetoothExt \
+    WallpaperPicker
 
 #    SlimFileManager removed until updated
 

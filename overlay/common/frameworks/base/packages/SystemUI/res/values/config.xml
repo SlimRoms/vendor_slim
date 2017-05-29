@@ -32,5 +32,8 @@
 
     <!-- SystemUIFactory component -->
     <string name="config_systemUIFactoryComponent" translatable="false">com.android.systemui.SlimSystemUIFactory</string>
+
+    <bool name="quick_settings_show_full_alarm">true</bool>
+
 </resources>
 

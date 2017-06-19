@@ -183,6 +183,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 EXTENDED_POST_PROCESS_PROPS := vendor/slim/tools/slim_process_props.py
 
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+  vendor/slim/build/target/product/security/slim
+
 -include vendor/slim-priv/keys/keys.mk
 
 ifeq ($(BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE),)

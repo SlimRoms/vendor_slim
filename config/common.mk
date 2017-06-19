@@ -183,6 +183,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 EXTENDED_POST_PROCESS_PROPS := vendor/slim/tools/slim_process_props.py
 
+-include vendor/slim-priv/keys/keys.mk
+
 ifeq ($(BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE),)
   ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.device.cache_dir=/data/cache

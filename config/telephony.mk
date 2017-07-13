@@ -10,3 +10,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Stk
+
+# Default ringtone
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.ringtone=Orion.ogg

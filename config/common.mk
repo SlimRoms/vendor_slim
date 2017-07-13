@@ -19,9 +19,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
 
 # Default sounds
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Titania.ogg \
-    ro.config.notification_sound=Tethys.ogg
+PRODUCT_PROPERTY_OVERRIDES += \\
+    ro.config.notification_sound=Argon.ogg \
+    ro.config.alarm_alert=Hassium.ogg
 
 # Backup Tool
 PRODUCT_COPY_FILES += \

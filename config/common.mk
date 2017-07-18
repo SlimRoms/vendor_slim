@@ -65,6 +65,11 @@ PRODUCT_PACKAGES += \
     Development
 endif
 
+# TWRP
+ifeq ($(WITH_TWRP),true)
+include vendor/slim/config/twrp.mk
+endif
+
 # Optional packages
 PRODUCT_PACKAGES += \
     Basic \

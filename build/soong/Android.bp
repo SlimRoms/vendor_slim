@@ -1,0 +1,7 @@
+bootstrap_go_package {
+    name: "soong-slim",
+    pkgPath: "slim/soong/android",
+    srcs: [
+        "android/variable.go",
+    ],
+}

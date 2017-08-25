@@ -97,6 +97,8 @@ PRODUCT_PACKAGES += \
 
 #    SlimFileManager removed until updated
 
+DISABLE_SLIM_FRAMEWORK:= true
+
 ifneq ($(DISABLE_SLIM_FRAMEWORK), true)
 ## Slim Framework
 include frameworks/slim/slim_framework.mk

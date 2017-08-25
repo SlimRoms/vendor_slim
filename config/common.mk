@@ -194,10 +194,10 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 -include vendor/slim-priv/keys/keys.mk
 
 ifeq ($(BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE),)
-  ADDITIONAL_DEFAULT_PROPERTIES += \
+  PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.device.cache_dir=/data/cache
 else
-  ADDITIONAL_DEFAULT_PROPERTIES += \
+  PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.device.cache_dir=/cache
 endif
 

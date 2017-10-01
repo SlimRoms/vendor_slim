@@ -26,9 +26,7 @@
     <!-- Should "4G" be shown instead of "LTE" when the network is NETWORK_TYPE_LTE? -->
     <bool name="config_show4GForLTE">false</bool>
 
-    <!-- SystemUIFactory component -->
-    <string name="config_systemUIFactoryComponent" translatable="false">com.android.systemui.SlimSystemUIFactory</string>
-
     <bool name="quick_settings_show_full_alarm">true</bool>
+
 </resources>
 

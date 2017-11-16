@@ -303,8 +303,8 @@ alias bib=breakfast
 function eat()
 {
     if [ "$OUT" ] ; then
-        MODVERSION=$(get_build_var SLIM_VERSION)
-        ZIPFILE=slim-$MODVERSION.zip
+        MODVERSION=$(get_build_var SLIM_MOD_VERSION)
+        ZIPFILE=$MODVERSION.zip
         ZIPPATH=$OUT/$ZIPFILE
         if [ ! -f $ZIPPATH ] ; then
             echo "Nothing to eat"

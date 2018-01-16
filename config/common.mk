@@ -76,6 +76,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SnapdragonGallery
 
+PRODUCT_PACKAGES += Launcher3
+
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     bootanimation.zip \

@@ -115,15 +115,10 @@ PRODUCT_PACKAGES += \
     libhealthd.cm
 endif
 
-# ExFAT support
-WITH_EXFAT ?= true
-ifeq ($(WITH_EXFAT),true)
-TARGET_USES_EXFAT := true
+# exFAT tools
 PRODUCT_PACKAGES += \
-    mount.exfat \
     fsck.exfat \
     mkfs.exfat
-endif
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \

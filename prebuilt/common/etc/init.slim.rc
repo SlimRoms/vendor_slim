@@ -23,9 +23,6 @@ on init
 on post-fs-data
     mkdir /data/.ssh 0750 root shell
 
-    # Run sysinit
-    start sysinit
-
 on boot
     # interactive governor
     chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
@@ -124,12 +121,6 @@ on boot
 
     # Persistent properties (only created if persist exists)
     mkdir /persist/properties 0770 system system
-
-# sysinit (/system/etc/init.d)
-service sysinit /system/bin/sysinit
-    user root
-    oneshot
-    disabled
 
 # adb over network
 on property:adb.network.port=*

@@ -35,11 +35,7 @@ PRODUCT_COPY_FILES += \
 
 # SLIM-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.local.rc:root/init.slim.rc
-
-# SELinux filesystem labels
-PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
+    vendor/slim/prebuilt/common/etc/init.slim.rc:system/etc/init/init.slim.rc
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
@@ -53,11 +49,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
     vendor/slim/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
-
-PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # debug packages
 ifneq ($(TARGET_BUILD_VARIENT),user)

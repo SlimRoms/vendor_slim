@@ -12,5 +12,5 @@ PRODUCT_PACKAGES += \
     Stk
 
 # Default ringtone
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.config.ringtone=Orion.ogg

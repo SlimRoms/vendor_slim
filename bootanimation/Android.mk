@@ -1,3 +1,8 @@
+#
+# Copyright (C) 2016 The CyanogenMod Project
+#               2017 The LineageOS Project
+#               2018 The SlimRoms Project
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -9,12 +14,45 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-LOCAL_PATH:= $(call my-dir)
-include $(CLEAR_VARS)
-LOCAL_MODULE := SlimBootAnimation
+ifeq ($(TARGET_SCREEN_WIDTH),)
+    $(warning TARGET_SCREEN_WIDTH is not set, using default value: 1080)
+    TARGET_SCREEN_WIDTH := 1080
+endif
 
-BOOTANIMATION := $(shell $(ANDROID_BUILD_TOP)/vendor/slim/bootanimation/generate-bootanimation.sh \
+define build-bootanimation
+    sh vendor/slim/bootanimation/generate-bootanimation.sh \
     $(TARGET_SCREEN_WIDTH) \
-    $(TARGET_BOOTANIMATION_HALF_RES))
+    $(TARGET_BOOTANIMATION_HALF_RES)
+endef
 
+TARGET_GENERATED_BOOTANIMATION := $(TARGET_OUT_INTERMEDIATES)/BOOTANIMATION/bootanimation.zip
+$(TARGET_GENERATED_BOOTANIMATION):
+	@echo "Building bootanimation"
+	$(build-bootanimation)
+
+ifeq ($(TARGET_BOOTANIMATION),)
+    TARGET_BOOTANIMATION := $(TARGET_GENERATED_BOOTANIMATION)
+    ifeq ($(shell command -v mogrify),)
+        $(info **********************************************)
+        $(info The boot animation could not be generated as)
+        $(info ImageMagick is not installed in your system.)
+        $(info $(space))
+        $(info Please install ImageMagick from this website:)
+        $(info https://imagemagick.org/script/binary-releases.php)
+        $(info **********************************************)
+        $(error stop)
+    endif
+endif
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := bootanimation.zip
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/media
+
+include $(BUILD_SYSTEM)/base_rules.mk
+
+$(LOCAL_BUILT_MODULE): $(TARGET_BOOTANIMATION)
+	@mkdir -p $(dir $@)
+	@cp $(TARGET_BOOTANIMATION) $@

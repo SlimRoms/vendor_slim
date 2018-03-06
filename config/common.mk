@@ -78,14 +78,13 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    SlimBootAnimation \
+    bootanimation.zip \
     SlimLauncher \
     SlimWallpaperResizer \
     SlimWallpapers \
     LatinIME \
     BluetoothExt \
     WallpaperPicker
-
 #    SlimFileManager removed until updated
 
 ifneq ($(DISABLE_SLIM_FRAMEWORK), true)

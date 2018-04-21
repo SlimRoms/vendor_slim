@@ -120,13 +120,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so
 
-# Telephony
-PRODUCT_PACKAGES += \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/slim/overlay/common \
     vendor/slim/overlay/dictionaries

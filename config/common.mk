@@ -155,6 +155,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.modversion=$(SLIM_MOD_VERSION) \
     ro.slim.buildtype=$(SLIM_BUILD_TYPE)
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.slim.version=$(SLIM_VERSION) \
+
 EXTENDED_POST_PROCESS_PROPS := vendor/slim/tools/slim_process_props.py
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \

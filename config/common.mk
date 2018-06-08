@@ -148,6 +148,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.slim.version=$(SLIM_VERSION) \
 
+PRODUCT_COPY_FILES += \
+    vendor/slim/config/permissions/privapp-permissions-slim.xml:system/etc/permissions/privapp-permissions-slim.xml
+
 EXTENDED_POST_PROCESS_PROPS := vendor/slim/tools/slim_process_props.py
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \

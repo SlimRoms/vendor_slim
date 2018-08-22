@@ -162,4 +162,4 @@ else
     ro.device.cache_dir=/cache
 endif
 
-$(call prepend-product-if-exists, vendor/extra/product.mk)
+$(call inherit-product-if-exists, vendor/extra/product.mk)

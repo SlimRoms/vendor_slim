@@ -250,6 +250,7 @@ function bbrunch()
         echo "No such item in brunch menu. Try 'breakfast'"
         return 1
     fi
+    unset DISABLE_SLIM_FRAMEWORK
     return $?
 }
 

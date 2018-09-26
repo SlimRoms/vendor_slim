@@ -26,13 +26,6 @@
     <!-- Should "4G" be shown instead of "LTE" when the network is NETWORK_TYPE_LTE? -->
     <bool name="config_show4GForLTE">false</bool>
 
-    <!-- Component to be used as the status bar service.  Must implement the IStatusBar
-     interface.  This name is in the ComponentName flattened format (package/class)  -->
-    <string name="config_statusBarComponent" translatable="false">com.android.systemui.statusbar.slim.SlimStatusBar</string>
-
-    <!-- SystemUIFactory component -->
-    <string name="config_systemUIFactoryComponent" translatable="false">com.android.systemui.SlimSystemUIFactory</string>
-
     <bool name="quick_settings_show_full_alarm">true</bool>
 
 </resources>

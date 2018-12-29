@@ -3,6 +3,9 @@ type Product_variables struct {
 	Additional_gralloc_10_usage_bits struct {
 		Cppflags []string
 	}
+	Apply_msm8974_1440p_egl_workaround struct {
+		Cflags []string
+	}
 	Supports_hw_fde struct {
 		Cflags []string
 		Header_libs []string
@@ -68,6 +71,7 @@ type Product_variables struct {
 
 type ProductVariables struct {
 	Additional_gralloc_10_usage_bits  *string `json:",omitempty"`
+	Apply_msm8974_1440p_egl_workaround  *bool `json:",omitempty"`
 	Supports_hw_fde  *bool `json:",omitempty"`
 	Supports_hw_fde_perf  *bool `json:",omitempty"`
 	Supports_legacy_hw_fde  *bool `json:",omitempty"`

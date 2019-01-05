@@ -71,11 +71,6 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhaseBeam
 
-# Include explicitly to work around GMS issues
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full \
-    librsjni
-
 #SnapdragonGallery
 PRODUCT_PACKAGES += \
     SnapdragonGallery

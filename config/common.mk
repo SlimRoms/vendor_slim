@@ -71,6 +71,10 @@ PRODUCT_COPY_FILES += \
     vendor/gzosp/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/gzosp/prebuilt/common/bin/sysinit:system/bin/sysinit
 
+# Power whitelist
+PRODUCT_COPY_FILES += \
+    vendor/gzosp/config/permissions/gzosp-power-whitelist.xml:system/etc/sysconfig/gzosp-power-whitelist.xml
+
 # Required packages
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \

@@ -6,8 +6,7 @@ function gzosp_device_combos()
 
     T="$(gettop)"
     list_file="${T}/vendor/gzosp/gzosp.devices"
-    variant1="userdebug"
-    variant2="user"
+    variant="userdebug"
 
     if [[ $1 ]]
     then
@@ -34,8 +33,7 @@ function gzosp_device_combos()
 
     while IFS= read -r device
     do
-        add_lunch_combo "gzosp_${device}-${variant1}"
-        add_lunch_combo "gzosp_${device}-${variant2}"
+        add_lunch_combo "gzosp_${device}-${variant}"
     done < "${list_file}"
 }
 

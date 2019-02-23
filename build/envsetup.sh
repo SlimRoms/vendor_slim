@@ -170,6 +170,48 @@ function gzosp_push()
     git $path_opt push "ssh://${ssh_name}/GZOSP/$proj" "HEAD:refs/for/$branch"
 }
 
+function eat()
+{
+    if [ "$OUT" ] ; then
+        ZIPPATH=`ls -tr "$OUT"/Gzosp-*.zip | tail -1`
+        if [ ! -f $ZIPPATH ] ; then
+            echo "Nothing to eat"
+            return 1
+        fi
+        adb start-server # Prevent unexpected starting server message from adb get-state in the next line
+        if [ $(adb get-state) != device -a $(adb shell 'test -e /sbin/recovery 2> /dev/null; echo $?') != 0 ] ; then
+            echo "No device is online. Waiting for one..."
+            echo "Please connect USB and/or enable USB debugging"
+            until [ $(adb get-state) = device -o $(adb shell 'test -e /sbin/recovery 2> /dev/null; echo $?') = 0 ];do
+                sleep 1
+            done
+            echo "Device Found.."
+        fi
+        if (adb shell getprop ro.gzosp.device | grep -q "$GZOSP_BUILD"); then
+            # if adbd isn't root we can't write to /cache/recovery/
+            adb root
+            sleep 1
+            adb wait-for-device
+            cat << EOF > /tmp/command
+--sideload_auto_reboot
+EOF
+            if adb push /tmp/command /cache/recovery/ ; then
+                echo "Rebooting into recovery for sideload installation"
+                adb reboot recovery
+                adb wait-for-sideload
+                adb sideload $ZIPPATH
+            fi
+            rm /tmp/command
+        else
+            echo "The connected device does not appear to be $GZOSP_BUILD, run away!"
+        fi
+        return $?
+    else
+        echo "Nothing to eat"
+        return 1
+    fi
+}
+
 
 gzosp_rename_function hmm
 function hmm() #hidden

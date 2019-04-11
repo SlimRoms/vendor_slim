@@ -43,6 +43,9 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
     vendor/slim/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
 
+# Include AOSP audio files
+include vendor/slim/config/aosp_audio.mk
+
 # debug packages
 ifneq ($(TARGET_BUILD_VARIENT),user)
 PRODUCT_PACKAGES += \

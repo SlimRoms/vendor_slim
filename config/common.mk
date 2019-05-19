@@ -148,7 +148,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.slim.version=$(SLIM_VERSION) \
 
 PRODUCT_COPY_FILES += \
-    vendor/slim/config/permissions/privapp-permissions-slim.xml:system/etc/permissions/privapp-permissions-slim.xml
+    vendor/slim/config/permissions/privapp-permissions-slim.xml:system/etc/permissions/privapp-permissions-slim.xml \
+    vendor/slim/config/permissions/privapp-permissions-slim-legacy.xml:system/etc/permissions/privapp-permissions-slim-legacy.xml
 
 EXTENDED_POST_PROCESS_PROPS := vendor/slim/tools/slim_process_props.py
 

@@ -60,9 +60,6 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_COPY_FILES +=  \
 #    vendor/gzosp/prebuilt/common/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
-# privapp permissions
-    vendor/gzosp/prebuilt/common/etc/permissions/privapp-permissions-gzr.xml:system/etc/permissions/privapp-permissions-gzr.xml
-
 # Gzosp-specific startup services
 PRODUCT_COPY_FILES += \
     vendor/gzosp/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \

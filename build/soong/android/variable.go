@@ -23,6 +23,8 @@ type Product_variables struct {
 	}
 	Has_legacy_camera_hal1 struct {
 		Cflags []string
+		Overrides []string
+		Shared_libs []string
 	}
 
 	Uses_media_extensions struct {

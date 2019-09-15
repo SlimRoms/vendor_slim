@@ -24,31 +24,35 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/slim/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh
+    vendor/slim/prebuilt/common/bin/50-slim.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-slim.sh
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/slim/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/slim/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+    vendor/slim/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/slim/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/slim/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
 
 # SLIM-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.slim.rc:system/etc/init/init.slim.rc
+    vendor/slim/prebuilt/common/etc/init.slim.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.slim.rc
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
+    vendor/slim/prebuilt/common/lib/content-types.properties:$(TARGET_COPY_OUT_SYSTEM)/lib/content-types.properties
+
+# Backup Services whitelist
+PRODUCT_COPY_FILES += \
+    vendor/slim/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.sip.voip.xml
 
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
-    vendor/slim/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
+    vendor/slim/prebuilt/common/etc/mkshrc:$(TARGET_COPY_OUT_SYSTEM)/etc/mkshrc \
+    vendor/slim/prebuilt/common/etc/sysctl.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/sysctl.conf
 
 # Include AOSP audio files
 include vendor/slim/config/aosp_audio.mk
@@ -139,8 +143,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.slim.version=$(SLIM_VERSION) \
 
 PRODUCT_COPY_FILES += \
-    vendor/slim/config/permissions/privapp-permissions-slim.xml:system/etc/permissions/privapp-permissions-slim.xml \
-    vendor/slim/config/permissions/privapp-permissions-slim-legacy.xml:system/etc/permissions/privapp-permissions-slim-legacy.xml
+    vendor/slim/config/permissions/privapp-permissions-slim.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-slim.xml \
+    vendor/slim/config/permissions/privapp-permissions-slim-legacy.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-slim-legacy.xml
 
 EXTENDED_POST_PROCESS_PROPS := vendor/slim/tools/slim_process_props.py
 

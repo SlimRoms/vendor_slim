@@ -36,9 +36,4 @@
         <permission name="android.permission.MANAGE_ACTIVITY_STACKS"/>
     </privapp-permissions>
 
-    <!-- Additional permissions on top of privapp-permissions-platform.xml -->
-    <privapp-permissions package="com.android.systemui">
-        <permission name="android.permission.MODIFY_DAY_NIGHT_MODE"/>
-    </privapp-permissions>
-
 </permissions>

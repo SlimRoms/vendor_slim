@@ -48,4 +48,9 @@
         <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
     </privapp-permissions>
 
+    <!-- Additional permissions for digital wellbeing -->
+    <privapp-permissions package="com.google.android.apps.wellbeing">
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+    </privapp-permissions>
+
 </permissions>

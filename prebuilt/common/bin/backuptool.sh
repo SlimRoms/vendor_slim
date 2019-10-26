@@ -33,7 +33,7 @@ preserve_addon_d() {
   fi
 }
 
-# Proceed only if /system is the expected GZOSP version
+# Proceed only if /system is the expected SLIM version
 check_prereq() {
 # If there is no build.prop file the partition is probably empty.
 if [ ! -r $S/build.prop ]; then

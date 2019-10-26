@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Copyright (C) 2012-2013, The CyanogenMod Project
 # Copyright (C) 2012-2015, SlimRoms Project
-# Copyright (C) 2017, GZOSP
+# Copyright (C) 2017, SLIM
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -41,12 +41,12 @@ except ImportError:
     urllib.request = urllib2
 
 DEBUG = False
-default_manifest = ".repo/manifests/gzosp_default.xml"
-custom_local_manifest = ".repo/local_manifests/gzosp_manifest.xml"
+default_manifest = ".repo/manifests/slim_default.xml"
+custom_local_manifest = ".repo/local_manifests/slim_manifest.xml"
 custom_default_revision = "8.1"
-custom_dependencies = "gzosp.dependencies"
-org_manifest = "GZOSP-Devices"  # leave empty if org is provided in manifest
-org_display = "GZOSP-Devices"  # needed for displaying
+custom_dependencies = "slim.dependencies"
+org_manifest = "SLIM-Devices"  # leave empty if org is provided in manifest
+org_display = "SLIM-Devices"  # needed for displaying
 
 github_auth = None
 

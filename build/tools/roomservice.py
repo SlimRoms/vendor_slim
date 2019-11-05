@@ -45,8 +45,8 @@ default_manifest = ".repo/manifests/slim_default.xml"
 custom_local_manifest = ".repo/local_manifests/slim_manifest.xml"
 custom_default_revision = "8.1"
 custom_dependencies = "slim.dependencies"
-org_manifest = "SLIM-Devices"  # leave empty if org is provided in manifest
-org_display = "SLIM-Devices"  # needed for displaying
+org_manifest = "SlimRoms"  # leave empty if org is provided in manifest
+org_display = "SlimRoms"  # needed for displaying
 
 github_auth = None
 

@@ -13,9 +13,9 @@
 # limitations under the License.
 
 $(call inherit-product, build/target/product/aosp_x86_64.mk)
-$(call inherit-product, vendor/lineage/config/common.mk)
+$(call inherit-product, vendor/slim/config/common.mk)
 
 # Allow building otatools
 TARGET_FORCE_OTA_PACKAGE := true
 
-PRODUCT_NAME := lineage_x86_64
+PRODUCT_NAME := slim_x86_64

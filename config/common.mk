@@ -116,40 +116,6 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/slim/overlay/common \
     vendor/slim/overlay/dictionaries
 
-# Versioning System
-# Slim version.
-PRODUCT_VERSION_MAJOR = $(PLATFORM_VERSION)
-PRODUCT_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = 0.1
-ifdef SLIM_BUILD_EXTRA
-    SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
-endif
-ifndef SLIM_BUILD_TYPE
-    SLIM_BUILD_TYPE := UNOFFICIAL
-endif
-
-ifeq ($(SLIM_BUILD_TYPE),DM)
-    SLIM_POSTFIX := -$(shell date +"%Y%m%d")
-endif
-
-ifndef SLIM_POSTFIX
-    SLIM_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
-endif
-
-# Set all versions
-SLIM_VERSION := 10.0
-SLIM_MOD_VERSION := Slim-$(SLIM_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(SLIM_BUILD_TYPE)$(SLIM_POSTFIX)
-
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    BUILD_DISPLAY_ID=$(BUILD_ID) \
-    slim.ota.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE) \
-    ro.slim.version=$(SLIM_VERSION) \
-    ro.modversion=$(SLIM_MOD_VERSION) \
-    ro.slim.buildtype=$(SLIM_BUILD_TYPE)
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.slim.version=$(SLIM_VERSION) \
-
 PRODUCT_COPY_FILES += \
     vendor/slim/config/permissions/privapp-permissions-slim.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-slim.xml \
     vendor/slim/config/permissions/privapp-permissions-slim-legacy.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-slim-legacy.xml

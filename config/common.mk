@@ -53,12 +53,6 @@ PRODUCT_COPY_FILES += \
 # Include AOSP audio files
 include vendor/slim/config/aosp_audio.mk
 
-# debug packages
-ifneq ($(TARGET_BUILD_VARIENT),user)
-PRODUCT_PACKAGES += \
-    Development
-endif
-
 # TWRP
 ifeq ($(WITH_TWRP),true)
 include vendor/slim/config/twrp.mk
@@ -71,16 +65,6 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 # the size of the system image. This has no bearing on stack traces, but will
 # leave less information available via JDWP.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-
-# Optional packages
-PRODUCT_PACKAGES += \
-    Basic \
-    LiveWallpapersPicker \
-    PhaseBeam
-
-#SnapdragonGallery
-PRODUCT_PACKAGES += \
-    SnapdragonGallery
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \

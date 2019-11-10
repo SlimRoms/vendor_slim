@@ -103,6 +103,11 @@ PRODUCT_PACKAGES += \
     fsck.exfat \
     mkfs.exfat
 
+PRODUCT_PACKAGES += \
+    curl \
+    vim \
+    wget
+
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/slim/overlay/common \
     vendor/slim/overlay/dictionaries

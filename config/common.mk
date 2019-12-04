@@ -54,9 +54,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.sip.voip.xml
 
 # Don't export PS1 in /system/etc/mkshrc.
-PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/mkshrc:$(TARGET_COPY_OUT_SYSTEM)/etc/mkshrc \
-    vendor/slim/prebuilt/common/etc/sysctl.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/sysctl.conf
+#PRODUCT_COPY_FILES += \
+#    vendor/slim/prebuilt/common/etc/mkshrc:$(TARGET_COPY_OUT_SYSTEM)/etc/mkshrc \
+#    vendor/slim/prebuilt/common/etc/sysctl.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/sysctl.conf
 
 # Include AOSP audio files
 include vendor/slim/config/aosp_audio.mk
@@ -121,6 +121,32 @@ PRODUCT_COPY_FILES += \
     vendor/slim/config/permissions/privapp-permissions-slim-legacy.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-slim-legacy.xml
 
 EXTENDED_POST_PROCESS_PROPS := vendor/slim/tools/slim_process_props.py
+
+PRODUCT_VERSION_MAJOR = $(PLATFORM_VERSION)
+PRODUCT_VERSION_MINOR = 0
+PRODUCT_VERSION_MAINTENANCE = 0
+ifdef SLIM_BUILD_EXTRA
+    SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
+endif
+ifndef SLIM_BUILD_TYPE
+    SLIM_BUILD_TYPE := UNOFFICIAL
+endif
+
+ifeq ($(SLIM_BUILD_TYPE),DM)
+    SLIM_POSTFIX := -$(shell date +"%Y%m%d")
+endif
+
+ifndef SLIM_POSTFIX
+    SLIM_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
+endif
+
+ifeq ($(PRODUCT_VERSION_MAINTENANCE),0)
+    SLIM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(SLIM_BUILD_TYPE)$(SLIM_POSTFIX)
+else
+    SLIM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(SLIM_BUILD_TYPE)$(SLIM_POSTFIX)
+endif
+    
+SLIM_MOD_VERSION := $(SLIM_BUILD)-$(SLIM_VERSION)
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
   vendor/slim/build/target/product/security/slim
